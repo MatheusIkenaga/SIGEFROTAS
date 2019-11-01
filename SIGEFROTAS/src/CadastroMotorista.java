@@ -92,11 +92,6 @@ public class CadastroMotorista extends javax.swing.JFrame {
         btSave.setText("Salvar");
 
         btCanc.setText("Cancelar");
-        btCanc.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCancActionPerformed(evt);
-            }
-        });
 
         btLimpar.setText("Limpar");
         btLimpar.addActionListener(new java.awt.event.ActionListener() {
@@ -149,8 +144,8 @@ public class CadastroMotorista extends javax.swing.JFrame {
                                                 .addGap(6, 6, 6)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(tbCpfCadMot, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addComponent(jLabel4))
+                                                    .addComponent(tbCpfCadMot, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(jLabel4))))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(tbRG)
@@ -256,7 +251,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
 
     private void btCancActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
+        
     }//GEN-LAST:event_btCancActionPerformed
 
     /**
