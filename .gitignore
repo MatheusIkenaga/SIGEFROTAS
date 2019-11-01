@@ -1,3 +1,10 @@
 /SIGEFROTAS/nbproject/private/
 /SIGEFROTAS/build/
 /SIGEFROTAS/dist/
+Adapter/nbproject/private/private.properties
+Adapter/build/classes/TomadaTresPinos.class
+Adapter/build/classes/TomadaDoisPinos.class
+Adapter/build/classes/Executavel.class
+Adapter/build/classes/Adaptador.class
+Adapter/build/classes/.netbeans_update_resources
+Adapter/build/classes/.netbeans_automatic_build
