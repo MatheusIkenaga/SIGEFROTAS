@@ -335,6 +335,8 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -361,12 +363,18 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
+     
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new CadastroVeiculo().setVisible(true);
             }
         });
     }
+
+
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCancelarVeic;
