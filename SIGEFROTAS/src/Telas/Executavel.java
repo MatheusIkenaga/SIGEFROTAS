@@ -19,7 +19,7 @@ public class Executavel{
     public static void main(String[] args) {
         // TODO code application logic here
         
-        new TelaInicial().setExtendedState(Frame.MAXIMIZED_BOTH);
+        new TelaInicial();
         
     }
     
