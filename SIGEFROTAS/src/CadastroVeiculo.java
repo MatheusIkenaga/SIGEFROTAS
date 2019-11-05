@@ -1,3 +1,6 @@
+
+import java.awt.Frame;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,6 +19,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
      */
     public CadastroVeiculo() {
         initComponents();
+        this.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -30,12 +34,11 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         buttonGroup1 = new javax.swing.ButtonGroup();
         tbCodVeic = new javax.swing.JTextField();
         tbMarcaVeic = new javax.swing.JTextField();
-        tbModeloVeic = new javax.swing.JTextField();
         tbCorVeic = new javax.swing.JTextField();
         tbPlacaVeic = new javax.swing.JTextField();
         tbHodometroVeic = new javax.swing.JTextField();
-        cbAnoFabricacao = new javax.swing.JComboBox<>();
-        cbAnoModelo = new javax.swing.JComboBox<>();
+        tbNumApolice = new javax.swing.JTextField();
+        tbObsVeic = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -44,58 +47,137 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        cbTipoVeic = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
-        cbDispoVeic = new javax.swing.JComboBox<>();
         jLabel10 = new javax.swing.JLabel();
-        cbSeguradoraVeic = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        tbNumApolice = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        tbObsVeic = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        cbAnoFabricacao = new javax.swing.JComboBox<>();
+        cbAnoModelo = new javax.swing.JComboBox<>();
+        cbTipoVeic = new javax.swing.JComboBox<>();
+        cbDispoVeic = new javax.swing.JComboBox<>();
+        cbSeguradoraVeic = new javax.swing.JComboBox<>();
         btSalvarVeic = new javax.swing.JButton();
         btCancelarVeic = new javax.swing.JButton();
         btLimparVeic = new javax.swing.JButton();
-        jLabel14 = new javax.swing.JLabel();
+        tbModeloVeic = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         tbCodVeic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbCodVeicActionPerformed(evt);
             }
         });
+        getContentPane().add(tbCodVeic);
+        tbCodVeic.setBounds(51, 124, 200, 20);
 
         tbMarcaVeic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbMarcaVeicActionPerformed(evt);
             }
         });
-
-        tbModeloVeic.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbModeloVeicActionPerformed(evt);
-            }
-        });
+        getContentPane().add(tbMarcaVeic);
+        tbMarcaVeic.setBounds(51, 191, 486, 20);
 
         tbCorVeic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbCorVeicActionPerformed(evt);
             }
         });
+        getContentPane().add(tbCorVeic);
+        tbCorVeic.setBounds(51, 264, 486, 20);
 
         tbPlacaVeic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbPlacaVeicActionPerformed(evt);
             }
         });
+        getContentPane().add(tbPlacaVeic);
+        tbPlacaVeic.setBounds(689, 264, 212, 20);
 
         tbHodometroVeic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbHodometroVeicActionPerformed(evt);
             }
         });
+        getContentPane().add(tbHodometroVeic);
+        tbHodometroVeic.setBounds(1000, 264, 221, 20);
+
+        tbNumApolice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbNumApoliceActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tbNumApolice);
+        tbNumApolice.setBounds(1004, 444, 217, 20);
+
+        tbObsVeic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbObsVeicActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tbObsVeic);
+        tbObsVeic.setBounds(53, 531, 1168, 104);
+
+        jLabel1.setText(" Código do Veículo");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(51, 104, 87, 14);
+
+        jLabel2.setText(" Marca do Veículo");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(51, 171, 83, 14);
+
+        jLabel3.setText(" Modelo do Veículo");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(689, 171, 88, 14);
+
+        jLabel4.setText(" Cor do Veículo");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(51, 244, 71, 14);
+
+        jLabel5.setText(" Placa do Veículo");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(689, 244, 79, 14);
+
+        jLabel6.setText(" Hodômetro (KM)");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(1000, 244, 81, 14);
+
+        jLabel7.setText(" Ano de Fabricação");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(51, 325, 92, 14);
+
+        jLabel8.setText(" Ano do Modelo");
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(689, 325, 74, 14);
+
+        jLabel9.setText(" Tipo do Veículo");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(51, 424, 74, 14);
+
+        jLabel10.setText(" Disponibilidade");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(322, 424, 73, 14);
+
+        jLabel11.setText(" Seguradora");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(689, 424, 59, 14);
+
+        jLabel12.setText(" Número da Apólice");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(1004, 424, 92, 14);
+
+        jLabel13.setText(" Observações");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(53, 511, 66, 14);
+
+        jLabel14.setFont(new java.awt.Font("Lucida Console", 0, 24)); // NOI18N
+        jLabel14.setText("Cadastro de Veículos");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(506, 31, 280, 25);
 
         cbAnoFabricacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
         cbAnoFabricacao.addActionListener(new java.awt.event.ActionListener() {
@@ -103,50 +185,32 @@ public class CadastroVeiculo extends javax.swing.JFrame {
                 cbAnoFabricacaoActionPerformed(evt);
             }
         });
+        getContentPane().add(cbAnoFabricacao);
+        cbAnoFabricacao.setBounds(51, 345, 486, 20);
 
         cbAnoModelo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
-
-        jLabel1.setText(" Código do Veículo");
-
-        jLabel2.setText(" Marca do Veículo");
-
-        jLabel3.setText(" Modelo do Veículo");
-
-        jLabel4.setText(" Cor do Veículo");
-
-        jLabel5.setText(" Placa do Veículo");
-
-        jLabel6.setText(" Hodômetro (KM)");
-
-        jLabel7.setText(" Ano de Fabricação");
-
-        jLabel8.setText(" Ano do Modelo");
+        getContentPane().add(cbAnoModelo);
+        cbAnoModelo.setBounds(689, 345, 532, 20);
 
         cbTipoVeic.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Motocicleta", "Automóvel", "Caminhão" }));
-
-        jLabel9.setText(" Tipo do Veículo");
+        getContentPane().add(cbTipoVeic);
+        cbTipoVeic.setBounds(51, 444, 206, 20);
 
         cbDispoVeic.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponível", "Indisponível", "Em Viagem", "Em Manutenção" }));
-
-        jLabel10.setText(" Disponibilidade");
+        getContentPane().add(cbDispoVeic);
+        cbDispoVeic.setBounds(322, 444, 215, 20);
 
         cbSeguradoraVeic.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Porto Seguro", "Azul", "Sulamérica" }));
-
-        jLabel11.setText(" Seguradora");
-
-        tbNumApolice.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbNumApoliceActionPerformed(evt);
-            }
-        });
-
-        jLabel12.setText(" Número da Apólice");
-
-        jLabel13.setText(" Observações");
+        getContentPane().add(cbSeguradoraVeic);
+        cbSeguradoraVeic.setBounds(689, 444, 223, 20);
 
         btSalvarVeic.setText("Salvar");
+        getContentPane().add(btSalvarVeic);
+        btSalvarVeic.setBounds(1150, 653, 71, 23);
 
         btCancelarVeic.setText("Cancelar");
+        getContentPane().add(btCancelarVeic);
+        btCancelarVeic.setBounds(1046, 653, 75, 23);
 
         btLimparVeic.setText("Limpar");
         btLimparVeic.addActionListener(new java.awt.event.ActionListener() {
@@ -154,131 +218,16 @@ public class CadastroVeiculo extends javax.swing.JFrame {
                 btLimparVeicActionPerformed(evt);
             }
         });
+        getContentPane().add(btLimparVeic);
+        btLimparVeic.setBounds(53, 653, 63, 23);
 
-        jLabel14.setFont(new java.awt.Font("Lucida Console", 0, 24)); // NOI18N
-        jLabel14.setText("Cadastro de Veículos");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(btLimparVeic)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btCancelarVeic)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(btSalvarVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tbObsVeic, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(tbCodVeic, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel4)
-                                .addComponent(jLabel7)
-                                .addComponent(tbMarcaVeic)
-                                .addComponent(tbCorVeic)
-                                .addComponent(cbAnoFabricacao, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel8)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel5)
-                                        .addComponent(tbPlacaVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(tbHodometroVeic, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                                        .addComponent(jLabel6)))
-                                .addComponent(tbModeloVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3)
-                                .addComponent(cbAnoModelo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cbTipoVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel9))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cbDispoVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel10))
-                            .addGap(18, 18, 18)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(cbSeguradoraVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel11))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel12)
-                                .addComponent(tbNumApolice, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(27, 27, 27))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(205, 205, 205)
-                .addComponent(jLabel14)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tbCodVeic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(1, 1, 1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tbMarcaVeic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbModeloVeic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addGap(4, 4, 4)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tbCorVeic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbPlacaVeic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbHodometroVeic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(14, 14, 14)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbAnoFabricacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbAnoModelo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel9)
-                        .addComponent(jLabel10)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbTipoVeic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbDispoVeic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbSeguradoraVeic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbNumApolice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tbObsVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btSalvarVeic)
-                    .addComponent(btCancelarVeic)
-                    .addComponent(btLimparVeic))
-                .addContainerGap())
-        );
+        tbModeloVeic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tbModeloVeicActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tbModeloVeic);
+        tbModeloVeic.setBounds(689, 191, 532, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -290,10 +239,6 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     private void tbMarcaVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbMarcaVeicActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tbMarcaVeicActionPerformed
-
-    private void tbModeloVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbModeloVeicActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tbModeloVeicActionPerformed
 
     private void tbCorVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbCorVeicActionPerformed
         // TODO add your handling code here:
@@ -331,6 +276,14 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         this.tbNumApolice.setText("");
         this.tbObsVeic.setText("");
     }//GEN-LAST:event_btLimparVeicActionPerformed
+
+    private void tbObsVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbObsVeicActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbObsVeicActionPerformed
+
+    private void tbModeloVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbModeloVeicActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tbModeloVeicActionPerformed
 
     /**
      * @param args the command line arguments
