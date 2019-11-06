@@ -23,6 +23,7 @@ public class ConnectionFactory {
 			JOptionPane.showMessageDialog(null, "Erro ao conectar:  \n" + e);
 			throw new RuntimeException(e);
 		}
+            
 
             
 
