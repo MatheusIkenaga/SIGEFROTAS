@@ -18,8 +18,10 @@ public class CadastroMotorista extends javax.swing.JFrame {
      */
     public CadastroMotorista() {
         initComponents();
-        this.setExtendedState(Frame.MAXIMIZED_BOTH);
+        this.setLocationRelativeTo(null);
+        //this.setExtendedState(Frame.MAXIMIZED_BOTH);
         this.setVisible(true);
+        this.cbSexo.setSelectedItem(null);
     }
 
     /**
@@ -56,7 +58,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
         btCanc = new javax.swing.JButton();
         btLimpar = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         tbCodMototista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -259,7 +261,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
     private void btCancActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        new TelaInicial().setVisible(true);
+        //new TelaPreCadastro().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btCancActionPerformed
 

@@ -24,9 +24,15 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     public CadastroVeiculo() {
         initComponents();
 //<<<<<<< HEAD:SIGEFROTAS/src/CadastroVeiculo.java
-        this.setExtendedState(Frame.MAXIMIZED_BOTH);
+        //this.setExtendedState(Frame.MAXIMIZED_BOTH);
 //=======
-        setExtendedState(Frame.MAXIMIZED_BOTH);
+        //setExtendedState(Frame.MAXIMIZED_BOTH);
+        this.setLocationRelativeTo(null);
+        this.cbAnoFabricacao.setSelectedItem(null);
+        this.cbAnoModelo.setSelectedItem(null);
+        this.cbTipoVeic.setSelectedItem(null);
+        this.cbDispoVeic.setSelectedItem(null);
+        this.cbSeguradoraVeic.setSelectedItem(null);
         this.setVisible(true);
 //>>>>>>> 7a189340bc241aaa76b9f069ffa4514956f47860:SIGEFROTAS/src/Telas/CadastroVeiculo.java
     }
@@ -61,7 +67,6 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         cbAnoFabricacao = new javax.swing.JComboBox<>();
         cbAnoModelo = new javax.swing.JComboBox<>();
         cbTipoVeic = new javax.swing.JComboBox<>();
@@ -71,8 +76,10 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         btCancelarVeic = new javax.swing.JButton();
         btLimparVeic = new javax.swing.JButton();
         tbModeloVeic = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
 
         tbCodVeic.addActionListener(new java.awt.event.ActionListener() {
@@ -183,11 +190,6 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         getContentPane().add(jLabel13);
         jLabel13.setBounds(53, 511, 84, 16);
 
-        jLabel14.setFont(new java.awt.Font("Lucida Console", 0, 24)); // NOI18N
-        jLabel14.setText("Cadastro de Veículos");
-        getContentPane().add(jLabel14);
-        jLabel14.setBounds(506, 31, 245, 30);
-
         cbAnoFabricacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
         cbAnoFabricacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,6 +220,11 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         btSalvarVeic.setBounds(1150, 653, 71, 29);
 
         btCancelarVeic.setText("Cancelar");
+        btCancelarVeic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancelarVeicActionPerformed(evt);
+            }
+        });
         getContentPane().add(btCancelarVeic);
         btCancelarVeic.setBounds(1046, 653, 98, 29);
 
@@ -237,6 +244,11 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         });
         getContentPane().add(tbModeloVeic);
         tbModeloVeic.setBounds(689, 191, 532, 26);
+
+        jLabel15.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        jLabel15.setText("Cadastro de Veículo");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(490, 30, 233, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -294,6 +306,11 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tbModeloVeicActionPerformed
 
+    private void btCancelarVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarVeicActionPerformed
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btCancelarVeicActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -350,7 +367,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

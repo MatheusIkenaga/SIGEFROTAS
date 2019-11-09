@@ -12,12 +12,12 @@ import java.awt.Frame;
  *
  * @author matheusikenaga
  */
-public class TelaPreCadastro extends javax.swing.JFrame {
+public class Modulo1 extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaPreCadastro
      */
-    public TelaPreCadastro() {
+    public Modulo1() {
         initComponents();
         this.setExtendedState(Frame.MAXIMIZED_BOTH);
         this.setVisible(true);
@@ -50,6 +50,14 @@ public class TelaPreCadastro extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         btInsMultaSin = new javax.swing.JButton();
         btConsultMultasSin = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        btGerFrotas = new javax.swing.JButton();
+        btEstoque = new javax.swing.JButton();
+        btLocação = new javax.swing.JButton();
+        btFinancas = new javax.swing.JButton();
+        btManut = new javax.swing.JButton();
+        btMultasSinist = new javax.swing.JButton();
+        btSIGEGFROTAS = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1280, 720));
@@ -73,6 +81,11 @@ public class TelaPreCadastro extends javax.swing.JFrame {
         btConsultVeiculo.setText("Consultar");
 
         btInsViagem.setText("Incluir");
+        btInsViagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInsViagemActionPerformed(evt);
+            }
+        });
 
         btConsultViagem.setText("Consultar");
 
@@ -91,6 +104,11 @@ public class TelaPreCadastro extends javax.swing.JFrame {
         jLabel5.setText("Cadastro Peças");
 
         btInsPecas.setText("Incluir");
+        btInsPecas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInsPecasActionPerformed(evt);
+            }
+        });
 
         btConsultPecas.setText("Consultar");
 
@@ -100,12 +118,106 @@ public class TelaPreCadastro extends javax.swing.JFrame {
 
         btConsultMultasSin.setText("Consultar");
 
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+
+        btGerFrotas.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/ger_frota 89x89.png")); // NOI18N
+        btGerFrotas.setBorderPainted(false);
+        btGerFrotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btGerFrotasActionPerformed(evt);
+            }
+        });
+
+        btEstoque.setText("jButton1");
+        btEstoque.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEstoqueActionPerformed(evt);
+            }
+        });
+
+        btLocação.setText("jButton1");
+        btLocação.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLocaçãoActionPerformed(evt);
+            }
+        });
+
+        btFinancas.setText("jButton1");
+        btFinancas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btFinancasActionPerformed(evt);
+            }
+        });
+
+        btManut.setText("jButton1");
+        btManut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btManutActionPerformed(evt);
+            }
+        });
+
+        btMultasSinist.setText("jButton1");
+        btMultasSinist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btMultasSinistActionPerformed(evt);
+            }
+        });
+
+        btSIGEGFROTAS.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/sige logo 88x88.png")); // NOI18N
+        btSIGEGFROTAS.setBorderPainted(false);
+        btSIGEGFROTAS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSIGEGFROTASActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(btSIGEGFROTAS)
+                .addGap(295, 295, 295)
+                .addComponent(btGerFrotas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btEstoque)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btLocação)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btFinancas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btManut)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btMultasSinist)
+                .addContainerGap(487, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btSIGEGFROTAS, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btLocação, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btFinancas, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btManut, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btMultasSinist, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 16, Short.MAX_VALUE))
+                    .addComponent(btGerFrotas, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(344, 344, 344)
+                .addGap(446, 446, 446)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -145,12 +257,13 @@ public class TelaPreCadastro extends javax.swing.JFrame {
                             .addComponent(btInsPecas)
                             .addGap(118, 118, 118)
                             .addComponent(btConsultPecas))))
-                .addContainerGap(385, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(261, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(165, 165, 165)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(btInsMotorista)
@@ -189,7 +302,7 @@ public class TelaPreCadastro extends javax.swing.JFrame {
                         .addComponent(jLabel6))
                     .addComponent(btInsMultaSin)
                     .addComponent(btConsultMultasSin))
-                .addGap(195, 195, 195))
+                .addContainerGap(184, Short.MAX_VALUE))
         );
 
         pack();
@@ -197,15 +310,66 @@ public class TelaPreCadastro extends javax.swing.JFrame {
 
     private void btInsMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsMotoristaActionPerformed
         new CadastroMotorista().setVisible(true);
-        this.dispose();        // TODO add your handling code here:
+        //this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btInsMotoristaActionPerformed
 
     private void btInsVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsVeiculoActionPerformed
         // TODO add your handling code here:
         new CadastroVeiculo().setVisible(true);
-        this.dispose();
+        //this.dispose();
 
     }//GEN-LAST:event_btInsVeiculoActionPerformed
+
+    private void btGerFrotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGerFrotasActionPerformed
+        new Modulo1().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btGerFrotasActionPerformed
+
+    private void btSIGEGFROTASActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSIGEGFROTASActionPerformed
+        new TelaInicial().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btSIGEGFROTASActionPerformed
+
+    private void btInsViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsViagemActionPerformed
+        new CadastroViagem().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btInsViagemActionPerformed
+
+    private void btInsPecasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsPecasActionPerformed
+        new CadastroPeca().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btInsPecasActionPerformed
+
+    private void btEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEstoqueActionPerformed
+        new Modulo2().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btEstoqueActionPerformed
+
+    private void btLocaçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLocaçãoActionPerformed
+        new Modulo3().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btLocaçãoActionPerformed
+
+    private void btFinancasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFinancasActionPerformed
+        new Modulo4().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btFinancasActionPerformed
+
+    private void btManutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btManutActionPerformed
+        new Modulo5().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btManutActionPerformed
+
+    private void btMultasSinistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMultasSinistActionPerformed
+        new Modulo6().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btMultasSinistActionPerformed
 
     /**
      * @param args the command line arguments
@@ -218,17 +382,25 @@ public class TelaPreCadastro extends javax.swing.JFrame {
     private javax.swing.JButton btConsultPecas;
     private javax.swing.JButton btConsultVeiculo;
     private javax.swing.JButton btConsultViagem;
+    private javax.swing.JButton btEstoque;
+    private javax.swing.JButton btFinancas;
+    private javax.swing.JButton btGerFrotas;
     private javax.swing.JButton btInsAluguel;
     private javax.swing.JButton btInsMotorista;
     private javax.swing.JButton btInsMultaSin;
     private javax.swing.JButton btInsPecas;
     private javax.swing.JButton btInsVeiculo;
     private javax.swing.JButton btInsViagem;
+    private javax.swing.JButton btLocação;
+    private javax.swing.JButton btManut;
+    private javax.swing.JButton btMultasSinist;
+    private javax.swing.JButton btSIGEGFROTAS;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
