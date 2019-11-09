@@ -3,6 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
+//teste
 package Telas;
 
 import java.awt.Frame;
@@ -51,7 +53,6 @@ public class TelaPreCadastro extends javax.swing.JFrame {
         btConsultMultasSin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         setSize(new java.awt.Dimension(1280, 720));
 
         btInsMotorista.setText("Incluir");
@@ -105,56 +106,52 @@ public class TelaPreCadastro extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(344, 344, 344)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
                         .addComponent(jLabel1)
                         .addGap(122, 122, 122)
                         .addComponent(btInsMotorista)
                         .addGap(118, 118, 118)
                         .addComponent(btConsultMotorista))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
                         .addComponent(jLabel2)
                         .addGap(136, 136, 136)
                         .addComponent(btInsVeiculo)
                         .addGap(118, 118, 118)
                         .addComponent(btConsultVeiculo))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
+                        .addGap(2, 2, 2)
                         .addComponent(jLabel3)
                         .addGap(136, 136, 136)
                         .addComponent(btInsViagem)
                         .addGap(118, 118, 118)
                         .addComponent(btConsultViagem))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
                         .addComponent(jLabel4)
                         .addGap(136, 136, 136)
                         .addComponent(btInsAluguel)
                         .addGap(118, 118, 118)
                         .addComponent(btConsultAluguel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(124, 124, 124)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(72, 72, 72)
-                                .addComponent(btInsMultaSin)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btConsultMultasSin))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(149, 149, 149)
-                                .addComponent(btInsPecas)
-                                .addGap(118, 118, 118)
-                                .addComponent(btConsultPecas)))))
-                .addGap(600, 600, 600))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel6)
+                            .addGap(72, 72, 72)
+                            .addComponent(btInsMultaSin)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btConsultMultasSin))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addGap(149, 149, 149)
+                            .addComponent(btInsPecas)
+                            .addGap(118, 118, 118)
+                            .addComponent(btConsultPecas))))
+                .addContainerGap(385, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(199, 199, 199)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(261, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(btInsMotorista)
@@ -193,7 +190,7 @@ public class TelaPreCadastro extends javax.swing.JFrame {
                         .addComponent(jLabel6))
                     .addComponent(btInsMultaSin)
                     .addComponent(btConsultMultasSin))
-                .addContainerGap())
+                .addGap(195, 195, 195))
         );
 
         pack();
