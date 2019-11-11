@@ -9,6 +9,7 @@ import Telas.CadastroVeiculo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -45,6 +46,7 @@ private Connection conexao;
                         
 			stmt.execute();
 			stmt.close();
+                        JOptionPane.showMessageDialog(null, "Gravado com sucesso ! ");
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}
