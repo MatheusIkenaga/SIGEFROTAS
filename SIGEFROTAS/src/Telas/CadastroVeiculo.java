@@ -3,6 +3,8 @@
 package Telas;
 //>>>>>>> 7a189340bc241aaa76b9f069ffa4514956f47860:SIGEFROTAS/src/Telas/CadastroVeiculo.java
 
+import Banco.Veiculo;
+import Banco.VeiculoDAO;
 import java.awt.Frame;
 
 /*
@@ -17,6 +19,9 @@ import java.awt.Frame;
  * @author Matheus 
  */
 public class CadastroVeiculo extends javax.swing.JFrame {
+    
+    private VeiculoDAO dao= new VeiculoDAO();
+    private Veiculo veiculo = new Veiculo();
 
     /**
      * Creates new form Cad_Veiculo
@@ -216,6 +221,11 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         cbSeguradoraVeic.setBounds(689, 444, 223, 27);
 
         btSalvarVeic.setText("Salvar");
+        btSalvarVeic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSalvarVeicActionPerformed(evt);
+            }
+        });
         getContentPane().add(btSalvarVeic);
         btSalvarVeic.setBounds(1150, 653, 71, 29);
 
@@ -310,6 +320,25 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_btCancelarVeicActionPerformed
+
+    private void btSalvarVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarVeicActionPerformed
+        
+        veiculo.setCD_VEICULO(Integer.parseInt(this.tbCodVeic.getText()));
+        veiculo.setMarca_veiculo(this.tbMarcaVeic.getText());
+        veiculo.setModelo_veiculo(this.tbModeloVeic.getText());
+        veiculo.setCor_veiculo(this.tbCorVeic.getText ());
+        veiculo.setPlaca_veiculo(this.tbPlacaVeic.getText());
+        veiculo.setHODOM_VEICULO(Integer.parseInt(this.tbHodometroVeic.getText()));
+        veiculo.setAno_veiculo(Integer.parseInt(this.cbAnoFabricacao.getSelectedItem().toString()));
+        veiculo.setAno_modelo_veiculo(Integer.parseInt(this.cbAnoModelo.getSelectedItem().toString()));
+        veiculo.setTipo_veiculo(this.cbTipoVeic.getSelectedItem().toString());
+        veiculo.setDISPO_VEICULO(this.cbDispoVeic.getSelectedItem().toString());
+        veiculo.setSeguro_veiculo(Integer.parseInt(this.cbSeguradoraVeic.getSelectedItem().toString()));
+        veiculo.setNUM_APOLICE_VEICULO(Integer.parseInt(this.tbNumApolice.getText()));
+        veiculo.setObs_veiculo(this.tbObsVeic.getText());
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btSalvarVeicActionPerformed
 
     /**
      * @param args the command line arguments
