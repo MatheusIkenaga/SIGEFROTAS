@@ -26,7 +26,7 @@ private Connection conexao;
     }
     
     public void insert(Veiculo veiculo){
-        String sql = "insert into veiculo (CD_VEICULO, MARCA_VEICULO, COR_VEICULO, ANO_VEICULO, MODELO_VEICULO, TIPO_VEICULO, HODOM_VEICULO, PLACA_VEICULO, STATUS_VEICULO, MANUTENCAO_VEICULO, OBS_VEICULO, SEGURO_VEICULO)";
+        String sql = "insert into veiculo (CD_VEICULO, MARCA_VEICULO, COR_VEICULO, ANO_VEICULO, MODELO_VEICULO, TIPO_VEICULO, HODOM_VEICULO, PLACA_VEICULO, STATUS_VEICULO, MANUTENCAO_VEICULO, OBS_VEICULO, SEGURO_VEICULO) values (?,?,?,?,?,?,?,?,?,?,?,?)";
         
         try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);

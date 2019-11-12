@@ -32,35 +32,43 @@ public class Modulo1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btInsMotorista = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        btConsultAluguel = new javax.swing.JButton();
+        btInsMultaSin = new javax.swing.JButton();
+        btConsultPecas = new javax.swing.JButton();
         btConsultMotorista = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        btInsMotorista = new javax.swing.JButton();
         btInsVeiculo = new javax.swing.JButton();
         btConsultVeiculo = new javax.swing.JButton();
-        btInsViagem = new javax.swing.JButton();
-        btConsultViagem = new javax.swing.JButton();
-        btInsAluguel = new javax.swing.JButton();
-        btConsultAluguel = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        btConsultMultasSin = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         btInsPecas = new javax.swing.JButton();
-        btConsultPecas = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        btInsMultaSin = new javax.swing.JButton();
-        btConsultMultasSin = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        btGerFrotas = new javax.swing.JButton();
-        btEstoque = new javax.swing.JButton();
-        btLocação = new javax.swing.JButton();
-        btFinancas = new javax.swing.JButton();
-        btManut = new javax.swing.JButton();
-        btMultasSinist = new javax.swing.JButton();
-        btSIGEGFROTAS = new javax.swing.JButton();
+        btConsultViagem = new javax.swing.JButton();
+        btInsViagem = new javax.swing.JButton();
+        btInsAluguel = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setSize(new java.awt.Dimension(1280, 720));
+
+        jPanel1.setAlignmentX(0.0F);
+        jPanel1.setAlignmentY(0.0F);
+
+        jLabel4.setText("Cadastro Aluguel");
+
+        btConsultAluguel.setText("Consultar");
+
+        btInsMultaSin.setText("Incluir");
+
+        btConsultPecas.setText("Consultar");
+
+        btConsultMotorista.setText("Consultar");
+
+        jLabel6.setText("Cadastro Multas e Sinistros");
 
         btInsMotorista.setText("Incluir");
         btInsMotorista.addActionListener(new java.awt.event.ActionListener() {
@@ -68,8 +76,6 @@ public class Modulo1 extends javax.swing.JFrame {
                 btInsMotoristaActionPerformed(evt);
             }
         });
-
-        btConsultMotorista.setText("Consultar");
 
         btInsVeiculo.setText("Incluir");
         btInsVeiculo.addActionListener(new java.awt.event.ActionListener() {
@@ -80,26 +86,11 @@ public class Modulo1 extends javax.swing.JFrame {
 
         btConsultVeiculo.setText("Consultar");
 
-        btInsViagem.setText("Incluir");
-        btInsViagem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btInsViagemActionPerformed(evt);
-            }
-        });
-
-        btConsultViagem.setText("Consultar");
-
-        btInsAluguel.setText("Incluir");
-
-        btConsultAluguel.setText("Consultar");
-
-        jLabel1.setText("Cadastro Motorista");
-
         jLabel2.setText("Cadastro Veículo");
 
-        jLabel3.setText("Cadastro Viagem");
+        btConsultMultasSin.setText("Consultar");
 
-        jLabel4.setText("Cadastro Aluguel");
+        jLabel1.setText("Cadastro Motorista");
 
         jLabel5.setText("Cadastro Peças");
 
@@ -110,102 +101,108 @@ public class Modulo1 extends javax.swing.JFrame {
             }
         });
 
-        btConsultPecas.setText("Consultar");
+        btConsultViagem.setText("Consultar");
 
-        jLabel6.setText("Cadastro Multas e Sinistros");
-
-        btInsMultaSin.setText("Incluir");
-
-        btConsultMultasSin.setText("Consultar");
-
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
-
-        btGerFrotas.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/ger_frota 89x89.png")); // NOI18N
-        btGerFrotas.setBorderPainted(false);
-        btGerFrotas.addActionListener(new java.awt.event.ActionListener() {
+        btInsViagem.setText("Incluir");
+        btInsViagem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btGerFrotasActionPerformed(evt);
+                btInsViagemActionPerformed(evt);
             }
         });
 
-        btEstoque.setText("jButton1");
-        btEstoque.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btEstoqueActionPerformed(evt);
-            }
-        });
+        btInsAluguel.setText("Incluir");
 
-        btLocação.setText("jButton1");
-        btLocação.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btLocaçãoActionPerformed(evt);
-            }
-        });
-
-        btFinancas.setText("jButton1");
-        btFinancas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btFinancasActionPerformed(evt);
-            }
-        });
-
-        btManut.setText("jButton1");
-        btManut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btManutActionPerformed(evt);
-            }
-        });
-
-        btMultasSinist.setText("jButton1");
-        btMultasSinist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btMultasSinistActionPerformed(evt);
-            }
-        });
-
-        btSIGEGFROTAS.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/sige logo 88x88.png")); // NOI18N
-        btSIGEGFROTAS.setBorderPainted(false);
-        btSIGEGFROTAS.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btSIGEGFROTASActionPerformed(evt);
-            }
-        });
+        jLabel3.setText("Cadastro Viagem");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(btSIGEGFROTAS)
-                .addGap(295, 295, 295)
-                .addComponent(btGerFrotas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btEstoque)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btLocação)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btFinancas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btManut)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btMultasSinist)
-                .addContainerGap(487, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(122, 122, 122)
+                        .addComponent(btInsMotorista)
+                        .addGap(118, 118, 118)
+                        .addComponent(btConsultMotorista))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(136, 136, 136)
+                        .addComponent(btInsVeiculo)
+                        .addGap(118, 118, 118)
+                        .addComponent(btConsultVeiculo))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(2, 2, 2)
+                        .addComponent(jLabel3)
+                        .addGap(136, 136, 136)
+                        .addComponent(btInsViagem)
+                        .addGap(118, 118, 118)
+                        .addComponent(btConsultViagem))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(136, 136, 136)
+                        .addComponent(btInsAluguel)
+                        .addGap(118, 118, 118)
+                        .addComponent(btConsultAluguel))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel6)
+                            .addGap(72, 72, 72)
+                            .addComponent(btInsMultaSin)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btConsultMultasSin))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel5)
+                            .addGap(149, 149, 149)
+                            .addComponent(btInsPecas)
+                            .addGap(118, 118, 118)
+                            .addComponent(btConsultPecas))))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(btInsMotorista)
+                    .addComponent(btConsultMotorista))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btSIGEGFROTAS, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btEstoque, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btLocação, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btFinancas, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btManut, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btMultasSinist, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 16, Short.MAX_VALUE))
-                    .addComponent(btGerFrotas, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel2))
+                    .addComponent(btInsVeiculo)
+                    .addComponent(btConsultVeiculo))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel3))
+                    .addComponent(btInsViagem)
+                    .addComponent(btConsultViagem))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel4))
+                    .addComponent(btInsAluguel)
+                    .addComponent(btConsultAluguel))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btInsPecas)
+                        .addComponent(jLabel5))
+                    .addComponent(btConsultPecas))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel6))
+                    .addComponent(btInsMultaSin)
+                    .addComponent(btConsultMultasSin))
                 .addContainerGap())
         );
 
@@ -213,96 +210,17 @@ public class Modulo1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(446, 446, 446)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(122, 122, 122)
-                        .addComponent(btInsMotorista)
-                        .addGap(118, 118, 118)
-                        .addComponent(btConsultMotorista))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(136, 136, 136)
-                        .addComponent(btInsVeiculo)
-                        .addGap(118, 118, 118)
-                        .addComponent(btConsultVeiculo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel3)
-                        .addGap(136, 136, 136)
-                        .addComponent(btInsViagem)
-                        .addGap(118, 118, 118)
-                        .addComponent(btConsultViagem))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel4)
-                        .addGap(136, 136, 136)
-                        .addComponent(btInsAluguel)
-                        .addGap(118, 118, 118)
-                        .addComponent(btConsultAluguel))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel6)
-                            .addGap(72, 72, 72)
-                            .addComponent(btInsMultaSin)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btConsultMultasSin))
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jLabel5)
-                            .addGap(149, 149, 149)
-                            .addComponent(btInsPecas)
-                            .addGap(118, 118, 118)
-                            .addComponent(btConsultPecas))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(358, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(359, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(274, 274, 274)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(165, 165, 165)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(btInsMotorista)
-                    .addComponent(btConsultMotorista))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel2))
-                    .addComponent(btInsVeiculo)
-                    .addComponent(btConsultVeiculo))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel3))
-                    .addComponent(btInsViagem)
-                    .addComponent(btConsultViagem))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel4))
-                    .addComponent(btInsAluguel)
-                    .addComponent(btConsultAluguel))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btInsPecas)
-                        .addComponent(jLabel5))
-                    .addComponent(btConsultPecas))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel6))
-                    .addComponent(btInsMultaSin)
-                    .addComponent(btConsultMultasSin))
-                .addContainerGap(184, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
 
         pack();
@@ -320,17 +238,6 @@ public class Modulo1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btInsVeiculoActionPerformed
 
-    private void btGerFrotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGerFrotasActionPerformed
-        new Modulo1().setVisible(true);
-        this.dispose();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btGerFrotasActionPerformed
-
-    private void btSIGEGFROTASActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSIGEGFROTASActionPerformed
-        new TelaInicial().setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btSIGEGFROTASActionPerformed
-
     private void btInsViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsViagemActionPerformed
         new CadastroViagem().setVisible(true);
         // TODO add your handling code here:
@@ -340,36 +247,6 @@ public class Modulo1 extends javax.swing.JFrame {
         new CadastroPeca().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btInsPecasActionPerformed
-
-    private void btEstoqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEstoqueActionPerformed
-        new Modulo2().setVisible(true);
-        this.dispose();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btEstoqueActionPerformed
-
-    private void btLocaçãoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLocaçãoActionPerformed
-        new Modulo3().setVisible(true);
-        this.dispose();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btLocaçãoActionPerformed
-
-    private void btFinancasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btFinancasActionPerformed
-        new Modulo4().setVisible(true);
-        this.dispose();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btFinancasActionPerformed
-
-    private void btManutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btManutActionPerformed
-        new Modulo5().setVisible(true);
-        this.dispose();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btManutActionPerformed
-
-    private void btMultasSinistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btMultasSinistActionPerformed
-        new Modulo6().setVisible(true);
-        this.dispose();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btMultasSinistActionPerformed
 
     /**
      * @param args the command line arguments
@@ -382,19 +259,12 @@ public class Modulo1 extends javax.swing.JFrame {
     private javax.swing.JButton btConsultPecas;
     private javax.swing.JButton btConsultVeiculo;
     private javax.swing.JButton btConsultViagem;
-    private javax.swing.JButton btEstoque;
-    private javax.swing.JButton btFinancas;
-    private javax.swing.JButton btGerFrotas;
     private javax.swing.JButton btInsAluguel;
     private javax.swing.JButton btInsMotorista;
     private javax.swing.JButton btInsMultaSin;
     private javax.swing.JButton btInsPecas;
     private javax.swing.JButton btInsVeiculo;
     private javax.swing.JButton btInsViagem;
-    private javax.swing.JButton btLocação;
-    private javax.swing.JButton btManut;
-    private javax.swing.JButton btMultasSinist;
-    private javax.swing.JButton btSIGEGFROTAS;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
