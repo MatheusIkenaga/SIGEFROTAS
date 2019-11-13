@@ -325,16 +325,16 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         
         veiculo.setCD_VEICULO(Integer.parseInt(this.tbCodVeic.getText()));
         veiculo.setMarca_veiculo(this.tbMarcaVeic.getText());
-        //veiculo.setModelo_veiculo(this.tbModeloVeic.getText());
+        veiculo.setModelo_veiculo(this.tbModeloVeic.getText());
         veiculo.setCor_veiculo(this.tbCorVeic.getText ());
         veiculo.setPlaca_veiculo(this.tbPlacaVeic.getText());
         veiculo.setHODOM_VEICULO(Integer.parseInt(this.tbHodometroVeic.getText()));
         veiculo.setAno_veiculo(Integer.parseInt(this.cbAnoFabricacao.getSelectedItem().toString()));
-        //veiculo.setAno_modelo_veiculo(Integer.parseInt(this.cbAnoModelo.getSelectedItem().toString()));
+        veiculo.setAno_modelo_veiculo(Integer.parseInt(this.cbAnoModelo.getSelectedItem().toString()));
         veiculo.setTipo_veiculo(this.cbTipoVeic.getSelectedItem().toString());
-        //veiculo.setDISPO_VEICULO(this.cbDispoVeic.getSelectedItem().toString());
-        veiculo.setSeguro_veiculo(Integer.parseInt(this.cbSeguradoraVeic.getSelectedItem().toString()));
-        //veiculo.setNUM_APOLICE_VEICULO(Integer.parseInt(this.tbNumApolice.getText()));
+        veiculo.setDISPO_VEICULO(this.cbDispoVeic.getSelectedItem().toString());
+        veiculo.setSeguro_veiculo(this.cbSeguradoraVeic.getSelectedItem().toString());
+        veiculo.setNUM_APOLICE_VEICULO(this.tbNumApolice.getText());
         veiculo.setObs_veiculo(this.tbObsVeic.getText());
         dao.insert(veiculo);
         

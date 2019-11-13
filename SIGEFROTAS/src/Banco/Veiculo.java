@@ -14,17 +14,15 @@ public class Veiculo{
 	private String MARCA_VEICULO;
 	private String MODELO_VEICULO;
 	private String COR_VEICULO;
+        private String PLACA_VEICULO;
+        private int HODOM_VEICULO;
 	private int ANO_VEICULO;
-	private int ANO_MODELO_VEICULO;
+	private int ANO_MOD_VEICULO;
 	private String TIPO_VEICULO;
         private String DISPO_VEICULO;
-        private int HODOM_VEICULO;
-	private String PLACA_VEICULO;
-	private int STATUS_VEICULO;
-	private int MANUTENCAO_VEICULO;
+        private String SEGURO_VEICULO;
+	private String NUM_APOLICE_VEICULO;	
 	private String OBS_VEICULO;
-	private int SEGURO_VEICULO;
-        private int NUM_APOLICE_VEICULO;
 
 	public int getCD_VEICULO(){
 		return CD_VEICULO;
@@ -67,11 +65,11 @@ public class Veiculo{
 	}
 
 	public int getAno_modelo_veiculo(){
-		return ANO_MODELO_VEICULO;
+		return ANO_MOD_VEICULO;
 	}
 
 	public void setAno_modelo_veiculo(int ANO_MODELO_VEICULO){
-		this.ANO_MODELO_VEICULO=ANO_MODELO_VEICULO;
+		this.ANO_MOD_VEICULO=ANO_MODELO_VEICULO;
 	}
 
 	public String getTipo_veiculo(){
@@ -106,22 +104,6 @@ public class Veiculo{
 		this.PLACA_VEICULO=PLACA_VEICULO;
 	}
 
-	public int getStatus_veiculo(){
-		return STATUS_VEICULO;
-	}
-
-	public void setStatus_veiculo(int STATUS_VEICULO){
-		this.STATUS_VEICULO=STATUS_VEICULO;
-	}
-
-	public int getManutencao_veiculo(){
-		return MANUTENCAO_VEICULO;
-	}
-
-	public void setManutencao_veiculo(int MANUTENCAO_VEICULO){
-		this.MANUTENCAO_VEICULO=MANUTENCAO_VEICULO;
-	}
-
 	public String getObs_veiculo(){
 		return OBS_VEICULO;
 	}
@@ -130,19 +112,19 @@ public class Veiculo{
 		this.OBS_VEICULO=OBS_VEICULO;
 	}
 
-	public int getSeguro_veiculo(){
+	public String getSeguro_veiculo(){
 		return SEGURO_VEICULO;
 	}
 
-	public void setSeguro_veiculo(int SEGURO_VEICULO){
+	public void setSeguro_veiculo(String SEGURO_VEICULO){
 		this.SEGURO_VEICULO=SEGURO_VEICULO;
 	}
         
-        public int getNUM_APOLICE_VEICULO(){
+        public String getNUM_APOLICE_VEICULO(){
 		return NUM_APOLICE_VEICULO;
 	}
 
-	public void setNUM_APOLICE_VEICULO(int NUM_APOLICE_VEICULO){
+	public void setNUM_APOLICE_VEICULO(String NUM_APOLICE_VEICULO){
 		this.NUM_APOLICE_VEICULO=NUM_APOLICE_VEICULO;
 	}
 }
