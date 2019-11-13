@@ -26,7 +26,20 @@ private Connection conexao;
     }
     
     public void insert(Veiculo veiculo){
-        String sql = "insert into veiculo (CD_VEICULO, MARCA_VEICULO, MODELO_VEICULO, PLACA_VEICULO,COR_VEICULO, HODOM_VEICULO, ANO_VEICULO,ANO_MOD_VEICULO, TIPO_VEICULO,DISPO_VEICULO, SEGURO_VEICULO, NUM_APOLICE_VEICULO ,OBS_VEICULO) values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "insert into veiculo "
+                + "(CD_VEICULO, "
+                + "MARCA_VEICULO, "
+                + "MODELO_VEICULO,"
+                + "COR_VEICULO,"
+                + "PLACA_VEICULO, "
+                + "HODOM_VEICULO, "
+                + "ANO_VEICULO,"
+                + "ANO_MOD_VEICULO, "
+                + "TIPO_VEICULO,DISPO_VEICULO, "
+                + "SEGURO_VEICULO, "
+                + "NUM_APOLICE_VEICULO ,"
+                + "OBS_VEICULO) "
+                + "values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
         
         try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -56,7 +69,7 @@ private Connection conexao;
                         stmt.setString(5, veiculo.getPlaca_veiculo());
                         stmt.setString(6, Integer.toString(veiculo.getHODOM_VEICULO()));
                         stmt.setString(7, Integer.toString(veiculo.getAno_veiculo()));
-                        stmt.setString(8, Integer.toString(veiculo.getAno_modelo_veiculo()));
+                        stmt.setInt(8, veiculo.getAno_modelo_veiculo());
 			stmt.setString(9, veiculo.getTipo_veiculo());
                         stmt.setString(10, veiculo.getDISPO_VEICULO());
                         stmt.setString(11, veiculo.getSeguro_veiculo());
