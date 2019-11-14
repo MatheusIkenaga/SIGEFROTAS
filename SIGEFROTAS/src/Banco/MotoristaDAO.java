@@ -33,8 +33,10 @@ private Connection conexao;
                 + "RG_MOTORISTA, "
                 + "CNH_MOTORISTA, "
                 + "VAL_CNH_MOTORISTA, "
-                + "OBS_MOTORISTA)"
-                + "values (?,?,?,?,?,?,?,?)";
+                + "OBS_MOTORISTA,"
+                + "SOBRENOME_MOTORISTA,"
+                + "SEXO_MOTORISTA)"
+                + "values (?,?,?,?,?,?,?,?,?,?)";
         
         try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -47,6 +49,8 @@ private Connection conexao;
                         stmt.setString(6, motorista.getCnh_motorista());
 			stmt.setDate(7, (Date) motorista.getVAL_CNH_MOTORISTA());
                         stmt.setString(8, motorista.getObs_motorista());
+                        stmt.setString(9, motorista.getSobrenome_motorista());
+                        stmt.setString(10, Integer.toString(motorista.getSexo_motorista()));
       
                         
 			stmt.execute();

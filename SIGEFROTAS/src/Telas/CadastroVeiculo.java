@@ -94,7 +94,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tbCodVeic);
-        tbCodVeic.setBounds(51, 124, 200, 26);
+        tbCodVeic.setBounds(51, 124, 200, 20);
 
         tbMarcaVeic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +102,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tbMarcaVeic);
-        tbMarcaVeic.setBounds(51, 191, 486, 26);
+        tbMarcaVeic.setBounds(51, 191, 486, 20);
 
         tbCorVeic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +110,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tbCorVeic);
-        tbCorVeic.setBounds(51, 264, 486, 26);
+        tbCorVeic.setBounds(51, 264, 486, 20);
 
         tbPlacaVeic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +118,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tbPlacaVeic);
-        tbPlacaVeic.setBounds(689, 264, 212, 26);
+        tbPlacaVeic.setBounds(689, 264, 212, 20);
 
         tbHodometroVeic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +126,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tbHodometroVeic);
-        tbHodometroVeic.setBounds(1000, 264, 221, 26);
+        tbHodometroVeic.setBounds(1000, 264, 221, 20);
 
         tbNumApolice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +134,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tbNumApolice);
-        tbNumApolice.setBounds(1004, 444, 217, 26);
+        tbNumApolice.setBounds(1004, 444, 217, 20);
 
         tbObsVeic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,55 +146,55 @@ public class CadastroVeiculo extends javax.swing.JFrame {
 
         jLabel1.setText(" Código do Veículo");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(51, 104, 119, 16);
+        jLabel1.setBounds(51, 104, 87, 14);
 
         jLabel2.setText(" Marca do Veículo");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(51, 171, 111, 16);
+        jLabel2.setBounds(51, 171, 83, 14);
 
         jLabel3.setText(" Modelo do Veículo");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(689, 171, 120, 16);
+        jLabel3.setBounds(689, 171, 88, 14);
 
         jLabel4.setText(" Cor do Veículo");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(51, 244, 96, 16);
+        jLabel4.setBounds(51, 244, 71, 14);
 
         jLabel5.setText(" Placa do Veículo");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(689, 244, 106, 16);
+        jLabel5.setBounds(689, 244, 79, 14);
 
         jLabel6.setText(" Hodômetro (KM)");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(1000, 244, 106, 16);
+        jLabel6.setBounds(1000, 244, 81, 14);
 
         jLabel7.setText(" Ano de Fabricação");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(51, 325, 119, 16);
+        jLabel7.setBounds(51, 325, 92, 14);
 
         jLabel8.setText(" Ano do Modelo");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(689, 325, 99, 16);
+        jLabel8.setBounds(689, 325, 74, 14);
 
         jLabel9.setText(" Tipo do Veículo");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(51, 424, 102, 16);
+        jLabel9.setBounds(51, 424, 74, 14);
 
         jLabel10.setText(" Disponibilidade");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(322, 424, 103, 16);
+        jLabel10.setBounds(322, 424, 73, 14);
 
         jLabel11.setText(" Seguradora");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(689, 424, 74, 16);
+        jLabel11.setBounds(689, 424, 59, 14);
 
         jLabel12.setText(" Número da Apólice");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(1004, 424, 124, 16);
+        jLabel12.setBounds(1004, 424, 92, 14);
 
         jLabel13.setText(" Observações");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(53, 511, 84, 16);
+        jLabel13.setBounds(53, 511, 66, 14);
 
         cbAnoFabricacao.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
         cbAnoFabricacao.addActionListener(new java.awt.event.ActionListener() {
@@ -203,23 +203,23 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(cbAnoFabricacao);
-        cbAnoFabricacao.setBounds(51, 345, 486, 27);
+        cbAnoFabricacao.setBounds(51, 345, 486, 20);
 
         cbAnoModelo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020" }));
         getContentPane().add(cbAnoModelo);
-        cbAnoModelo.setBounds(689, 345, 532, 27);
+        cbAnoModelo.setBounds(689, 345, 532, 20);
 
         cbTipoVeic.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Motocicleta", "Automóvel", "Caminhão" }));
         getContentPane().add(cbTipoVeic);
-        cbTipoVeic.setBounds(51, 444, 206, 27);
+        cbTipoVeic.setBounds(51, 444, 206, 20);
 
         cbDispoVeic.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Disponível", "Indisponível", "Em Viagem", "Em Manutenção" }));
         getContentPane().add(cbDispoVeic);
-        cbDispoVeic.setBounds(322, 444, 215, 27);
+        cbDispoVeic.setBounds(322, 444, 215, 20);
 
         cbSeguradoraVeic.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Porto Seguro", "Azul", "Sulamérica" }));
         getContentPane().add(cbSeguradoraVeic);
-        cbSeguradoraVeic.setBounds(689, 444, 223, 27);
+        cbSeguradoraVeic.setBounds(689, 444, 223, 20);
 
         btSalvarVeic.setText("Salvar");
         btSalvarVeic.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +228,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btSalvarVeic);
-        btSalvarVeic.setBounds(1150, 653, 71, 29);
+        btSalvarVeic.setBounds(1150, 653, 71, 23);
 
         btCancelarVeic.setText("Cancelar");
         btCancelarVeic.addActionListener(new java.awt.event.ActionListener() {
@@ -237,7 +237,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btCancelarVeic);
-        btCancelarVeic.setBounds(1046, 653, 98, 29);
+        btCancelarVeic.setBounds(1046, 653, 75, 23);
 
         btLimparVeic.setText("Limpar");
         btLimparVeic.addActionListener(new java.awt.event.ActionListener() {
@@ -246,7 +246,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btLimparVeic);
-        btLimparVeic.setBounds(53, 653, 87, 29);
+        btLimparVeic.setBounds(53, 653, 63, 23);
 
         tbModeloVeic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -254,12 +254,12 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             }
         });
         getContentPane().add(tbModeloVeic);
-        tbModeloVeic.setBounds(689, 191, 532, 26);
+        tbModeloVeic.setBounds(689, 191, 532, 20);
 
         jLabel15.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         jLabel15.setText("Cadastro de Veículo");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(490, 30, 233, 30);
+        jLabel15.setBounds(490, 30, 217, 32);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

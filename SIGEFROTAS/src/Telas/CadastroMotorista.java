@@ -1,6 +1,10 @@
 package Telas;
 
+import Banco.Motorista;
+import Banco.MotoristaDAO;
 import java.awt.Frame;
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,6 +16,9 @@ import java.awt.Frame;
  * @author matheusikenaga
  */
 public class CadastroMotorista extends javax.swing.JFrame {
+    
+    private MotoristaDAO dao= new MotoristaDAO();
+    private Motorista motorista = new Motorista();
 
     /**
      * Creates new form CadastroMotorista
@@ -103,6 +110,11 @@ public class CadastroMotorista extends javax.swing.JFrame {
         jLabel11.setText("Cadastro de Motoristas");
 
         btSave.setText("Salvar");
+        btSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSaveActionPerformed(evt);
+            }
+        });
 
         btCanc.setText("Cancelar");
         btCanc.addActionListener(new java.awt.event.ActionListener() {
@@ -268,6 +280,39 @@ public class CadastroMotorista extends javax.swing.JFrame {
     private void tbSobrenomeCadMotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSobrenomeCadMotActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tbSobrenomeCadMotActionPerformed
+
+    private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
+        // TODO add your handling code here:
+        
+        motorista.setNm_motorista(this.tbNomeCadMot.getText());
+        motorista.setCnh_motorista (this.tbNumCnh.getText());
+        motorista.setVAL_CNH_MOTORISTA(this.tbVencCnh.getText().toString()); //COMO CONVERTE ESSA MERDA PRA DATE
+        motorista.setVAL_CNH_MOTORISTA(SimpleDateFormat("dd/MM/yyyy").parse(this.tbVencCnh.getText()));
+        motorista.setDT_NASC_MOTORISTA(this.tbDatanasc.getText()); //COMO CONVERTE ESSA MERDA PRA DATE
+        motorista.setCpf_motorista(this.tbCpfCadMot.getText());
+        motorista.setRg_motorista(this.tbRG.getText());
+        motorista.setSexo_motorista(Integer.parseInt(this.cbSexo.getSelectedItem().toString()));
+        motorista.setObs_motorista(this.tbObs.getText());
+        motorista.setSobrenome_motorista(this.tbSobrenomeCadMot.getText());
+        
+        /*
+        //veiculo.setCD_VEICULO(Integer.parseInt(this.tbCodVeic.getText()));
+        veiculo.setMarca_veiculo(this.tbMarcaVeic.getText());
+        veiculo.setModelo_veiculo(this.tbModeloVeic.getText());
+        veiculo.setCor_veiculo(this.tbCorVeic.getText ());
+        veiculo.setPlaca_veiculo(this.tbPlacaVeic.getText());
+        veiculo.setHODOM_VEICULO(Integer.parseInt(this.tbHodometroVeic.getText()));
+        veiculo.setAno_veiculo(Integer.parseInt(this.cbAnoFabricacao.getSelectedItem().toString()));
+        veiculo.setAno_modelo_veiculo(Integer.parseInt(this.cbAnoModelo.getSelectedItem().toString()));
+        veiculo.setTipo_veiculo(this.cbTipoVeic.getSelectedItem().toString());
+        veiculo.setDISPO_VEICULO(this.cbDispoVeic.getSelectedItem().toString());
+        veiculo.setSeguro_veiculo(this.cbSeguradoraVeic.getSelectedItem().toString());
+        veiculo.setNUM_APOLICE_VEICULO(this.tbNumApolice.getText());
+        veiculo.setObs_veiculo(this.tbObsVeic.getText());
+        dao.insert(veiculo);
+        */
+        
+    }//GEN-LAST:event_btSaveActionPerformed
 
     /**
      * @param args the command line arguments

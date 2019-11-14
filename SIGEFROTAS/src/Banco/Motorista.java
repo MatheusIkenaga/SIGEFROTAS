@@ -24,6 +24,8 @@ public class Motorista {
 	private String CNH_MOTORISTA;
         private Date VAL_CNH_MOTORISTA;
 	private String OBS_MOTORISTA;
+        private String SOBRENOME_MOTORISTA;
+        private int SEXO_MOTORISTA;
         
         /*
         public Cliente(String nome, String cpf, String dataNasc, String endereco, String telefone) throws ParseException {
@@ -36,7 +38,7 @@ public class Motorista {
 		this.telefone = telefone;
 	}
         */
-        public Motorista (int CD_MOTORISTA, String NM_MOTORISTA, String DT_NASC_MOTORISTA, String CPF_MOTORISTA, String RG_MOTORISTA, String CNH_MOTORISTA, String VAL_CNH_MOTORISTA, String OBS_MOTORISTA) throws ParseException {
+        public Motorista (int CD_MOTORISTA, String NM_MOTORISTA, String DT_NASC_MOTORISTA, String CPF_MOTORISTA, String RG_MOTORISTA, String CNH_MOTORISTA, String VAL_CNH_MOTORISTA, String OBS_MOTORISTA, String SOBRENOME_MOTORISTA, int SEXO_MOTORISTA) throws ParseException {
         
             SimpleDateFormat formato = new SimpleDateFormat ("dd/MM/yyyy");
             this.DT_NASC_MOTORISTA = (Date) formato.parse(DT_NASC_MOTORISTA);
@@ -47,7 +49,13 @@ public class Motorista {
             this.NM_MOTORISTA = NM_MOTORISTA;
             this.OBS_MOTORISTA = OBS_MOTORISTA;
             this.RG_MOTORISTA = RG_MOTORISTA;
+            this.SOBRENOME_MOTORISTA = SOBRENOME_MOTORISTA;
+            this.SEXO_MOTORISTA = SEXO_MOTORISTA;
         }
+
+    public Motorista() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
         
         
         
@@ -120,5 +128,21 @@ public class Motorista {
 	public void setObs_motorista(String OBS_MOTORISTA){
 		this.OBS_MOTORISTA=OBS_MOTORISTA;
 	}
+        
+        public String getSobrenome_motorista(){
+		return SOBRENOME_MOTORISTA;
+	}
+
+	public void setSobrenome_motorista(String SOBRENOME_MOTORISTA){
+		this.SOBRENOME_MOTORISTA=SOBRENOME_MOTORISTA;
+	}
+        public int getSexo_motorista(){
+		return SEXO_MOTORISTA;
+	}
+
+	public void setSexo_motorista(int SEXO_MOTORISTA){
+		this.SEXO_MOTORISTA=SEXO_MOTORISTA;
+	}
+     
 }
 
