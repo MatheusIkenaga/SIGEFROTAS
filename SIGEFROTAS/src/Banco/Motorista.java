@@ -5,6 +5,10 @@
  */
 package Banco;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author Matheus
@@ -14,10 +18,38 @@ public class Motorista {
     
         private int CD_MOTORISTA;
 	private String NM_MOTORISTA;
+        private Date DT_NASC_MOTORISTA;
 	private String CPF_MOTORISTA;
 	private String RG_MOTORISTA;
 	private String CNH_MOTORISTA;
+        private Date VAL_CNH_MOTORISTA;
 	private String OBS_MOTORISTA;
+        
+        /*
+        public Cliente(String nome, String cpf, String dataNasc, String endereco, String telefone) throws ParseException {
+		
+		SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy"); 
+		this.dataNasc = formato.parse(dataNasc);
+		this.nome = nome;
+		this.cpf = cpf;
+		this.endereco = endereco;
+		this.telefone = telefone;
+	}
+        */
+        public Motorista (int CD_MOTORISTA, String NM_MOTORISTA, String DT_NASC_MOTORISTA, String CPF_MOTORISTA, String RG_MOTORISTA, String CNH_MOTORISTA, String VAL_CNH_MOTORISTA, String OBS_MOTORISTA) throws ParseException {
+        
+            SimpleDateFormat formato = new SimpleDateFormat ("dd/MM/yyyy");
+            this.DT_NASC_MOTORISTA = (Date) formato.parse(DT_NASC_MOTORISTA);
+            this.VAL_CNH_MOTORISTA = (Date) formato.parse (VAL_CNH_MOTORISTA);
+            this.CD_MOTORISTA = CD_MOTORISTA;
+            this.CPF_MOTORISTA = CPF_MOTORISTA;
+            this.CNH_MOTORISTA = CNH_MOTORISTA;
+            this.NM_MOTORISTA = NM_MOTORISTA;
+            this.OBS_MOTORISTA = OBS_MOTORISTA;
+            this.RG_MOTORISTA = RG_MOTORISTA;
+        }
+        
+        
         
         public int getCD_MOTORISTA(){
 		return CD_MOTORISTA;
@@ -34,6 +66,20 @@ public class Motorista {
 	public void setNm_motorista(String NM_MOTORISTA){
 		this.NM_MOTORISTA=NM_MOTORISTA;
 	}
+        
+        public Date getDT_NASC_MOTORISTA (){
+            return DT_NASC_MOTORISTA;
+        }
+        
+        public void setDT_NASC_MOTORISTA (Date DT_NASC_MOTORISTA){
+            this.DT_NASC_MOTORISTA = DT_NASC_MOTORISTA;
+        }
+                
+                /*public Date getDataNasc() {
+		return dataNasc;
+	}
+	public void setDataNasc(Date dataNasc) {
+		this.dataNasc = dataNasc;*/
 
 	public String getCpf_motorista(){
 		return CPF_MOTORISTA;
@@ -58,6 +104,14 @@ public class Motorista {
 	public void setCnh_motorista(String CNH_MOTORISTA){
 		this.CNH_MOTORISTA=CNH_MOTORISTA;
 	}
+        
+         public Date getVAL_CNH_MOTORISTA (){
+            return VAL_CNH_MOTORISTA;
+        }
+        
+        public void setVAL_CNH_MOTORISTA (Date VAL_CNH_MOTORISTA){
+            this.VAL_CNH_MOTORISTA = VAL_CNH_MOTORISTA;
+        }
 
 	public String getObs_motorista(){
 		return OBS_MOTORISTA;
@@ -67,4 +121,4 @@ public class Motorista {
 		this.OBS_MOTORISTA=OBS_MOTORISTA;
 	}
 }
-}
+
