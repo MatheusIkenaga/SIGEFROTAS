@@ -87,6 +87,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
 
+        tbCodVeic.setEnabled(false);
         tbCodVeic.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbCodVeicActionPerformed(evt);
@@ -323,7 +324,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
 
     private void btSalvarVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarVeicActionPerformed
         
-        veiculo.setCD_VEICULO(Integer.parseInt(this.tbCodVeic.getText()));
+        //veiculo.setCD_VEICULO(Integer.parseInt(this.tbCodVeic.getText()));
         veiculo.setMarca_veiculo(this.tbMarcaVeic.getText());
         veiculo.setModelo_veiculo(this.tbModeloVeic.getText());
         veiculo.setCor_veiculo(this.tbCorVeic.getText ());

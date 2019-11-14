@@ -26,9 +26,9 @@ private Connection conexao;
     }
     
     public void insert(Veiculo veiculo){
-        String sql = "insert into veiculo "
-                + "(CD_VEICULO, "
-                + "MARCA_VEICULO, "
+        String sql = "insert into veiculo "  
+                //+ "(CD_VEICULO, "
+                + "(MARCA_VEICULO, "
                 + "MODELO_VEICULO,"
                 + "COR_VEICULO,"
                 + "PLACA_VEICULO, "
@@ -39,7 +39,7 @@ private Connection conexao;
                 + "SEGURO_VEICULO, "
                 + "NUM_APOLICE_VEICULO ,"
                 + "OBS_VEICULO) "
-                + "values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
+                + "values (?,?,?,?,?,?,?,?,?,?,?,?)";
         
         try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -61,6 +61,10 @@ private Connection conexao;
                         
                         */
                         
+                        /*
+                        
+                        SEM AUTO INCREMENT NO BANCO
+                        
 
 			stmt.setString(1, Integer.toString(veiculo.getCD_VEICULO()));
                         stmt.setString(2, veiculo.getMarca_veiculo());
@@ -75,6 +79,21 @@ private Connection conexao;
                         stmt.setString(11, veiculo.getSeguro_veiculo());
                         stmt.setString(12, veiculo.getNUM_APOLICE_VEICULO());
                         stmt.setString(13, veiculo.getObs_veiculo());
+                        */
+                        
+                        stmt.setString(1, veiculo.getMarca_veiculo());
+                        stmt.setString(2, veiculo.getModelo_veiculo());
+                        stmt.setString(3, veiculo.getCor_veiculo());
+                        stmt.setString(4, veiculo.getPlaca_veiculo());
+                        stmt.setString(5, Integer.toString(veiculo.getHODOM_VEICULO()));
+                        stmt.setString(6, Integer.toString(veiculo.getAno_veiculo()));
+                        stmt.setString(7, Integer.toString(veiculo.getAno_modelo_veiculo()));
+			stmt.setString(8, veiculo.getTipo_veiculo());
+                        stmt.setString(9, veiculo.getDISPO_VEICULO());
+                        stmt.setString(10, veiculo.getSeguro_veiculo());
+                        stmt.setString(11, veiculo.getNUM_APOLICE_VEICULO());
+                        stmt.setString(12, veiculo.getObs_veiculo());
+                        
                         
 			stmt.execute();
 			stmt.close();
