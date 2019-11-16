@@ -12,12 +12,12 @@ import java.awt.Frame;
  *
  * @author matheusikenaga
  */
-public class Modulo1 extends javax.swing.JFrame {
+public class Modulo1Cadastros extends javax.swing.JFrame {
 
     /**
      * Creates new form TelaPreCadastro
      */
-    public Modulo1() {
+    public Modulo1Cadastros() {
         initComponents();
         this.setExtendedState(Frame.MAXIMIZED_BOTH);
         this.setVisible(true);
@@ -241,15 +241,15 @@ public class Modulo1 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btInsVeiculoActionPerformed
 
-    private void btInsViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsViagemActionPerformed
-        new CadastroViagem().setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btInsViagemActionPerformed
-
     private void btInsPecasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsPecasActionPerformed
         new CadastroPeca().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btInsPecasActionPerformed
+
+    private void btInsViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsViagemActionPerformed
+        new CadastroViagem().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btInsViagemActionPerformed
 
     /**
      * @param args the command line arguments

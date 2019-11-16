@@ -286,9 +286,9 @@ public class CadastroMotorista extends javax.swing.JFrame {
         
         motorista.setNm_motorista(this.tbNomeCadMot.getText());
         motorista.setCnh_motorista (this.tbNumCnh.getText());
-        motorista.setVAL_CNH_MOTORISTA(this.tbVencCnh.getText().toString()); //COMO CONVERTE ESSA MERDA PRA DATE
-        motorista.setVAL_CNH_MOTORISTA(SimpleDateFormat("dd/MM/yyyy").parse(this.tbVencCnh.getText()));
-        motorista.setDT_NASC_MOTORISTA(this.tbDatanasc.getText()); //COMO CONVERTE ESSA MERDA PRA DATE
+        //motorista.setVAL_CNH_MOTORISTA(this.tbVencCnh.getText().toString()); //COMO CONVERTE ESSA MERDA PRA DATE
+        //motorista.setVAL_CNH_MOTORISTA(SimpleDateFormat("dd/MM/yyyy").parse(this.tbVencCnh.getText()));
+        //motorista.setDT_NASC_MOTORISTA(this.tbDatanasc.getText()); //COMO CONVERTE ESSA MERDA PRA DATE
         motorista.setCpf_motorista(this.tbCpfCadMot.getText());
         motorista.setRg_motorista(this.tbRG.getText());
         motorista.setSexo_motorista(Integer.parseInt(this.cbSexo.getSelectedItem().toString()));

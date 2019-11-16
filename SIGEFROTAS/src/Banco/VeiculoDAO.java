@@ -61,10 +61,11 @@ private Connection conexao;
                         
                         */
                         
+                        
+                        
+                        //SEM AUTO INCREMENT NO BANCO
+                        
                         /*
-                        
-                        SEM AUTO INCREMENT NO BANCO
-                        
 
 			stmt.setString(1, Integer.toString(veiculo.getCD_VEICULO()));
                         stmt.setString(2, veiculo.getMarca_veiculo());
@@ -80,6 +81,7 @@ private Connection conexao;
                         stmt.setString(12, veiculo.getNUM_APOLICE_VEICULO());
                         stmt.setString(13, veiculo.getObs_veiculo());
                         */
+                        
                         
                         stmt.setString(1, veiculo.getMarca_veiculo());
                         stmt.setString(2, veiculo.getModelo_veiculo());

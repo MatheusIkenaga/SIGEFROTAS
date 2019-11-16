@@ -191,25 +191,25 @@ public class PainelSuperior extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btModLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModLocacaoActionPerformed
-        new Modulo3().setVisible(true);
+        new Modulo3Locacao().setVisible(true);
         //this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_btModLocacaoActionPerformed
 
     private void btModFinancasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModFinancasActionPerformed
-        new Modulo4().setVisible(true);
+        new Modulo4Financas().setVisible(true);
         //this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_btModFinancasActionPerformed
 
     private void btModComprasEAbastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModComprasEAbastActionPerformed
-        new Modulo5().setVisible(true);
+        new Modulo5ComprasEAbast().setVisible(true);
         //this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_btModComprasEAbastActionPerformed
 
     private void btModManutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModManutActionPerformed
-        new Modulo6().setVisible(true);
+        new Modulo6Manut().setVisible(true);
         //this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_btModManutActionPerformed
@@ -220,12 +220,12 @@ public class PainelSuperior extends javax.swing.JPanel {
     }//GEN-LAST:event_btSIGEGFROTASActionPerformed
 
     private void btModGerFrotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModGerFrotaActionPerformed
-        new Modulo2().setVisible(true);
+        new Modulo2GerFrota().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btModGerFrotaActionPerformed
 
     private void btModCadastrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModCadastrosActionPerformed
-        new Modulo1().setVisible(true);
+        new Modulo1Cadastros().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btModCadastrosActionPerformed
 

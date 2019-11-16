@@ -11,15 +11,14 @@ import java.awt.Frame;
  *
  * @author matheusikenaga
  */
-public class Modulo2 extends javax.swing.JFrame {
+public class Modulo6Manut extends javax.swing.JFrame {
 
     /**
-     * Creates new form Modulo2
+     * Creates new form Modulo6
      */
-    public Modulo2() {
+    public Modulo6Manut() {
         initComponents();
         this.setExtendedState(Frame.MAXIMIZED_BOTH);
-               
     }
 
     /**
