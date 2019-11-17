@@ -18,8 +18,8 @@ public class Executavel{
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new Login();
-        //new TelaInicial();
+        //new Login();
+        new CadastroMotorista();
         
     }
     
