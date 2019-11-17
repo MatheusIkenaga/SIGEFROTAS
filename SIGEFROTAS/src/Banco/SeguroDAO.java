@@ -23,15 +23,15 @@ public class SeguroDAO {
     
     }
     
-    public void insert(SeguroDAO seguro){
-        String sql = "insert into seguro (CD_SEGURO, CD_VEIC_SEGURO, VALOR_SEGURO)";
+    public void insert(Seguro seguro){
+        String sql = "insert into seguro (CD_SEGURO, CD_VEIC_SEGURO, VALOR_SEGURO) values (?,?,?)";
         
         try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 
-			stmt.setString(1, seguro.getCD_SEGURO());
-			stmt.setString(2, seguro.getCD_VEIC_SEGURO());
-			stmt.setString(3, seguro.getVALOR_SEGURO());
+			stmt.setString(1, Integer.toString(seguro.getCd_seguro()));
+			stmt.setString(2, Integer.toString(seguro.getCd_veiculo_seguro()));
+			stmt.setString(3, Float.toString(seguro.getValor_seguro()));
 			
                         
 			stmt.execute();
