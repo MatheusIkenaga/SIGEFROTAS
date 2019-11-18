@@ -45,7 +45,6 @@ public class CadastroMotorista extends javax.swing.JFrame {
         tbSobrenomeCadMot = new javax.swing.JTextField();
         tbCpfCadMot = new javax.swing.JTextField();
         tbRG = new javax.swing.JTextField();
-        tbDatanasc = new javax.swing.JTextField();
         tbNumCnh = new javax.swing.JTextField();
         tbVencCnh = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -64,6 +63,9 @@ public class CadastroMotorista extends javax.swing.JFrame {
         btSave = new javax.swing.JButton();
         btCanc = new javax.swing.JButton();
         btLimpar = new javax.swing.JButton();
+        cbDia = new javax.swing.JComboBox<>();
+        cbMes = new javax.swing.JComboBox<>();
+        cbAno = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -130,6 +132,15 @@ public class CadastroMotorista extends javax.swing.JFrame {
             }
         });
 
+        cbDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31" }));
+        cbDia.setSelectedItem("DIA");
+        cbDia.setToolTipText("dia");
+        cbDia.setName("DIA"); // NOI18N
+
+        cbMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01","02","03","04","05","06","07","08","09","10","11","12" }));
+
+        cbAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "assim vai", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -168,15 +179,23 @@ public class CadastroMotorista extends javax.swing.JFrame {
                             .addComponent(tbNomeCadMot))
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tbDatanasc)
                             .addComponent(tbVencCnh)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
-                                    .addComponent(jLabel6)
                                     .addComponent(jLabel3))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 571, Short.MAX_VALUE))
-                            .addComponent(tbSobrenomeCadMot)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 588, Short.MAX_VALUE))
+                            .addComponent(tbSobrenomeCadMot)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(cbDia, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbMes, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbAno, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel10)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -219,7 +238,9 @@ public class CadastroMotorista extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tbCpfCadMot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tbRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbDatanasc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbDia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbMes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbAno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 19, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -242,6 +263,8 @@ public class CadastroMotorista extends javax.swing.JFrame {
                 .addGap(18, 18, 18))
         );
 
+        cbDia.getAccessibleContext().setAccessibleName("DIA");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -260,13 +283,13 @@ public class CadastroMotorista extends javax.swing.JFrame {
         this.tbNomeCadMot.setText("");
         this.tbNumCnh.setText("");
         this.tbVencCnh.setText("");
-        this.tbDatanasc.setText("");
+        //this.tbDatanasc.setText("");
         this.tbCpfCadMot.setText("");
         this.tbRG.setText("");
         this.cbSexo.setSelectedItem(null);
         this.tbObs.setText("");
         this.tbSobrenomeCadMot.setText("");
-        
+        this.cbAno.setSelectedItem(null);
         
     }//GEN-LAST:event_btLimparActionPerformed
 
@@ -319,7 +342,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
      */
     
     
-    //public static void main(String args[]) {
+    public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -346,19 +369,22 @@ public class CadastroMotorista extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-      /*  java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
                 new CadastroMotorista().setVisible(true);
             }
         });
     } 
-*/
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btCanc;
     private javax.swing.JButton btLimpar;
     private javax.swing.JButton btSave;
+    private javax.swing.JComboBox<String> cbAno;
+    private javax.swing.JComboBox<String> cbDia;
+    private javax.swing.JComboBox<String> cbMes;
     private javax.swing.JComboBox<String> cbSexo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -373,7 +399,6 @@ public class CadastroMotorista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField tbCodMototista;
     private javax.swing.JTextField tbCpfCadMot;
-    private javax.swing.JTextField tbDatanasc;
     private javax.swing.JTextField tbNomeCadMot;
     private javax.swing.JTextField tbNumCnh;
     private javax.swing.JTextField tbObs;
@@ -381,4 +406,8 @@ public class CadastroMotorista extends javax.swing.JFrame {
     private javax.swing.JTextField tbSobrenomeCadMot;
     private javax.swing.JTextField tbVencCnh;
     // End of variables declaration//GEN-END:variables
+
+    private Object SimpleDateFormat(String ddMMyyyy) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

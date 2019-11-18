@@ -24,18 +24,18 @@ private Connection conexao;
     
     }
     
-    public void insert(ComprasDAO compra){
-        String sql = "insert into compras (CD_COMPRA, DT_COMPRA, NF_COMPRA, CHAVE_ACESSO_COMPRA, VALOR_COMPRA, CD_PECA_COMPRA)";
+    public void insert(Compras compra){
+        String sql = "insert into compras (CD_COMPRA, DT_COMPRA, NF_COMPRA, CHAVE_ACESSO_COMPRA, VALOR_COMPRA, CD_PECA_COMPRA) values (?,?,?,?,?,?)";
         
         try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 
-			stmt.setString(1, compra.getCD_COMPRA());
-			stmt.setDate(2, (Date) compras.getDT_COMPRA());
-			stmt.setString(3, compra.getNF_COMPRA());
-			stmt.setString(4, compra.getCHAVE_ACESSO_COMPRA());
-                        stmt.setString(5, compra.getVALOR_COMPRA());
-                        stmt.setString(6, compra.getCD_PECA_COMPRA());
+			stmt.setString(1, Integer.toString(compra.getCd_compra()));
+			//stmt.setDate(2, (Date) compras.getDT_COMPRA());
+			stmt.setString(3, Integer.toString(compra.getNf_compra()));
+			stmt.setString(4, Integer.toString(compra.getChave_acesso_compra()));
+                        stmt.setString(5, Float.toString(compra.getValor_compra()));
+                        stmt.setString(6, Integer.toString(compra.getCd_peca_compra()));
                         
 			stmt.execute();
 			stmt.close();

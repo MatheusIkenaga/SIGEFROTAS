@@ -23,17 +23,22 @@ public class PecasDAO {
     
     }
     
-    public void insert(PecasDAO pecas){
-        String sql = "insert into pecas (CD_PECA, NOME_PECA, QTD_PECA, VALOR_PECA, CD_FORNEC_PECA)";
+    public void insert(Pecas pecas){
+        String sql = "insert into pecas (CD_PECA, "
+                + "NOME_PECA, "
+                + "QTD_PECA, "
+                + "VALOR_PECA, "
+                + "CD_FORNEC_PECA) "
+                + "values (?,?,?,?,?)";
         
         try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 
-			stmt.setString(1, pecas.getCD_PECA());
-			stmt.setString(2, pecas.getNOME_PECA());
-			stmt.setString(3, pecas.getQTD_PECA());
-			stmt.setString(4, pecas.getVALOR_PECA());
-                        stmt.setString(5, pecas.getCD_FORNEC_PECA());
+			stmt.setString(1, Integer.toString(pecas.getCd_peca()));
+			stmt.setString(2, pecas.getNome_peca());
+			stmt.setString(3, Integer.toString(pecas.getQtd_peca()));
+			stmt.setString(4, Float.toString(pecas.getValor_peca()));
+                        stmt.setString(5, Integer.toString(pecas.getCd_fornec_peca()));
                         
 			stmt.execute();
 			stmt.close();
