@@ -8,7 +8,10 @@ package Banco;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -26,8 +29,8 @@ private Connection conexao;
     
     public void insert(Motorista motorista){
         String sql = "insert into motorista "
-                + "(CD_MOTORISTA, "
-                + "NM_MOTORISTA, "
+                //+ "(CD_MOTORISTA, "
+                + "(NM_MOTORISTA, "
                 + "DT_NASC_MOTORISTA, "
                 + "CPF_MOTORISTA, "
                 + "RG_MOTORISTA, "
@@ -59,5 +62,39 @@ private Connection conexao;
 			throw new RuntimeException(e);
 		}
     }
+    
+    public List<Motorista> select(){
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        try {
+			List<Contato> contatos = new ArrayList<Motorista>();
+                        stmt = this.conexao.prepareStatement("select * from contato where nome=?");
+				
+				rs = stmt.executeQuery();
+                                
+                                while (rs.next()) {
+					Motorista motorista = new Motorista();
+					motorista.setCD_MOTORISTA(rs.getInt("cd"));
+					motorista.setNm_motorista(rs.getString("nome"));
+					motorista.setSobrenome_motorista(rs.getString("sobrenome"));
+                                        
+                                        
+					motorista.setTelefone(rs.getInt("telefone"));
+					motorista.setMensagem(rs.getString("mensagem"));
+					motorista.setDataRegistro(rs.getDate("dataRegistro"));
+                                        
+                                        
+					motorista.add(motorista);
+				}
+				rs.close();
+				stmt.close();
+                                
+        }
+        catch{
+        
+        }
+    }
+    
+    
     
 }

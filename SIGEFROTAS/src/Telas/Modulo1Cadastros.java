@@ -68,6 +68,11 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
         btConsultPecas.setText("Consultar");
 
         btConsultMotorista.setText("Consultar");
+        btConsultMotorista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultMotoristaActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Cadastro Multas e Sinistros");
 
@@ -86,6 +91,11 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
         });
 
         btConsultVeiculo.setText("Consultar");
+        btConsultVeiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultVeiculoActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Cadastro Veículo");
 
@@ -250,6 +260,18 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
         new CadastroViagem().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btInsViagemActionPerformed
+
+    private void btConsultMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultMotoristaActionPerformed
+        
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btConsultMotoristaActionPerformed
+
+    private void btConsultVeiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultVeiculoActionPerformed
+        new ConsultaVeiculo().setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btConsultVeiculoActionPerformed
 
     /**
      * @param args the command line arguments

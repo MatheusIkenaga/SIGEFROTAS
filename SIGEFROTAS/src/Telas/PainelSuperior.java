@@ -99,7 +99,7 @@ public class PainelSuperior extends javax.swing.JPanel {
         });
 
         btModGerFrota.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/img painel/gerfrotras.png")); // NOI18N
-        btModGerFrota.setToolTipText("Locação de Veículo");
+        btModGerFrota.setToolTipText("Gerenciamento de Frotas");
         btModGerFrota.setPreferredSize(new java.awt.Dimension(89, 89));
         btModGerFrota.setSize(new java.awt.Dimension(89, 89));
         btModGerFrota.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +109,7 @@ public class PainelSuperior extends javax.swing.JPanel {
         });
 
         btModCadastros.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/img painel/cadastros.png")); // NOI18N
-        btModCadastros.setToolTipText("Locação de Veículo");
+        btModCadastros.setToolTipText("Cadastros");
         btModCadastros.setPreferredSize(new java.awt.Dimension(89, 89));
         btModCadastros.setSize(new java.awt.Dimension(89, 89));
         btModCadastros.addActionListener(new java.awt.event.ActionListener() {

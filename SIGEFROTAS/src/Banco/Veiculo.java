@@ -24,6 +24,12 @@ public class Veiculo{
 	private String NUM_APOLICE_VEICULO;	
 	private String OBS_VEICULO;
 
+        /*
+    public Veiculo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+*/
+
 	public int getCD_VEICULO(){
 		return CD_VEICULO;
 	}
@@ -127,4 +133,24 @@ public class Veiculo{
 	public void setNUM_APOLICE_VEICULO(String NUM_APOLICE_VEICULO){
 		this.NUM_APOLICE_VEICULO=NUM_APOLICE_VEICULO;
 	}
+        
+        /*
+        
+        public Veiculo(int CD_VEICULO, String MARCA_VEICULO, String MODELO_VEICULO, String COR_VEICULO, String PLACA_VEICULO, int HODOM_VEICULO, int ANO_VEICULO, int ANO_MOD_VEICULO, String TIPO_VEICULO, String DISPO_VEICULO, String SEGURO_VEICULO, String NUM_APOLICE_VEICULO, String OBS_VEICULO){
+            this.CD_VEICULO = CD_VEICULO;
+            this.MARCA_VEICULO = MARCA_VEICULO;
+            this.MODELO_VEICULO = MODELO_VEICULO;
+            this.COR_VEICULO =COR_VEICULO ;
+            this.PLACA_VEICULO = PLACA_VEICULO;
+            this.HODOM_VEICULO = HODOM_VEICULO;
+            this.ANO_VEICULO = ANO_VEICULO;
+            this.ANO_MOD_VEICULO = ANO_MOD_VEICULO;
+            this.TIPO_VEICULO = TIPO_VEICULO;
+            this.DISPO_VEICULO = DISPO_VEICULO;
+            this.SEGURO_VEICULO = SEGURO_VEICULO;
+            this.NUM_APOLICE_VEICULO = NUM_APOLICE_VEICULO;
+            this.OBS_VEICULO = OBS_VEICULO;
+        
+        }
+*/
 }
