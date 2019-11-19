@@ -19,7 +19,7 @@ public class Executavel{
     public static void main(String[] args) {
         // TODO code application logic here
         //new Login();
-        new CadastroMotorista();
+        new Login();
         
     }
     

@@ -37,7 +37,8 @@ public class Motorista {
 		this.endereco = endereco;
 		this.telefone = telefone;
 	}
-        */
+        
+        
         public Motorista (int CD_MOTORISTA, String NM_MOTORISTA, String DT_NASC_MOTORISTA, String CPF_MOTORISTA, String RG_MOTORISTA, String CNH_MOTORISTA, String VAL_CNH_MOTORISTA, String OBS_MOTORISTA, String SOBRENOME_MOTORISTA, int SEXO_MOTORISTA) throws ParseException {
         
             SimpleDateFormat formato = new SimpleDateFormat ("dd/MM/yyyy");
@@ -57,7 +58,7 @@ public class Motorista {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
         
-        
+        */
         
         public int getCD_MOTORISTA(){
 		return CD_MOTORISTA;

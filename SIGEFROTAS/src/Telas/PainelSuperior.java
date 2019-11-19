@@ -35,11 +35,11 @@ public class PainelSuperior extends javax.swing.JPanel {
         btSIGEGFROTAS = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btModComprasEAbast = new javax.swing.JButton();
-        btModManut = new javax.swing.JButton();
         btModFinancas = new javax.swing.JButton();
         btModLocacao = new javax.swing.JButton();
         btModGerFrota = new javax.swing.JButton();
         btModCadastros = new javax.swing.JButton();
+        btModComprasEAbast1 = new javax.swing.JButton();
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.setAlignmentX(0.0F);
@@ -67,13 +67,6 @@ public class PainelSuperior extends javax.swing.JPanel {
         btModComprasEAbast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btModComprasEAbastActionPerformed(evt);
-            }
-        });
-
-        btModManut.setToolTipText("Manutenção");
-        btModManut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btModManutActionPerformed(evt);
             }
         });
 
@@ -118,6 +111,18 @@ public class PainelSuperior extends javax.swing.JPanel {
             }
         });
 
+        btModComprasEAbast1.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/img painel/manutencao.png")); // NOI18N
+        btModComprasEAbast1.setToolTipText("Manutenção");
+        btModComprasEAbast1.setMaximumSize(new java.awt.Dimension(89, 89));
+        btModComprasEAbast1.setMinimumSize(new java.awt.Dimension(89, 89));
+        btModComprasEAbast1.setPreferredSize(new java.awt.Dimension(89, 89));
+        btModComprasEAbast1.setSize(new java.awt.Dimension(89, 89));
+        btModComprasEAbast1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btModComprasEAbast1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -134,7 +139,7 @@ public class PainelSuperior extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btModComprasEAbast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btModManut)
+                .addComponent(btModComprasEAbast1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -142,13 +147,13 @@ public class PainelSuperior extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btModComprasEAbast1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btModCadastros, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btModGerFrota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btModLocacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btModFinancas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btModComprasEAbast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btModManut, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btModComprasEAbast, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
 
@@ -158,9 +163,9 @@ public class PainelSuperior extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(btSIGEGFROTAS)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 267, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addContainerGap(340, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +197,7 @@ public class PainelSuperior extends javax.swing.JPanel {
 
     private void btModLocacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModLocacaoActionPerformed
         new Modulo3Locacao().setVisible(true);
-        //this.dispose();
+       // this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_btModLocacaoActionPerformed
 
@@ -208,35 +213,42 @@ public class PainelSuperior extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btModComprasEAbastActionPerformed
 
-    private void btModManutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModManutActionPerformed
-        new Modulo6Manut().setVisible(true);
-        //this.dispose();
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btModManutActionPerformed
-
     private void btSIGEGFROTASActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSIGEGFROTASActionPerformed
         new TelaInicial().setVisible(true);
+        //        this.dispose();
+
         // TODO add your handling code here:
     }//GEN-LAST:event_btSIGEGFROTASActionPerformed
 
     private void btModGerFrotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModGerFrotaActionPerformed
         new Modulo2GerFrota().setVisible(true);
+        //this.dispose();
+
         // TODO add your handling code here:
     }//GEN-LAST:event_btModGerFrotaActionPerformed
 
     private void btModCadastrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModCadastrosActionPerformed
         new Modulo1Cadastros().setVisible(true);
+        //        this.dispose();
+
         // TODO add your handling code here:
     }//GEN-LAST:event_btModCadastrosActionPerformed
+
+    private void btModComprasEAbast1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btModComprasEAbast1ActionPerformed
+        new Modulo6Manut().setVisible(true);
+        //        this.dispose();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btModComprasEAbast1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btModCadastros;
     private javax.swing.JButton btModComprasEAbast;
+    private javax.swing.JButton btModComprasEAbast1;
     private javax.swing.JButton btModFinancas;
     private javax.swing.JButton btModGerFrota;
     private javax.swing.JButton btModLocacao;
-    private javax.swing.JButton btModManut;
     private javax.swing.JButton btSIGEGFROTAS;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

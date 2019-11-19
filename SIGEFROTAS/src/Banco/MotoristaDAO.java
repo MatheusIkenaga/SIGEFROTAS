@@ -63,6 +63,7 @@ private Connection conexao;
 		}
     }
     
+    /*
     public List<Motorista> select(){
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -94,6 +95,8 @@ private Connection conexao;
         
         }
     }
+
+*/
     
     
     

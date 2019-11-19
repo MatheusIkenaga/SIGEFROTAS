@@ -108,12 +108,12 @@ private Connection conexao;
 		}
     }
     
-    public ArrayList<Veiculo> selectConsulta(){
+    public List<Veiculo> selectConsulta(){
         PreparedStatement stmt = null;
 		ResultSet rs = null;
 
 		try {
-			ArrayList<Veiculo> veiculos = new ArrayList<Veiculo>();
+			List<Veiculo> veiculos = new ArrayList<Veiculo>();
                         
                         
                         //stmt = this.connection.prepareStatement("select * from contato where nome=?");
@@ -148,10 +148,10 @@ private Connection conexao;
                                         veiculo.setPlaca_veiculo(rs.getString("PLACA_VEICULO"));
                                         veiculo.setHODOM_VEICULO(rs.getInt("HODOM_VEICULO"));
                                         veiculo.setAno_veiculo(rs.getInt("ANO_VEICULO"));
-                                        veiculo.setAno_modelo_veiculo(rs.getInt("ANO_MOD__VEICULO"));
+                                        veiculo.setAno_modelo_veiculo(rs.getInt("ANO_MOD_VEICULO"));
                                         veiculo.setTipo_veiculo(rs.getString("TIPO_VEICULO"));
                                         veiculo.setDISPO_VEICULO(rs.getString("DISPO_VEICULO"));
-                                        veiculo.setSeguro_veiculo(rs.getString("SEGUO_VEICULO"));
+                                        veiculo.setSeguro_veiculo(rs.getString("SEGURO_VEICULO"));
                                         veiculo.setNUM_APOLICE_VEICULO(rs.getString("NUM_APOLICE_VEICULO"));
                                         veiculo.setObs_veiculo(rs.getString("OBS_VEICULO"));
 
@@ -164,52 +164,9 @@ private Connection conexao;
                         
                 }
                 catch(SQLException e) {
+                    //System.out.println(e);
 			throw new RuntimeException();
 		}
         
     }
-    
-    //ArrayList<Veiculo> veiculos;
-    /*
-    public ArrayList<Veiculo> ListarArray(){//interessante para realizar pesquisas
-        PreparedStatement stmt = null;
-	ResultSet rs = null;
-        
-        try{
-            stmt = this.conexao.prepareStatement("select * from veiculo order by CD_VEICULO");
-            rs = stmt.executeQuery();
-            while (rs.next()) {
-                Veiculo veiculo = new Veiculo();
-                veiculo.setCD_VEICULO(rs.getInt("CD_VEICULO"));
-		veiculo.setMarca_veiculo(rs.getString("MARCA_VEICULO"));
-                veiculo.setModelo_veiculo(rs.getString("MODELO_VEICULO"));
-                veiculo.setCor_veiculo(rs.getString("COR_VEICULO"));
-                veiculo.setPlaca_veiculo(rs.getString("PLACA_VEICULO"));
-                veiculo.setHODOM_VEICULO(rs.getInt("HODOM_VEICULO"));
-                veiculo.setAno_veiculo(rs.getInt("ANO_VEICULO"));
-                veiculo.setAno_modelo_veiculo(rs.getInt("ANO_MOD__VEICULO"));
-                veiculo.setTipo_veiculo(rs.getString("TIPO_VEICULO"));
-                veiculo.setDISPO_VEICULO(rs.getString("DISPO_VEICULO"));
-                veiculo.setSeguro_veiculo(rs.getString("SEGUO_VEICULO"));
-                veiculo.setNUM_APOLICE_VEICULO(rs.getString("NUM_APOLICE_VEICULO"));
-                veiculo.setObs_veiculo(rs.getString("OBS_VEICULO"));
-
-		veiculos.add(veiculo);
-		}
-		rs.close();
-		stmt.close();
-                                
-                return veiculos;
-        
-             
-        }
-        catch(SQLException e) {
-            throw new RuntimeException();
-	}
-        
-        
-    }
-
-*/
-    
 }

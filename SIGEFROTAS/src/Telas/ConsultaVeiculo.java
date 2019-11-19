@@ -11,6 +11,8 @@ import Banco.VeiculoDAO;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Iterator;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -63,7 +65,7 @@ public class ConsultaVeiculo extends javax.swing.JFrame {
         
         model.setColumnIdentifiers(columnsName);
         
-        ArrayList<Veiculo> list = dao.selectConsulta();
+        List<Veiculo> list = dao.selectConsulta();
         
         Object rowData[] = new Object [13];
         for (int i = 0; i < dao.selectConsulta().size();i++) {
@@ -129,23 +131,23 @@ public class ConsultaVeiculo extends javax.swing.JFrame {
 
         model.setColumnIdentifiers(columnsName);
 
-        ArrayList<Veiculo> list = dao.selectConsulta();
+        dao.selectConsulta();
 
         Object rowData[] = new Object [13];
         for (int i = 0; i < dao.selectConsulta().size();i++) {
-            rowData[0] = list.get(i).getCD_VEICULO();
-            rowData[1] = list.get(i).getMarca_veiculo();
-            rowData[2] = list.get(i).getModelo_veiculo();
-            rowData[3] = list.get(i).getCor_veiculo();
-            rowData[4] = list.get(i).getPlaca_veiculo();
-            rowData[5] = list.get(i).getHODOM_VEICULO();
-            rowData[6] = list.get(i).getAno_veiculo();
-            rowData[7] = list.get(i).getAno_modelo_veiculo();
-            rowData[8] = list.get(i).getTipo_veiculo();
-            rowData[9] = list.get(i).getDISPO_VEICULO();
-            rowData[10] = list.get(i).getSeguro_veiculo();
-            rowData[11] = list.get(i).getNUM_APOLICE_VEICULO();
-            rowData[12] = list.get(i).getObs_veiculo();
+            rowData[0] = dao.selectConsulta().get(i).getCD_VEICULO();
+            rowData[1] = dao.selectConsulta().get(i).getMarca_veiculo();
+            rowData[2] = dao.selectConsulta().get(i).getModelo_veiculo();
+            rowData[3] = dao.selectConsulta().get(i).getCor_veiculo();
+            rowData[4] = dao.selectConsulta().get(i).getPlaca_veiculo();
+            rowData[5] = dao.selectConsulta().get(i).getHODOM_VEICULO();
+            rowData[6] = dao.selectConsulta().get(i).getAno_veiculo();
+            rowData[7] = dao.selectConsulta().get(i).getAno_modelo_veiculo();
+            rowData[8] = dao.selectConsulta().get(i).getTipo_veiculo();
+            rowData[9] = dao.selectConsulta().get(i).getDISPO_VEICULO();
+            rowData[10] = dao.selectConsulta().get(i).getSeguro_veiculo();
+            rowData[11] = dao.selectConsulta().get(i).getNUM_APOLICE_VEICULO();
+            rowData[12] = dao.selectConsulta().get(i).getObs_veiculo();
             model.addRow(rowData);
         }
         jTable1.setModel(model);
@@ -180,7 +182,7 @@ public class ConsultaVeiculo extends javax.swing.JFrame {
 
     /**
      * @param args the command line arguments
-     */
+     */   
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
