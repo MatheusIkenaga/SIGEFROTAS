@@ -2,7 +2,7 @@
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -30,7 +30,16 @@
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" min="-2" pref="1209" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="btExcluir" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btVoltar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Component id="btEditar" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jScrollPane2" min="-2" pref="1209" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace pref="36" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -41,8 +50,14 @@
               <EmptySpace pref="43" max="32767" attributes="0"/>
               <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" min="-2" pref="564" max="-2" attributes="0"/>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="533" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="btEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btVoltar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btExcluir" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -72,6 +87,9 @@
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable1MouseClicked"/>
+          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable()"/>
             <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableModel model = new DefaultTableModel();&#xa;        Object[] columnsName = new Object [13];&#xa;        columnsName[0] = &quot;C&#xf3;digo&quot;;&#xa;        columnsName[1] = &quot;Marca&quot;;&#xa;        columnsName[2] = &quot;Modelo&quot;;&#xa;        columnsName[3] = &quot;Cor&quot;;&#xa;        columnsName[4] = &quot;Placa&quot;;&#xa;        columnsName[5] = &quot;Hodometro&quot;;&#xa;        columnsName[6] = &quot;Ano Fabrica&#xe7;&#xe3;o&quot;;&#xa;        columnsName[7] = &quot;Ano Modelo&quot;;&#xa;        columnsName[8] = &quot;Tipo&quot;;&#xa;        columnsName[9] = &quot;Disponibilidade&quot;;&#xa;        columnsName[10] = &quot;Seguro&quot;;&#xa;        columnsName[11] = &quot;Apolice&quot;;&#xa;        columnsName[12] = &quot;Observa&#xe7;&#xf5;es&quot;;&#xa;        &#xa;        model.setColumnIdentifiers(columnsName);&#xa;        &#xa;        dao.selectConsulta();&#xa;        &#xa;        Object rowData[] = new Object [13];&#xa;        for (int i = 0; i &lt; dao.selectConsulta().size();i++) {&#xa;            rowData[0] = dao.selectConsulta().get(i).getCD_VEICULO();&#xa;            rowData[1] = dao.selectConsulta().get(i).getMarca_veiculo();&#xa;            rowData[2] = dao.selectConsulta().get(i).getModelo_veiculo();&#xa;            rowData[3] = dao.selectConsulta().get(i).getCor_veiculo();&#xa;            rowData[4] = dao.selectConsulta().get(i).getPlaca_veiculo();&#xa;            rowData[5] = dao.selectConsulta().get(i).getHODOM_VEICULO();&#xa;            rowData[6] = dao.selectConsulta().get(i).getAno_veiculo();&#xa;            rowData[7] = dao.selectConsulta().get(i).getAno_modelo_veiculo();&#xa;            rowData[8] = dao.selectConsulta().get(i).getTipo_veiculo();&#xa;            rowData[9] = dao.selectConsulta().get(i).getDISPO_VEICULO();&#xa;            rowData[10] = dao.selectConsulta().get(i).getSeguro_veiculo();&#xa;            rowData[11] = dao.selectConsulta().get(i).getNUM_APOLICE_VEICULO();&#xa;            rowData[12] = dao.selectConsulta().get(i).getObs_veiculo();&#xa;            model.addRow(rowData);&#xa;        }"/>
@@ -79,5 +97,29 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JButton" name="btEditar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Editar Registro"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btEditarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btVoltar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Voltar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btVoltarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btExcluir">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Excluir Registro"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btExcluirActionPerformed"/>
+      </Events>
+    </Component>
   </SubComponents>
 </Form>

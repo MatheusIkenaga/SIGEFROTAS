@@ -41,6 +41,54 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         this.setVisible(true);
 //>>>>>>> 7a189340bc241aaa76b9f069ffa4514956f47860:SIGEFROTAS/src/Telas/CadastroVeiculo.java
     }
+    /*
+    public CadastroVeiculo(int CD, String Marca, String Modelo, String Cor, String Placa, int Hodometro, int Ano_veic, int Ano_mod, String Tipo, String Dispo, String Seguro, String Num_Apo, String Obs){
+        initComponents();
+
+        this.setLocationRelativeTo(null);
+        
+        this.tbCodVeic.setText(Integer.toString(CD));
+        this.tbMarcaVeic.setText(Marca);
+        this.tbModeloVeic.setText(Modelo);
+        this.tbCorVeic.setText(Cor);
+        this.tbPlacaVeic.setText(Placa);
+        this.tbHodometroVeic.setText(Integer.toString(Hodometro));
+        this.cbAnoModelo.setSelectedItem(Integer.toString(Ano_veic));
+        this.cbAnoFabricacao.setSelectedItem(Integer.toString(Ano_mod));
+        this.cbTipoVeic.setSelectedItem(Tipo);
+        this.cbDispoVeic.setSelectedItem(Dispo);
+        this.cbSeguradoraVeic.setSelectedItem(Seguro);
+        this.tbNumApolice.setText(Num_Apo);
+        this.tbObsVeic.setText(Obs);
+        this.setVisible(true);
+    
+    
+    }
+    */
+        public CadastroVeiculo(Veiculo veiculo){
+        initComponents();
+
+        this.setLocationRelativeTo(null);
+        
+        this.tbCodVeic.setText(Integer.toString(veiculo.getCD_VEICULO()));
+        this.tbMarcaVeic.setText(veiculo.getMarca_veiculo());
+        this.tbModeloVeic.setText(veiculo.getModelo_veiculo());
+        this.tbCorVeic.setText(veiculo.getCor_veiculo());
+        this.tbPlacaVeic.setText(veiculo.getPlaca_veiculo());
+        this.tbHodometroVeic.setText(Integer.toString(veiculo.getHODOM_VEICULO()));
+        this.cbAnoModelo.setSelectedItem(Integer.toString(veiculo.getAno_veiculo()));
+        this.cbAnoFabricacao.setSelectedItem(Integer.toString(veiculo.getAno_modelo_veiculo()));
+        this.cbTipoVeic.setSelectedItem(veiculo.getTipo_veiculo());
+        this.cbDispoVeic.setSelectedItem(veiculo.getDISPO_VEICULO());
+        this.cbSeguradoraVeic.setSelectedItem(veiculo.getSeguro_veiculo());
+        this.tbNumApolice.setText(veiculo.getNUM_APOLICE_VEICULO());
+        this.tbObsVeic.setText(veiculo.getObs_veiculo());
+        this.setVisible(true);
+    
+    
+        
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -318,28 +366,57 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     }//GEN-LAST:event_tbModeloVeicActionPerformed
 
     private void btCancelarVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarVeicActionPerformed
+        if(this.tbCodVeic == null){
         this.dispose();
+        }else{
+        new ConsultaVeiculo();
+        this.dispose();
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_btCancelarVeicActionPerformed
 
     private void btSalvarVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvarVeicActionPerformed
         
         //veiculo.setCD_VEICULO(Integer.parseInt(this.tbCodVeic.getText()));
-        veiculo.setMarca_veiculo(this.tbMarcaVeic.getText());
-        veiculo.setModelo_veiculo(this.tbModeloVeic.getText());
-        veiculo.setCor_veiculo(this.tbCorVeic.getText ());
-        veiculo.setPlaca_veiculo(this.tbPlacaVeic.getText());
-        veiculo.setHODOM_VEICULO(Integer.parseInt(this.tbHodometroVeic.getText()));
-        veiculo.setAno_veiculo(Integer.parseInt(this.cbAnoFabricacao.getSelectedItem().toString()));
-        veiculo.setAno_modelo_veiculo(Integer.parseInt(this.cbAnoModelo.getSelectedItem().toString()));
-        veiculo.setTipo_veiculo(this.cbTipoVeic.getSelectedItem().toString());
-        veiculo.setDISPO_VEICULO(this.cbDispoVeic.getSelectedItem().toString());
-        veiculo.setSeguro_veiculo(this.cbSeguradoraVeic.getSelectedItem().toString());
-        veiculo.setNUM_APOLICE_VEICULO(this.tbNumApolice.getText());
-        veiculo.setObs_veiculo(this.tbObsVeic.getText());
-        dao.insert(veiculo);
         
-        this.dispose();
+        if(this.tbCodVeic.getText()== null){
+            veiculo.setMarca_veiculo(this.tbMarcaVeic.getText());
+            veiculo.setModelo_veiculo(this.tbModeloVeic.getText());
+            veiculo.setCor_veiculo(this.tbCorVeic.getText ());
+            veiculo.setPlaca_veiculo(this.tbPlacaVeic.getText());
+            veiculo.setHODOM_VEICULO(Integer.parseInt(this.tbHodometroVeic.getText()));
+            veiculo.setAno_veiculo(Integer.parseInt(this.cbAnoFabricacao.getSelectedItem().toString()));
+            veiculo.setAno_modelo_veiculo(Integer.parseInt(this.cbAnoModelo.getSelectedItem().toString()));
+            veiculo.setTipo_veiculo(this.cbTipoVeic.getSelectedItem().toString());
+            veiculo.setDISPO_VEICULO(this.cbDispoVeic.getSelectedItem().toString());
+            veiculo.setSeguro_veiculo(this.cbSeguradoraVeic.getSelectedItem().toString());
+            veiculo.setNUM_APOLICE_VEICULO(this.tbNumApolice.getText());
+            veiculo.setObs_veiculo(this.tbObsVeic.getText());
+            dao.insert(veiculo);
+        
+            this.dispose();
+            
+        }else{
+            veiculo.setCD_VEICULO(Integer.parseInt(this.tbCodVeic.getText()));
+            veiculo.setMarca_veiculo(this.tbMarcaVeic.getText());
+            veiculo.setModelo_veiculo(this.tbModeloVeic.getText());
+            veiculo.setCor_veiculo(this.tbCorVeic.getText ());
+            veiculo.setPlaca_veiculo(this.tbPlacaVeic.getText());
+            veiculo.setHODOM_VEICULO(Integer.parseInt(this.tbHodometroVeic.getText()));
+            veiculo.setAno_veiculo(Integer.parseInt(this.cbAnoFabricacao.getSelectedItem().toString()));
+            veiculo.setAno_modelo_veiculo(Integer.parseInt(this.cbAnoModelo.getSelectedItem().toString()));
+            veiculo.setTipo_veiculo(this.cbTipoVeic.getSelectedItem().toString());
+            veiculo.setDISPO_VEICULO(this.cbDispoVeic.getSelectedItem().toString());
+            veiculo.setSeguro_veiculo(this.cbSeguradoraVeic.getSelectedItem().toString());
+            veiculo.setNUM_APOLICE_VEICULO(this.tbNumApolice.getText());
+            veiculo.setObs_veiculo(this.tbObsVeic.getText());
+            
+            dao.update(veiculo);
+            
+            new ConsultaVeiculo();
+            this.dispose();
+            
+        }
         
         // TODO add your handling code here:
     }//GEN-LAST:event_btSalvarVeicActionPerformed

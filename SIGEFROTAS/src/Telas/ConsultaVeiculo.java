@@ -8,6 +8,7 @@ package Telas;
 import java.sql.ResultSet;
 import Banco.Veiculo;
 import Banco.VeiculoDAO;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -21,9 +22,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ConsultaVeiculo extends javax.swing.JFrame {
 
+    
+
     /**
      * Creates new form ConsultaMotorista
      */
+    
     private VeiculoDAO dao= new VeiculoDAO();
     //public ArrayList<Veiculo> list = new ArrayList<Veiculo>();
     
@@ -48,6 +52,9 @@ public class ConsultaVeiculo extends javax.swing.JFrame {
     
     public void AddRowToJTable(){
         DefaultTableModel model = new DefaultTableModel();
+        
+        jTable1.setDefaultEditor(Object.class, null);
+        
         Object[] columnsName = new Object [13];
         columnsName[0] = "Código";
         columnsName[1] = "Marca";
@@ -83,6 +90,7 @@ public class ConsultaVeiculo extends javax.swing.JFrame {
             rowData[11] = list.get(i).getNUM_APOLICE_VEICULO();
             rowData[12] = list.get(i).getObs_veiculo();
             model.addRow(rowData);
+            
         }
     }
     
@@ -93,6 +101,8 @@ public class ConsultaVeiculo extends javax.swing.JFrame {
         AddRowToJTable();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
+        
+        
     }
 
     /**
@@ -107,8 +117,11 @@ public class ConsultaVeiculo extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        btEditar = new javax.swing.JButton();
+        btVoltar = new javax.swing.JButton();
+        btExcluir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel15.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         jLabel15.setText("Consulta de Veículos");
@@ -152,7 +165,33 @@ public class ConsultaVeiculo extends javax.swing.JFrame {
         }
         jTable1.setModel(model);
         jScrollPane2.getViewport().add(jTable1);
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTable1);
+
+        btEditar.setText("Editar Registro");
+        btEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btEditarActionPerformed(evt);
+            }
+        });
+
+        btVoltar.setText("Voltar");
+        btVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btVoltarActionPerformed(evt);
+            }
+        });
+
+        btExcluir.setText("Excluir Registro");
+        btExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btExcluirActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -164,7 +203,14 @@ public class ConsultaVeiculo extends javax.swing.JFrame {
                 .addGap(517, 517, 517))
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(btExcluir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btVoltar)
+                        .addGap(24, 24, 24)
+                        .addComponent(btEditar))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1209, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -173,12 +219,114 @@ public class ConsultaVeiculo extends javax.swing.JFrame {
                 .addContainerGap(43, Short.MAX_VALUE)
                 .addComponent(jLabel15)
                 .addGap(52, 52, 52)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btEditar)
+                    .addComponent(btVoltar)
+                    .addComponent(btExcluir))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+   
+    private void btEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btEditarActionPerformed
+
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        int linhaSelecionadaIndex = jTable1.getSelectedRow();
+       
+        Veiculo veiculoalterar = new Veiculo();
+        
+        veiculoalterar.setCD_VEICULO(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,0).toString()));
+        veiculoalterar.setMarca_veiculo(model.getValueAt(linhaSelecionadaIndex,1).toString());
+        veiculoalterar.setModelo_veiculo(model.getValueAt(linhaSelecionadaIndex,2).toString());
+        veiculoalterar.setCor_veiculo(model.getValueAt(linhaSelecionadaIndex,3).toString());
+        veiculoalterar.setPlaca_veiculo(model.getValueAt(linhaSelecionadaIndex,4).toString());
+        veiculoalterar.setHODOM_VEICULO(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,5).toString()));
+        veiculoalterar.setAno_veiculo(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,6).toString()));
+        veiculoalterar.setAno_modelo_veiculo(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,7).toString()));
+        veiculoalterar.setTipo_veiculo(model.getValueAt(linhaSelecionadaIndex,8).toString());
+        veiculoalterar.setDISPO_VEICULO(model.getValueAt(linhaSelecionadaIndex,9).toString());
+        veiculoalterar.setSeguro_veiculo(model.getValueAt(linhaSelecionadaIndex,10).toString());
+        veiculoalterar.setNUM_APOLICE_VEICULO(model.getValueAt(linhaSelecionadaIndex,11).toString());
+        veiculoalterar.setObs_veiculo(model.getValueAt(linhaSelecionadaIndex,12).toString());
+        
+        new CadastroVeiculo(veiculoalterar);
+        this.dispose();
+// TODO add your handling code here:
+    }//GEN-LAST:event_btEditarActionPerformed
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTable1MouseClicked
+
+    private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
+        int botaoDialogo = JOptionPane.YES_NO_OPTION;
+        JOptionPane.showConfirmDialog(null,"Você tem certeza? Essa operação pode ser PERMANENTE!","EXCLUIR VEICULO", botaoDialogo);
+        if(botaoDialogo == JOptionPane.YES_OPTION){
+            DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+            int linhaSelecionadaIndex = jTable1.getSelectedRow();
+        
+            Veiculo veiculoexcluir = new Veiculo();
+        
+            veiculoexcluir.setCD_VEICULO(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,0).toString()));
+            veiculoexcluir.setMarca_veiculo(model.getValueAt(linhaSelecionadaIndex,1).toString());
+            veiculoexcluir.setModelo_veiculo(model.getValueAt(linhaSelecionadaIndex,2).toString());
+            veiculoexcluir.setCor_veiculo(model.getValueAt(linhaSelecionadaIndex,3).toString());
+            veiculoexcluir.setPlaca_veiculo(model.getValueAt(linhaSelecionadaIndex,4).toString());
+            veiculoexcluir.setHODOM_VEICULO(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,5).toString()));
+            veiculoexcluir.setAno_veiculo(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,6).toString()));
+            veiculoexcluir.setAno_modelo_veiculo(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,7).toString()));
+            veiculoexcluir.setTipo_veiculo(model.getValueAt(linhaSelecionadaIndex,8).toString());
+            veiculoexcluir.setDISPO_VEICULO(model.getValueAt(linhaSelecionadaIndex,9).toString());
+            veiculoexcluir.setSeguro_veiculo(model.getValueAt(linhaSelecionadaIndex,10).toString());
+            veiculoexcluir.setNUM_APOLICE_VEICULO(model.getValueAt(linhaSelecionadaIndex,11).toString());
+            veiculoexcluir.setObs_veiculo(model.getValueAt(linhaSelecionadaIndex,12).toString());
+        
+        
+            dao.delete(veiculoexcluir);
+            this.dispose();
+            new ConsultaVeiculo();
+        
+        }
+        if(botaoDialogo == JOptionPane.NO_OPTION){
+            remove(botaoDialogo);
+        }
+/*
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        int linhaSelecionadaIndex = jTable1.getSelectedRow();
+        
+        Veiculo veiculoexcluir = new Veiculo();
+        
+        veiculoexcluir.setCD_VEICULO(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,0).toString()));
+        veiculoexcluir.setMarca_veiculo(model.getValueAt(linhaSelecionadaIndex,1).toString());
+        veiculoexcluir.setModelo_veiculo(model.getValueAt(linhaSelecionadaIndex,2).toString());
+        veiculoexcluir.setCor_veiculo(model.getValueAt(linhaSelecionadaIndex,3).toString());
+        veiculoexcluir.setPlaca_veiculo(model.getValueAt(linhaSelecionadaIndex,4).toString());
+        veiculoexcluir.setHODOM_VEICULO(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,5).toString()));
+        veiculoexcluir.setAno_veiculo(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,6).toString()));
+        veiculoexcluir.setAno_modelo_veiculo(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,7).toString()));
+        veiculoexcluir.setTipo_veiculo(model.getValueAt(linhaSelecionadaIndex,8).toString());
+        veiculoexcluir.setDISPO_VEICULO(model.getValueAt(linhaSelecionadaIndex,9).toString());
+        veiculoexcluir.setSeguro_veiculo(model.getValueAt(linhaSelecionadaIndex,10).toString());
+        veiculoexcluir.setNUM_APOLICE_VEICULO(model.getValueAt(linhaSelecionadaIndex,11).toString());
+        veiculoexcluir.setObs_veiculo(model.getValueAt(linhaSelecionadaIndex,12).toString());
+        
+        
+        dao.delete(veiculoexcluir);
+        this.dispose();
+        new ConsultaVeiculo();
+        
+        */
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btExcluirActionPerformed
+
+    private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -186,6 +334,9 @@ public class ConsultaVeiculo extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btEditar;
+    private javax.swing.JButton btExcluir;
+    private javax.swing.JButton btVoltar;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;

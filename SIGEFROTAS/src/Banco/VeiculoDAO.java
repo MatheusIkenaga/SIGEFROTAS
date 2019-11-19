@@ -169,4 +169,58 @@ private Connection conexao;
 		}
         
     }
+    
+    public void update(Veiculo veiculo){
+        String sql = "update VEICULO set "
+                + "MARCA_VEICULO=?, "
+                + "MODELO_VEICULO=?, "
+                + "COR_VEICULO=? , "
+                + "PLACA_VEICULO=?,"
+                + "HODOM_VEICULO=?,"
+                + "ANO_VEICULO=?,"
+                + "ANO_MOD_VEICULO=?,"
+                + "TIPO_VEICULO=?,"
+                + "DISPO_VEICULO=?,"
+                + "SEGURO_VEICULO=?,"
+                + "NUM_APOLICE_VEICULO=?,"
+                + "OBS_VEICULO=? where CD_VEICULO=?";
+
+		try {
+			PreparedStatement stmt = conexao.prepareStatement(sql);
+			stmt.setString(1, veiculo.getMarca_veiculo());
+			stmt.setString(2, veiculo.getModelo_veiculo());
+			stmt.setString(3, veiculo.getCor_veiculo());
+			stmt.setString(4, veiculo.getPlaca_veiculo());
+                        stmt.setInt(5,veiculo.getHODOM_VEICULO());
+                        stmt.setInt(6,veiculo.getAno_veiculo());
+                        stmt.setInt(7,veiculo.getAno_modelo_veiculo());
+                        stmt.setString(8,veiculo.getTipo_veiculo());
+                        stmt.setString(9,veiculo.getDISPO_VEICULO());
+                        stmt.setString(10,veiculo.getSeguro_veiculo());
+			stmt.setString(11, veiculo.getNUM_APOLICE_VEICULO());
+                        stmt.setString(12,veiculo.getObs_veiculo());
+                        stmt.setInt(13,veiculo.getCD_VEICULO());
+                        
+			stmt.execute();
+			stmt.close();
+			JOptionPane.showMessageDialog(null, "Registro alterado com sucesso !");
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+    
+    }
+    
+    public void delete(Veiculo veiculo) {
+		try {
+			PreparedStatement stmt = conexao.prepareStatement("delete from VEICULO where CD_VEICULO=?");
+			stmt.setInt(1, veiculo.getCD_VEICULO());
+			stmt.execute();
+			stmt.close();
+			JOptionPane.showMessageDialog(null, "Registro excluído com sucesso !");
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+            
+    
 }
