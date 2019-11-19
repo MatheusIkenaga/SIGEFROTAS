@@ -294,32 +294,7 @@ public class ConsultaVeiculo extends javax.swing.JFrame {
         if(botaoDialogo == JOptionPane.NO_OPTION){
             remove(botaoDialogo);
         }
-/*
-        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
-        int linhaSelecionadaIndex = jTable1.getSelectedRow();
-        
-        Veiculo veiculoexcluir = new Veiculo();
-        
-        veiculoexcluir.setCD_VEICULO(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,0).toString()));
-        veiculoexcluir.setMarca_veiculo(model.getValueAt(linhaSelecionadaIndex,1).toString());
-        veiculoexcluir.setModelo_veiculo(model.getValueAt(linhaSelecionadaIndex,2).toString());
-        veiculoexcluir.setCor_veiculo(model.getValueAt(linhaSelecionadaIndex,3).toString());
-        veiculoexcluir.setPlaca_veiculo(model.getValueAt(linhaSelecionadaIndex,4).toString());
-        veiculoexcluir.setHODOM_VEICULO(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,5).toString()));
-        veiculoexcluir.setAno_veiculo(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,6).toString()));
-        veiculoexcluir.setAno_modelo_veiculo(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,7).toString()));
-        veiculoexcluir.setTipo_veiculo(model.getValueAt(linhaSelecionadaIndex,8).toString());
-        veiculoexcluir.setDISPO_VEICULO(model.getValueAt(linhaSelecionadaIndex,9).toString());
-        veiculoexcluir.setSeguro_veiculo(model.getValueAt(linhaSelecionadaIndex,10).toString());
-        veiculoexcluir.setNUM_APOLICE_VEICULO(model.getValueAt(linhaSelecionadaIndex,11).toString());
-        veiculoexcluir.setObs_veiculo(model.getValueAt(linhaSelecionadaIndex,12).toString());
-        
-        
-        dao.delete(veiculoexcluir);
-        this.dispose();
-        new ConsultaVeiculo();
-        
-        */
+
         // TODO add your handling code here:
     }//GEN-LAST:event_btExcluirActionPerformed
 

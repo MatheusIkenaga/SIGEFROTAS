@@ -379,12 +379,12 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         
         //veiculo.setCD_VEICULO(Integer.parseInt(this.tbCodVeic.getText()));
         
-        if(this.tbCodVeic.getText()== null){
+        if(this.tbCodVeic.getText().isEmpty()){
             veiculo.setMarca_veiculo(this.tbMarcaVeic.getText());
             veiculo.setModelo_veiculo(this.tbModeloVeic.getText());
             veiculo.setCor_veiculo(this.tbCorVeic.getText ());
             veiculo.setPlaca_veiculo(this.tbPlacaVeic.getText());
-            veiculo.setHODOM_VEICULO(Integer.parseInt(this.tbHodometroVeic.getText()));
+            veiculo.setHODOM_VEICULO(Integer.parseInt(this.tbHodometroVeic.getText().toString()));
             veiculo.setAno_veiculo(Integer.parseInt(this.cbAnoFabricacao.getSelectedItem().toString()));
             veiculo.setAno_modelo_veiculo(Integer.parseInt(this.cbAnoModelo.getSelectedItem().toString()));
             veiculo.setTipo_veiculo(this.cbTipoVeic.getSelectedItem().toString());
@@ -396,7 +396,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         
             this.dispose();
             
-        }else{
+        }else if(this.tbCodVeic.getText() != null){
             veiculo.setCD_VEICULO(Integer.parseInt(this.tbCodVeic.getText()));
             veiculo.setMarca_veiculo(this.tbMarcaVeic.getText());
             veiculo.setModelo_veiculo(this.tbModeloVeic.getText());

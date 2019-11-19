@@ -104,7 +104,8 @@ private Connection conexao;
 			stmt.close();
                         JOptionPane.showMessageDialog(null, "Gravado com sucesso ! ");
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+                    System.out.println(e);
+                    throw new RuntimeException(e);
 		}
     }
     
@@ -165,6 +166,7 @@ private Connection conexao;
                 }
                 catch(SQLException e) {
                     //System.out.println(e);
+                    System.out.println(e);
 			throw new RuntimeException();
 		}
         
@@ -205,22 +207,25 @@ private Connection conexao;
 			stmt.close();
 			JOptionPane.showMessageDialog(null, "Registro alterado com sucesso !");
 		} catch (SQLException e) {
+                    System.out.println(e);
 			throw new RuntimeException(e);
 		}
     
     }
     
     public void delete(Veiculo veiculo) {
-		try {
-			PreparedStatement stmt = conexao.prepareStatement("delete from VEICULO where CD_VEICULO=?");
-			stmt.setInt(1, veiculo.getCD_VEICULO());
-			stmt.execute();
-			stmt.close();
-			JOptionPane.showMessageDialog(null, "Registro excluído com sucesso !");
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
-	}
+	try {
+            PreparedStatement stmt = conexao.prepareStatement("delete from VEICULO where CD_VEICULO=?");
+            stmt.setInt(1, veiculo.getCD_VEICULO());
+            stmt.execute();
+            stmt.close();
+            JOptionPane.showMessageDialog(null, "Registro excluído com sucesso !");
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw new RuntimeException(e);
+        }
+        
+    }
             
     
 }
