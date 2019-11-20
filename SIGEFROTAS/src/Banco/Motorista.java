@@ -18,11 +18,11 @@ public class Motorista {
     
         private int CD_MOTORISTA;
 	private String NM_MOTORISTA;
-        private Date DT_NASC_MOTORISTA;
+        private String DT_NASC_MOTORISTA;
 	private String CPF_MOTORISTA;
 	private String RG_MOTORISTA;
 	private String CNH_MOTORISTA;
-        private Date VAL_CNH_MOTORISTA;
+        private String VAL_CNH_MOTORISTA;
 	private String OBS_MOTORISTA;
         private String SOBRENOME_MOTORISTA;
         private int SEXO_MOTORISTA;
@@ -76,11 +76,11 @@ public class Motorista {
 		this.NM_MOTORISTA=NM_MOTORISTA;
 	}
         
-        public Date getDT_NASC_MOTORISTA (){
+        public String getDT_NASC_MOTORISTA (){
             return DT_NASC_MOTORISTA;
         }
         
-        public void setDT_NASC_MOTORISTA (Date DT_NASC_MOTORISTA){
+        public void setDT_NASC_MOTORISTA (String DT_NASC_MOTORISTA){
             this.DT_NASC_MOTORISTA = DT_NASC_MOTORISTA;
         }
                 
@@ -114,11 +114,11 @@ public class Motorista {
 		this.CNH_MOTORISTA=CNH_MOTORISTA;
 	}
         
-         public Date getVAL_CNH_MOTORISTA (){
+         public String getVAL_CNH_MOTORISTA (){
             return VAL_CNH_MOTORISTA;
         }
         
-        public void setVAL_CNH_MOTORISTA (Date VAL_CNH_MOTORISTA){
+        public void setVAL_CNH_MOTORISTA (String VAL_CNH_MOTORISTA){
             this.VAL_CNH_MOTORISTA = VAL_CNH_MOTORISTA;
         }
 

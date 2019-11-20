@@ -5,15 +5,31 @@
  */
 package Telas;
 
+import Banco.VeiculoDAO;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author matheusikenaga
  */
 public class CadastroViagem extends javax.swing.JFrame {
 
+    VeiculoDAO veicDAO = new VeiculoDAO();
     /**
      * Creates new form CadastroViagem
      */
+    private void preencheVeiculo(){
+        try{
+        
+        
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    
+    }
+    
+    
     public CadastroViagem() {
         //this.setLocationRelativeTo(null);
         initComponents();
@@ -23,6 +39,7 @@ public class CadastroViagem extends javax.swing.JFrame {
         this.cbTipoViagem.setSelectedItem(null);
         this.cbMotorista.setSelectedItem(null);
         this.cbVeiculo.setSelectedItem(null);
+        veicDAO.preencheCB(cbVeiculo);
     }
 
     /**
@@ -68,7 +85,6 @@ public class CadastroViagem extends javax.swing.JFrame {
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         setSize(new java.awt.Dimension(1280, 720));
 
         cbTipoViagem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chamado Técnico", "Manutencão Preventiva", "Outros" }));
@@ -113,7 +129,7 @@ public class CadastroViagem extends javax.swing.JFrame {
 
         jLabel12.setText("Observações");
 
-        cbVeiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbVeiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {""}));
 
         cbMotorista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 

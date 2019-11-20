@@ -5,6 +5,8 @@ import Banco.MotoristaDAO;
 import java.awt.Frame;
 import java.text.SimpleDateFormat;  
 import java.util.Date;  
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,6 +21,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
     
     private MotoristaDAO dao= new MotoristaDAO();
     private Motorista motorista = new Motorista();
+    
 
     /**
      * Creates new form CadastroMotorista
@@ -29,6 +32,17 @@ public class CadastroMotorista extends javax.swing.JFrame {
         //this.setExtendedState(Frame.MAXIMIZED_BOTH);
         this.setVisible(true);
         this.cbSexo.setSelectedItem(null);
+        this.cbAno.setSelectedItem(2019);
+
+        preencheCbAno(cbAno);
+    }
+    
+    public void preencheCbAno(JComboBox cb){
+        int i = 2019;
+        while(i>1930){
+            cb.addItem(i);
+            i--;
+        }
     }
 
     /**
@@ -134,12 +148,14 @@ public class CadastroMotorista extends javax.swing.JFrame {
 
         cbDia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31" }));
         cbDia.setSelectedItem("DIA");
-        cbDia.setToolTipText("dia");
+        cbDia.setToolTipText("Dia");
         cbDia.setName("DIA"); // NOI18N
 
         cbMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01","02","03","04","05","06","07","08","09","10","11","12" }));
+        cbMes.setToolTipText("Mês");
 
-        cbAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "assim vai", "Item 3", "Item 4" }));
+        cbAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        cbAno.setToolTipText("Ano");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -187,14 +203,14 @@ public class CadastroMotorista extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 588, Short.MAX_VALUE))
                             .addComponent(tbSobrenomeCadMot)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
                                         .addComponent(cbDia, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(cbMes, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cbAno, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(cbAno, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel10)
@@ -305,18 +321,37 @@ public class CadastroMotorista extends javax.swing.JFrame {
     }//GEN-LAST:event_tbSobrenomeCadMotActionPerformed
 
     private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
-        // TODO add your handling code here:
+       
+        SimpleDateFormat formatDT = new SimpleDateFormat("dd/MM/yyyy");
+        
+        // SERVE PARA VALIDAR SE A DATA ESTÁ SENDO SALVA CORRETAMENTE NA VARIAVEL sDataNasc
+        /*       
+        String sDataNasc = (this.cbDia.getSelectedItem().toString() + "/" +
+                             this.cbMes.getSelectedItem().toString() + "/" +
+                             this.cbAno.getSelectedItem().toString());
+        JOptionPane.showMessageDialog(null,sDataNasc);
+        */
         
         motorista.setNm_motorista(this.tbNomeCadMot.getText());
         motorista.setCnh_motorista (this.tbNumCnh.getText());
-        //motorista.setVAL_CNH_MOTORISTA(this.tbVencCnh.getText().toString()); //COMO CONVERTE ESSA MERDA PRA DATE
+
+//CORRIGIR
         //motorista.setVAL_CNH_MOTORISTA(SimpleDateFormat("dd/MM/yyyy").parse(this.tbVencCnh.getText()));
-        //motorista.setDT_NASC_MOTORISTA(this.tbDatanasc.getText()); //COMO CONVERTE ESSA MERDA PRA DATE
+        
+        motorista.setDT_NASC_MOTORISTA(this.cbDia.getSelectedItem().toString() + "/" +
+                             this.cbMes.getSelectedItem().toString() + "/" +
+                             this.cbAno.getSelectedItem().toString());
+
+        
+        
         motorista.setCpf_motorista(this.tbCpfCadMot.getText());
         motorista.setRg_motorista(this.tbRG.getText());
         motorista.setSexo_motorista(Integer.parseInt(this.cbSexo.getSelectedItem().toString()));
         motorista.setObs_motorista(this.tbObs.getText());
         motorista.setSobrenome_motorista(this.tbSobrenomeCadMot.getText());
+        dao.insert(motorista);
+        this.dispose();
+        
         
         /*
         //veiculo.setCD_VEICULO(Integer.parseInt(this.tbCodVeic.getText()));

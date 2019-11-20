@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import Banco.Veiculo;
 import Banco.VeiculoDAO;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Iterator;

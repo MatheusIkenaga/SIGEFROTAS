@@ -12,6 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -46,11 +47,11 @@ private Connection conexao;
 
 			stmt.setString(1, Integer.toString(motorista.getCD_MOTORISTA()));
 			stmt.setString(2, motorista.getNm_motorista());
-                        stmt.setDate(3, (Date) motorista.getDT_NASC_MOTORISTA());
+                        stmt.setString(3, motorista.getDT_NASC_MOTORISTA());
 			stmt.setString(4, motorista.getCpf_motorista());
                         stmt.setString(5, motorista.getRg_motorista());
                         stmt.setString(6, motorista.getCnh_motorista());
-			stmt.setDate(7, (Date) motorista.getVAL_CNH_MOTORISTA());
+			stmt.setString(7, motorista.getVAL_CNH_MOTORISTA());
                         stmt.setString(8, motorista.getObs_motorista());
                         stmt.setString(9, motorista.getSobrenome_motorista());
                         stmt.setString(10, Integer.toString(motorista.getSexo_motorista()));
@@ -59,8 +60,9 @@ private Connection conexao;
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
+                    JOptionPane.showMessageDialog(null, e);
+                    throw new RuntimeException(e);
+            }
     }
     
     /*
