@@ -32,9 +32,19 @@ public class CadastroMotorista extends javax.swing.JFrame {
         //this.setExtendedState(Frame.MAXIMIZED_BOTH);
         this.setVisible(true);
         this.cbSexo.setSelectedItem(null);
-        this.cbAno.setSelectedItem(2019);
+        this.cbDia.setSelectedItem(null);
+        this.cbMes.setSelectedItem(null);
+        this.cbAno.setSelectedItem(null);
+        this.cbDiaCNH.setSelectedItem(null);
+        this.cbMesCNH.setSelectedItem(null);
+        this.cbAnoCNH.setSelectedItem(null);
+        
+        if(cbDia.getSelectedItem()=="31"){
+           cbMes.removeItem("02");
+        }
 
         preencheCbAno(cbAno);
+        preencheCbAnoCNH(cbAnoCNH);
     }
     
     public void preencheCbAno(JComboBox cb){
@@ -43,6 +53,39 @@ public class CadastroMotorista extends javax.swing.JFrame {
             cb.addItem(i);
             i--;
         }
+    }
+    
+    public void preencheCbAnoCNH(JComboBox cb){
+        int i = 2029;
+        while(i>2019){
+            cb.addItem(i);
+            i--;
+        }
+    }
+    
+    public CadastroMotorista(Motorista motorista){
+        initComponents();
+
+        this.setLocationRelativeTo(null);
+        
+        this.tbCodMototista.setText(Integer.toString(motorista.getCD_MOTORISTA()));
+        this.tbNomeCadMot.setText(motorista.getNm_motorista());
+        this.tbSobrenomeCadMot.setText(motorista.getSobrenome_motorista());
+        this.tbCpfCadMot.setText(motorista.getCpf_motorista());
+        this.tbRG.setText(motorista.getRg_motorista());
+        this.cbDia.setSelectedItem(motorista.getDT_NASC_MOTORISTA().substring(8,10));
+        this.cbMes.setSelectedItem(motorista.getDT_NASC_MOTORISTA().substring(5,7));
+        this.cbAno.setSelectedItem(motorista.getDT_NASC_MOTORISTA().substring(0,4));
+        this.cbSexo.setSelectedItem(motorista.getSX_MOTORISTA());
+        this.tbNumCnh.setText(motorista.getCnh_motorista());
+        this.cbDiaCNH.setSelectedItem(motorista.getVAL_CNH_MOTORISTA().substring(8,10));
+        this.cbMesCNH.setSelectedItem(motorista.getVAL_CNH_MOTORISTA().substring(5,7));
+        this.cbAnoCNH.setSelectedItem(motorista.getVAL_CNH_MOTORISTA().substring(0,4));      
+        this.setVisible(true);
+    
+    
+        
+        
     }
 
     /**
@@ -60,7 +103,6 @@ public class CadastroMotorista extends javax.swing.JFrame {
         tbCpfCadMot = new javax.swing.JTextField();
         tbRG = new javax.swing.JTextField();
         tbNumCnh = new javax.swing.JTextField();
-        tbVencCnh = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -80,9 +122,13 @@ public class CadastroMotorista extends javax.swing.JFrame {
         cbDia = new javax.swing.JComboBox<>();
         cbMes = new javax.swing.JComboBox<>();
         cbAno = new javax.swing.JComboBox<>();
+        cbDiaCNH = new javax.swing.JComboBox<>();
+        cbMesCNH = new javax.swing.JComboBox<>();
+        cbAnoCNH = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        tbCodMototista.setEnabled(false);
         tbCodMototista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tbCodMototistaActionPerformed(evt);
@@ -157,6 +203,22 @@ public class CadastroMotorista extends javax.swing.JFrame {
         cbAno.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
         cbAno.setToolTipText("Ano");
 
+        cbDiaCNH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31" }));
+        cbDiaCNH.setSelectedItem("DIA");
+        cbDiaCNH.setToolTipText("Dia");
+        cbDiaCNH.setName("DIA"); // NOI18N
+        cbDiaCNH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbDiaCNHActionPerformed(evt);
+            }
+        });
+
+        cbMesCNH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "01","02","03","04","05","06","07","08","09","10","11","12" }));
+        cbMesCNH.setToolTipText("Mês");
+
+        cbAnoCNH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
+        cbAnoCNH.setToolTipText("Ano");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -195,7 +257,6 @@ public class CadastroMotorista extends javax.swing.JFrame {
                             .addComponent(tbNomeCadMot))
                         .addGap(18, 18, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tbVencCnh)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
@@ -210,7 +271,13 @@ public class CadastroMotorista extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(cbMes, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cbAno, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(cbAno, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(cbDiaCNH, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbMesCNH, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(cbAnoCNH, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addComponent(jLabel10)
@@ -265,8 +332,10 @@ public class CadastroMotorista extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(tbNumCnh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tbVencCnh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(cbSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbDiaCNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbMesCNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbAnoCNH, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -298,14 +367,18 @@ public class CadastroMotorista extends javax.swing.JFrame {
         this.tbCodMototista.setText("");
         this.tbNomeCadMot.setText("");
         this.tbNumCnh.setText("");
-        this.tbVencCnh.setText("");
-        //this.tbDatanasc.setText("");
+        this.cbDia.setSelectedItem(null);
+        this.cbMes.setSelectedItem(null);
+        this.cbAno.setSelectedItem(null);
+        this.cbDiaCNH.setSelectedItem(null);
+        this.cbMesCNH.setSelectedItem(null);
+        this.cbAnoCNH.setSelectedItem(null);
         this.tbCpfCadMot.setText("");
         this.tbRG.setText("");
         this.cbSexo.setSelectedItem(null);
         this.tbObs.setText("");
         this.tbSobrenomeCadMot.setText("");
-        this.cbAno.setSelectedItem(null);
+        //this.cbAno.setSelectedItem(null);
         
     }//GEN-LAST:event_btLimparActionPerformed
 
@@ -321,56 +394,28 @@ public class CadastroMotorista extends javax.swing.JFrame {
     }//GEN-LAST:event_tbSobrenomeCadMotActionPerformed
 
     private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
-       
-        SimpleDateFormat formatDT = new SimpleDateFormat("dd/MM/yyyy");
-        
-        // SERVE PARA VALIDAR SE A DATA ESTÁ SENDO SALVA CORRETAMENTE NA VARIAVEL sDataNasc
-        /*       
-        String sDataNasc = (this.cbDia.getSelectedItem().toString() + "/" +
-                             this.cbMes.getSelectedItem().toString() + "/" +
-                             this.cbAno.getSelectedItem().toString());
-        JOptionPane.showMessageDialog(null,sDataNasc);
-        */
-        
+              
         motorista.setNm_motorista(this.tbNomeCadMot.getText());
-        motorista.setCnh_motorista (this.tbNumCnh.getText());
-
-//CORRIGIR
-        //motorista.setVAL_CNH_MOTORISTA(SimpleDateFormat("dd/MM/yyyy").parse(this.tbVencCnh.getText()));
-        
-        motorista.setDT_NASC_MOTORISTA(this.cbDia.getSelectedItem().toString() + "/" +
-                             this.cbMes.getSelectedItem().toString() + "/" +
-                             this.cbAno.getSelectedItem().toString());
-
-        
-        
+        motorista.setSobrenome_motorista(this.tbSobrenomeCadMot.getText());
         motorista.setCpf_motorista(this.tbCpfCadMot.getText());
         motorista.setRg_motorista(this.tbRG.getText());
-        motorista.setSexo_motorista(Integer.parseInt(this.cbSexo.getSelectedItem().toString()));
+        motorista.setDT_NASC_MOTORISTA(this.cbAno.getSelectedItem().toString() + "-" +
+                             this.cbMes.getSelectedItem().toString() + "-" +
+                             this.cbDia.getSelectedItem().toString());
+        motorista.setSX_MOTORISTA(this.cbSexo.getSelectedItem().toString());
+        motorista.setCnh_motorista (this.tbNumCnh.getText());
+        motorista.setVAL_CNH_MOTORISTA(this.cbAnoCNH.getSelectedItem().toString() + "-" +
+                             this.cbMesCNH.getSelectedItem().toString() + "-" +
+                             this.cbDiaCNH.getSelectedItem().toString());
         motorista.setObs_motorista(this.tbObs.getText());
-        motorista.setSobrenome_motorista(this.tbSobrenomeCadMot.getText());
         dao.insert(motorista);
         this.dispose();
-        
-        
-        /*
-        //veiculo.setCD_VEICULO(Integer.parseInt(this.tbCodVeic.getText()));
-        veiculo.setMarca_veiculo(this.tbMarcaVeic.getText());
-        veiculo.setModelo_veiculo(this.tbModeloVeic.getText());
-        veiculo.setCor_veiculo(this.tbCorVeic.getText ());
-        veiculo.setPlaca_veiculo(this.tbPlacaVeic.getText());
-        veiculo.setHODOM_VEICULO(Integer.parseInt(this.tbHodometroVeic.getText()));
-        veiculo.setAno_veiculo(Integer.parseInt(this.cbAnoFabricacao.getSelectedItem().toString()));
-        veiculo.setAno_modelo_veiculo(Integer.parseInt(this.cbAnoModelo.getSelectedItem().toString()));
-        veiculo.setTipo_veiculo(this.cbTipoVeic.getSelectedItem().toString());
-        veiculo.setDISPO_VEICULO(this.cbDispoVeic.getSelectedItem().toString());
-        veiculo.setSeguro_veiculo(this.cbSeguradoraVeic.getSelectedItem().toString());
-        veiculo.setNUM_APOLICE_VEICULO(this.tbNumApolice.getText());
-        veiculo.setObs_veiculo(this.tbObsVeic.getText());
-        dao.insert(veiculo);
-        */
-        
+ 
     }//GEN-LAST:event_btSaveActionPerformed
+
+    private void cbDiaCNHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbDiaCNHActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbDiaCNHActionPerformed
 
 
 
@@ -379,8 +424,11 @@ public class CadastroMotorista extends javax.swing.JFrame {
     private javax.swing.JButton btLimpar;
     private javax.swing.JButton btSave;
     private javax.swing.JComboBox<String> cbAno;
+    private javax.swing.JComboBox<String> cbAnoCNH;
     private javax.swing.JComboBox<String> cbDia;
+    private javax.swing.JComboBox<String> cbDiaCNH;
     private javax.swing.JComboBox<String> cbMes;
+    private javax.swing.JComboBox<String> cbMesCNH;
     private javax.swing.JComboBox<String> cbSexo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -400,7 +448,6 @@ public class CadastroMotorista extends javax.swing.JFrame {
     private javax.swing.JTextField tbObs;
     private javax.swing.JTextField tbRG;
     private javax.swing.JTextField tbSobrenomeCadMot;
-    private javax.swing.JTextField tbVencCnh;
     // End of variables declaration//GEN-END:variables
 
     private Object SimpleDateFormat(String ddMMyyyy) {

@@ -424,7 +424,7 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
     }//GEN-LAST:event_btInsViagemActionPerformed
 
     private void btConsultMotoristaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultMotoristaActionPerformed
-        
+        new ConsultaMotorista();
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btConsultMotoristaActionPerformed

@@ -18,14 +18,14 @@ public class Motorista {
     
         private int CD_MOTORISTA;
 	private String NM_MOTORISTA;
-        private String DT_NASC_MOTORISTA;
-	private String CPF_MOTORISTA;
+        private String SOBRENOME_MOTORISTA;
+        private String CPF_MOTORISTA;
 	private String RG_MOTORISTA;
+        private String DT_NASC_MOTORISTA;
+	private String SX_MOTORISTA; //get set
 	private String CNH_MOTORISTA;
         private String VAL_CNH_MOTORISTA;
 	private String OBS_MOTORISTA;
-        private String SOBRENOME_MOTORISTA;
-        private int SEXO_MOTORISTA;
         
         /*
         public Cliente(String nome, String cpf, String dataNasc, String endereco, String telefone) throws ParseException {
@@ -137,13 +137,15 @@ public class Motorista {
 	public void setSobrenome_motorista(String SOBRENOME_MOTORISTA){
 		this.SOBRENOME_MOTORISTA=SOBRENOME_MOTORISTA;
 	}
-        public int getSexo_motorista(){
-		return SEXO_MOTORISTA;
+        
+        
+        public String getSX_MOTORISTA(){
+		return SX_MOTORISTA;
 	}
 
-	public void setSexo_motorista(int SEXO_MOTORISTA){
-		this.SEXO_MOTORISTA=SEXO_MOTORISTA;
+	public void setSX_MOTORISTA(String SX_MOTORISTA){
+		this.SX_MOTORISTA=SX_MOTORISTA;
 	}
-     
+        //SX_MOTORISTA
 }
 
