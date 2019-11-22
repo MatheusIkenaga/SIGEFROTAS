@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 
 /**
@@ -29,6 +30,44 @@ String dt;
         this.conexao = new ConnectionFactory().getConnection("root", "root1234");
     
     }
+    
+    /*
+    public void preencheCB(JComboBox cb){
+        try{
+            String sql= "select * from VEICULO order by MODELO_VEICULO";
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            ResultSet rs=stmt.executeQuery();
+            
+            while(rs.next()){
+                String resultado = (rs.getString("MODELO_VEICULO")+ " | " + rs.getString("PLACA_VEICULO"));
+                cb.addItem(resultado);
+            }
+                
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    
+    }
+    */
+    
+    public void preencheCB(JComboBox cb){
+        try{
+            String sql= "select * from MOTORISTA order by NM_MOTORISTA";
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            ResultSet rs=stmt.executeQuery();
+            
+            while(rs.next()){
+                String resultado = (rs.getString("NM_MOTORISTA")+" "+rs.getString("SNM_MOTORISTA"));
+                cb.addItem(resultado);
+            }
+                
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+    }
+    
     
     public void insert(Motorista motorista){
         String sql = "insert into MOTORISTA "

@@ -5,6 +5,7 @@
  */
 package Telas;
 
+import Banco.MotoristaDAO;
 import Banco.VeiculoDAO;
 import javax.swing.JOptionPane;
 
@@ -15,19 +16,11 @@ import javax.swing.JOptionPane;
 public class CadastroViagem extends javax.swing.JFrame {
 
     VeiculoDAO veicDAO = new VeiculoDAO();
+    MotoristaDAO motoDAO = new MotoristaDAO();
     /**
      * Creates new form CadastroViagem
      */
-    private void preencheVeiculo(){
-        try{
-        
-        
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null,e);
-        }
     
-    }
     
     
     public CadastroViagem() {
@@ -40,6 +33,7 @@ public class CadastroViagem extends javax.swing.JFrame {
         this.cbMotorista.setSelectedItem(null);
         this.cbVeiculo.setSelectedItem(null);
         veicDAO.preencheCB(cbVeiculo);
+        motoDAO.preencheCB(cbMotorista);
     }
 
     /**
@@ -131,7 +125,7 @@ public class CadastroViagem extends javax.swing.JFrame {
 
         cbVeiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {""}));
 
-        cbMotorista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbMotorista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
 
         cbOrigem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC - Acre", "AL - Alagoas", "AM - Amazonas", "AP - Amapá", "BA - Bahia", "CE - Ceará","DF - Distrito Federal","ES - Espírito Santo","GO - Goiás","MA - Maranhão","MG - Minas Gerais","MS - Mato Grosso do Sul","MT - Mato Grosso","PA - pará","PB - Paraíba","PE - Penambuco","PI - Piauí","PR - Paraná","RJ - Rio de Janeiro","RN - Rio Grande do Norte","RO - Ronsônia","RR - Roraima","RS - Rio Grande do Sul","SC - Santa Catarina","SE - Sergipe","SP - São Paulo","TO - Tocantins", }));
 
