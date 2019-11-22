@@ -10,6 +10,7 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -21,6 +22,7 @@ import javax.swing.JOptionPane;
 public class MotoristaDAO {
     
 private Connection conexao;
+String dt;
     
     public MotoristaDAO () {
         
@@ -63,6 +65,30 @@ private Connection conexao;
                     JOptionPane.showMessageDialog(null, e);
                     throw new RuntimeException(e);
             }
+    }
+    
+    public String getDtNasc(Motorista motorista){
+    // i - CD_MOTORISTA
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+        
+        this.dt = formato.format(dt);
+        ResultSet rs = null;
+        String sql = "select DT_NASC_MOTORISTA from MOTORISTA where CD_MOTORISTA= ?";
+        try{       
+            PreparedStatement stmt = conexao.prepareStatement(sql);
+            stmt.setInt(1, motorista.getCD_MOTORISTA());
+            dt = (rs.getString("DT_NASC_MOTORISTA"));
+            stmt.execute();
+            
+            stmt.close();
+            return dt;
+        }
+        
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+            throw new RuntimeException(e);
+        }
+        
     }
     
     
