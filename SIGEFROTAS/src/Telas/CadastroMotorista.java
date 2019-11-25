@@ -31,8 +31,11 @@ public class CadastroMotorista extends javax.swing.JFrame {
      * Creates new form CadastroMotorista
      */
     public CadastroMotorista() {
+        
         initComponents();
         this.setLocationRelativeTo(null);
+        this.lbCodMot.setVisible(false);
+        this.tbCodMototista.setVisible(false);
         //this.setExtendedState(Frame.MAXIMIZED_BOTH);
         this.setVisible(true);
         this.cbSexo.setSelectedItem(null);
@@ -49,7 +52,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
         
         this.tbCodMototista.setText(Integer.toString(motorista.getCD_MOTORISTA()));
         this.tbNomeCadMot.setText(motorista.getNm_motorista());
-        this.tbSobrenomeCadMot.setText(motorista.getTELEFONE_motorista());
+        this.tbTelefoneCadMot.setText(motorista.getTELEFONE_motorista());
         this.tbCpfCadMot.setText(motorista.getCpf_motorista());
         this.tbRG.setText(motorista.getRg_motorista());       
         
@@ -108,45 +111,68 @@ public class CadastroMotorista extends javax.swing.JFrame {
 
         tbCodMototista = new javax.swing.JTextField();
         tbNomeCadMot = new javax.swing.JTextField();
-        tbSobrenomeCadMot = new javax.swing.JTextField();
-        tbCpfCadMot = new javax.swing.JTextField();
-        tbRG = new javax.swing.JTextField();
-        tbNumCnh = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        cbSexo = new javax.swing.JComboBox<>();
-        jLabel10 = new javax.swing.JLabel();
-        tbObs = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        btSave = new javax.swing.JButton();
-        btCanc = new javax.swing.JButton();
-        btLimpar = new javax.swing.JButton();
-        dcDtNasc = new com.toedter.calendar.JDateChooser();
-        dcCnh = new com.toedter.calendar.JDateChooser();
+        try{
+            javax.swing.text.MaskFormatter tel= new javax.swing.text.MaskFormatter("(##)#####-####");
+            tbTelefoneCadMot = new javax.swing.JFormattedTextField(tel);
+            try{
+                javax.swing.text.MaskFormatter cpf= new javax.swing.text.MaskFormatter("###.###.###-##");
+                tbCpfCadMot = new javax.swing.JFormattedTextField(cpf);
+                try{
+                    javax.swing.text.MaskFormatter RG= new javax.swing.text.MaskFormatter("##.###.###-A");
+                    tbRG = new javax.swing.JFormattedTextField(RG);
+                    try{
+                        javax.swing.text.MaskFormatter cnh= new javax.swing.text.MaskFormatter("###########");
+                        tbNumCnh = new javax.swing.JFormattedTextField(cnh);
+                        lbCodMot = new javax.swing.JLabel();
+                        jLabel2 = new javax.swing.JLabel();
+                        jLabel3 = new javax.swing.JLabel();
+                        jLabel4 = new javax.swing.JLabel();
+                        jLabel5 = new javax.swing.JLabel();
+                        jLabel6 = new javax.swing.JLabel();
+                        jLabel7 = new javax.swing.JLabel();
+                        jLabel8 = new javax.swing.JLabel();
+                        jLabel9 = new javax.swing.JLabel();
+                        cbSexo = new javax.swing.JComboBox<>();
+                        jLabel10 = new javax.swing.JLabel();
+                        tbObs = new javax.swing.JTextField();
+                        jLabel11 = new javax.swing.JLabel();
+                        btSave = new javax.swing.JButton();
+                        btCanc = new javax.swing.JButton();
+                        btLimpar = new javax.swing.JButton();
+                        dcDtNasc = new com.toedter.calendar.JDateChooser();
+                        dcCnh = new com.toedter.calendar.JDateChooser();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+                        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        tbCodMototista.setEnabled(false);
-        tbCodMototista.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbCodMototistaActionPerformed(evt);
+                        tbCodMototista.setEnabled(false);
+                        tbCodMototista.addActionListener(new java.awt.event.ActionListener() {
+                            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                tbCodMototistaActionPerformed(evt);
+                            }
+                        });
+
+                    }
+                    catch (Exception e){
+                    }
+                    tbTelefoneCadMot.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                            tbTelefoneCadMotActionPerformed(evt);
+                        }
+                    });
+
+                }
+                catch (Exception e){
+                }
+
             }
-        });
-
-        tbSobrenomeCadMot.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tbSobrenomeCadMotActionPerformed(evt);
+            catch (Exception e){
             }
-        });
 
-        jLabel1.setText("Código do Motorista");
+        }
+        catch (Exception e){
+        }
+
+        lbCodMot.setText("Código do Motorista");
 
         jLabel2.setText("Nome");
 
@@ -212,7 +238,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
                                     .addComponent(tbCpfCadMot, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel2)
-                                    .addComponent(jLabel1)
+                                    .addComponent(lbCodMot)
                                     .addComponent(tbCodMototista, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
@@ -242,7 +268,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
                                             .addComponent(jLabel8)
                                             .addComponent(jLabel3))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 588, Short.MAX_VALUE))
-                                    .addComponent(tbSobrenomeCadMot)
+                                    .addComponent(tbTelefoneCadMot)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, Short.MAX_VALUE))))
@@ -274,7 +300,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
                 .addGap(68, 68, 68)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(lbCodMot)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(tbCodMototista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,7 +312,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(tbNomeCadMot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tbSobrenomeCadMot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tbTelefoneCadMot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
@@ -343,8 +369,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
         this.tbRG.setText("");
         this.cbSexo.setSelectedItem(null);
         this.tbObs.setText("");
-        this.tbSobrenomeCadMot.setText("");
-        //this.cbAno.setSelectedItem(null);
+        this.tbTelefoneCadMot.setText("");
         
     }//GEN-LAST:event_btLimparActionPerformed
 
@@ -355,33 +380,45 @@ public class CadastroMotorista extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btCancActionPerformed
 
-    private void tbSobrenomeCadMotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbSobrenomeCadMotActionPerformed
+    private void tbTelefoneCadMotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbTelefoneCadMotActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tbSobrenomeCadMotActionPerformed
+    }//GEN-LAST:event_tbTelefoneCadMotActionPerformed
 
     private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
         
-        if(this.tbCodMototista.getText().isEmpty()){
+        if(this.tbNomeCadMot.getText().equals("")||
+           this.tbTelefoneCadMot.getText().equals("")||
+           (this.tbCpfCadMot.getText().equals("   .   .   -  "))||
+           this.tbRG.getText().equals("")||
+           this.cbSexo.getSelectedItem().equals("")||
+           this.tbNumCnh.getText().equals("")||
+           this.dcCnh.getDate().equals("")){
             
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        motorista.setNm_motorista(this.tbNomeCadMot.getText());
-        motorista.setTELEFONE_motorista(this.tbSobrenomeCadMot.getText());
-        motorista.setCpf_motorista(this.tbCpfCadMot.getText());
-        motorista.setRg_motorista(this.tbRG.getText());
-        motorista.setDT_NASC_MOTORISTA(df.format(this.dcDtNasc.getDate()));
-        motorista.setSX_MOTORISTA(this.cbSexo.getSelectedItem().toString());
-        motorista.setCnh_motorista (this.tbNumCnh.getText());
-        motorista.setVAL_CNH_MOTORISTA(df.format(this.dcCnh.getDate()));
-        motorista.setObs_motorista(this.tbObs.getText());
-        dao.insert(motorista);
-        this.dispose();
+            JOptionPane.showMessageDialog(null, "Preencha os campos de: Nome, Tel, CPF, RG, Data de Nascimento, Sexo, Num. CNH e Data de Validade da CNH");
+            
+            
+        }else{
         
+            if(this.tbCodMototista.getText().isEmpty()){
+            
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+            motorista.setNm_motorista(this.tbNomeCadMot.getText());
+            motorista.setTELEFONE_motorista(this.tbTelefoneCadMot.getText());
+            motorista.setCpf_motorista(this.tbCpfCadMot.getText());
+            motorista.setRg_motorista(this.tbRG.getText());
+            motorista.setDT_NASC_MOTORISTA(df.format(this.dcDtNasc.getDate()));
+            motorista.setSX_MOTORISTA(this.cbSexo.getSelectedItem().toString());
+            motorista.setCnh_motorista (this.tbNumCnh.getText());
+            motorista.setVAL_CNH_MOTORISTA(df.format(this.dcCnh.getDate()));
+            motorista.setObs_motorista(this.tbObs.getText());
+            dao.insert(motorista);
+            this.dispose();
         
-        }else if(this.tbCodMototista.getText() != null){
+            }else if(this.tbCodMototista.getText() != null){
             motorista.setCD_MOTORISTA(Integer.parseInt(this.tbCodMototista.getText()));
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             motorista.setNm_motorista(this.tbNomeCadMot.getText());
-            motorista.setTELEFONE_motorista(this.tbSobrenomeCadMot.getText());
+            motorista.setTELEFONE_motorista(this.tbTelefoneCadMot.getText());
             motorista.setCpf_motorista(this.tbCpfCadMot.getText());
             motorista.setRg_motorista(this.tbRG.getText());
             motorista.setDT_NASC_MOTORISTA(df.format(this.dcDtNasc.getDate()));
@@ -395,7 +432,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
             this.dispose();
         }
     }//GEN-LAST:event_btSaveActionPerformed
-
+}
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -405,7 +442,6 @@ public class CadastroMotorista extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cbSexo;
     private com.toedter.calendar.JDateChooser dcCnh;
     private com.toedter.calendar.JDateChooser dcDtNasc;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
@@ -416,13 +452,14 @@ public class CadastroMotorista extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lbCodMot;
     private javax.swing.JTextField tbCodMototista;
     private javax.swing.JTextField tbCpfCadMot;
     private javax.swing.JTextField tbNomeCadMot;
     private javax.swing.JTextField tbNumCnh;
     private javax.swing.JTextField tbObs;
     private javax.swing.JTextField tbRG;
-    private javax.swing.JTextField tbSobrenomeCadMot;
+    private javax.swing.JTextField tbTelefoneCadMot;
     // End of variables declaration//GEN-END:variables
 
     private Object SimpleDateFormat(String ddMMyyyy) {
