@@ -127,9 +127,14 @@ public class CadastroViagem extends javax.swing.JFrame {
 
         cbMotorista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "" }));
 
-        cbOrigem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC - Acre", "AL - Alagoas", "AM - Amazonas", "AP - Amapá", "BA - Bahia", "CE - Ceará","DF - Distrito Federal","ES - Espírito Santo","GO - Goiás","MA - Maranhão","MG - Minas Gerais","MS - Mato Grosso do Sul","MT - Mato Grosso","PA - pará","PB - Paraíba","PE - Penambuco","PI - Piauí","PR - Paraná","RJ - Rio de Janeiro","RN - Rio Grande do Norte","RO - Ronsônia","RR - Roraima","RS - Rio Grande do Sul","SC - Santa Catarina","SE - Sergipe","SP - São Paulo","TO - Tocantins", }));
+        cbOrigem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC - Acre", "AL - Alagoas", "AM - Amazonas", "AP - Amapá", "BA - Bahia", "CE - Ceará","DF - Distrito Federal","ES - Espírito Santo","GO - Goiás","MA - Maranhão","MG - Minas Gerais","MS - Mato Grosso do Sul","MT - Mato Grosso","PA - Pará","PB - Paraíba","PE - Penambuco","PI - Piauí","PR - Paraná","RJ - Rio de Janeiro","RN - Rio Grande do Norte","RO - Rondônia","RR - Roraima","RS - Rio Grande do Sul","SC - Santa Catarina","SE - Sergipe","SP - São Paulo","TO - Tocantins", }));
+        cbOrigem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbOrigemActionPerformed(evt);
+            }
+        });
 
-        cbDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC - Acre", "AL - Alagoas", "AM - Amazonas", "AP - Amapá", "BA - Bahia", "CE - Ceará","DF - Distrito Federal","ES - Espírito Santo","GO - Goiás","MA - Maranhão","MG - Minas Gerais","MS - Mato Grosso do Sul","MT - Mato Grosso","PA - pará","PB - Paraíba","PE - Penambuco","PI - Piauí","PR - Paraná","RJ - Rio de Janeiro","RN - Rio Grande do Norte","RO - Ronsônia","RR - Roraima","RS - Rio Grande do Sul","SC - Santa Catarina","SE - Sergipe","SP - São Paulo","TO - Tocantins", }));
+        cbDestino.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AC - Acre", "AL - Alagoas", "AM - Amazonas", "AP - Amapá", "BA - Bahia", "CE - Ceará","DF - Distrito Federal","ES - Espírito Santo","GO - Goiás","MA - Maranhão","MG - Minas Gerais","MS - Mato Grosso do Sul","MT - Mato Grosso","PA - Pará","PB - Paraíba","PE - Penambuco","PI - Piauí","PR - Paraná","RJ - Rio de Janeiro","RN - Rio Grande do Norte","RO - Rondônia","RR - Roraima","RS - Rio Grande do Sul","SC - Santa Catarina","SE - Sergipe","SP - São Paulo","TO - Tocantins", }));
         cbDestino.setPreferredSize(new java.awt.Dimension(154, 25));
         cbDestino.setSize(new java.awt.Dimension(154, 25));
 
@@ -311,6 +316,10 @@ public class CadastroViagem extends javax.swing.JFrame {
         //new TelaPreCadastro().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btCancActionPerformed
+
+    private void cbOrigemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbOrigemActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbOrigemActionPerformed
 
     /**
      * @param args the command line arguments

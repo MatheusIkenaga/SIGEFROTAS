@@ -18,7 +18,7 @@ public class Motorista {
     
         private int CD_MOTORISTA;
 	private String NM_MOTORISTA;
-        private String SOBRENOME_MOTORISTA;
+        private String TELEFONE_MOTORISTA;
         private String CPF_MOTORISTA;
 	private String RG_MOTORISTA;
         private String DT_NASC_MOTORISTA;
@@ -130,12 +130,12 @@ public class Motorista {
 		this.OBS_MOTORISTA=OBS_MOTORISTA;
 	}
         
-        public String getSobrenome_motorista(){
-		return SOBRENOME_MOTORISTA;
+        public String getTELEFONE_motorista(){
+		return TELEFONE_MOTORISTA;
 	}
 
-	public void setSobrenome_motorista(String SOBRENOME_MOTORISTA){
-		this.SOBRENOME_MOTORISTA=SOBRENOME_MOTORISTA;
+	public void setTELEFONE_motorista(String TELEFONE_MOTORISTA){
+		this.TELEFONE_MOTORISTA=TELEFONE_MOTORISTA;
 	}
         
         

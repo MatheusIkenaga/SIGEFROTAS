@@ -44,7 +44,7 @@ public class ConsultaMotorista extends javax.swing.JFrame {
         for (int i = 0; i < dao.selectConsulta().size();i++) {
             rowData[0] = list.get(i).getCD_MOTORISTA();
             rowData[1] = list.get(i).getNm_motorista();
-            rowData[2] = list.get(i).getSobrenome_motorista();
+            rowData[2] = list.get(i).getTELEFONE_motorista();
             rowData[3] = list.get(i).getCpf_motorista();
             rowData[4] = list.get(i).getRg_motorista();
             //1997-08-21
@@ -105,7 +105,7 @@ public class ConsultaMotorista extends javax.swing.JFrame {
         Object[] columnsName = new Object [10];
         columnsName[0] = "Código";
         columnsName[1] = "Nome";
-        columnsName[2] = "Sobrenome";
+        columnsName[2] = "Telefone";
         columnsName[3] = "CPF";
         columnsName[4] = "RG";
         columnsName[5] = "Data de Nascimento";
@@ -122,7 +122,7 @@ public class ConsultaMotorista extends javax.swing.JFrame {
         for (int i = 0; i < dao.selectConsulta().size();i++) {
             rowData[0] = list.get(i).getCD_MOTORISTA();
             rowData[1] = list.get(i).getNm_motorista();
-            rowData[2] = list.get(i).getSobrenome_motorista();
+            rowData[2] = list.get(i).getTELEFONE_motorista();
             rowData[3] = list.get(i).getCpf_motorista();
             rowData[4] = list.get(i).getRg_motorista();
             //1997-08-21
@@ -225,7 +225,7 @@ public class ConsultaMotorista extends javax.swing.JFrame {
 
 	motoristaalterar.setCD_MOTORISTA(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,0).toString()));
 	motoristaalterar.setNm_motorista(model.getValueAt(linhaSelecionadaIndex,1).toString());
-	motoristaalterar.setSobrenome_motorista(model.getValueAt(linhaSelecionadaIndex,2).toString());
+	motoristaalterar.setTELEFONE_motorista(model.getValueAt(linhaSelecionadaIndex,2).toString());
         motoristaalterar.setCpf_motorista(model.getValueAt(linhaSelecionadaIndex,3).toString());
         motoristaalterar.setRg_motorista(model.getValueAt(linhaSelecionadaIndex,4).toString());
         motoristaalterar.setDT_NASC_MOTORISTA(model.getValueAt(linhaSelecionadaIndex,5).toString());
@@ -255,7 +255,7 @@ public class ConsultaMotorista extends javax.swing.JFrame {
 
             motoristaexcluir.setCD_MOTORISTA(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,0).toString()));
             motoristaexcluir.setNm_motorista(model.getValueAt(linhaSelecionadaIndex,1).toString());
-            motoristaexcluir.setSobrenome_motorista(model.getValueAt(linhaSelecionadaIndex,2).toString());
+            motoristaexcluir.setTELEFONE_motorista(model.getValueAt(linhaSelecionadaIndex,2).toString());
             motoristaexcluir.setCpf_motorista(model.getValueAt(linhaSelecionadaIndex,3).toString());
             motoristaexcluir.setRg_motorista(model.getValueAt(linhaSelecionadaIndex,4).toString());
             motoristaexcluir.setDT_NASC_MOTORISTA(model.getValueAt(linhaSelecionadaIndex,5).toString());

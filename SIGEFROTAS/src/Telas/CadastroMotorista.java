@@ -49,7 +49,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
         
         this.tbCodMototista.setText(Integer.toString(motorista.getCD_MOTORISTA()));
         this.tbNomeCadMot.setText(motorista.getNm_motorista());
-        this.tbSobrenomeCadMot.setText(motorista.getSobrenome_motorista());
+        this.tbSobrenomeCadMot.setText(motorista.getTELEFONE_motorista());
         this.tbCpfCadMot.setText(motorista.getCpf_motorista());
         this.tbRG.setText(motorista.getRg_motorista());       
         
@@ -150,7 +150,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
 
         jLabel2.setText("Nome");
 
-        jLabel3.setText("Sobrenome");
+        jLabel3.setText("Telefone");
 
         jLabel4.setText(" CPF");
 
@@ -365,7 +365,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
             
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         motorista.setNm_motorista(this.tbNomeCadMot.getText());
-        motorista.setSobrenome_motorista(this.tbSobrenomeCadMot.getText());
+        motorista.setTELEFONE_motorista(this.tbSobrenomeCadMot.getText());
         motorista.setCpf_motorista(this.tbCpfCadMot.getText());
         motorista.setRg_motorista(this.tbRG.getText());
         motorista.setDT_NASC_MOTORISTA(df.format(this.dcDtNasc.getDate()));
@@ -381,7 +381,7 @@ public class CadastroMotorista extends javax.swing.JFrame {
             motorista.setCD_MOTORISTA(Integer.parseInt(this.tbCodMototista.getText()));
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             motorista.setNm_motorista(this.tbNomeCadMot.getText());
-            motorista.setSobrenome_motorista(this.tbSobrenomeCadMot.getText());
+            motorista.setTELEFONE_motorista(this.tbSobrenomeCadMot.getText());
             motorista.setCpf_motorista(this.tbCpfCadMot.getText());
             motorista.setRg_motorista(this.tbRG.getText());
             motorista.setDT_NASC_MOTORISTA(df.format(this.dcDtNasc.getDate()));

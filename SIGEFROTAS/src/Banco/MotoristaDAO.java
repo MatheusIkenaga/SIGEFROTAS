@@ -31,26 +31,6 @@ String dt;
     
     }
     
-    /*
-    public void preencheCB(JComboBox cb){
-        try{
-            String sql= "select * from VEICULO order by MODELO_VEICULO";
-            PreparedStatement stmt = conexao.prepareStatement(sql);
-            ResultSet rs=stmt.executeQuery();
-            
-            while(rs.next()){
-                String resultado = (rs.getString("MODELO_VEICULO")+ " | " + rs.getString("PLACA_VEICULO"));
-                cb.addItem(resultado);
-            }
-                
-        }
-        catch(Exception e){
-            JOptionPane.showMessageDialog(null,e);
-        }
-    
-    }
-    */
-    
     public void preencheCB(JComboBox cb){
         try{
             String sql= "select * from MOTORISTA order by NM_MOTORISTA";
@@ -58,7 +38,7 @@ String dt;
             ResultSet rs=stmt.executeQuery();
             
             while(rs.next()){
-                String resultado = (rs.getString("NM_MOTORISTA")+" "+rs.getString("SNM_MOTORISTA"));
+                String resultado = (rs.getString("CD_MOTORISTA")+" "+rs.getString("NM_MOTORISTA"));
                 cb.addItem(resultado);
             }
                 
@@ -73,7 +53,7 @@ String dt;
         String sql = "insert into MOTORISTA "
                 //+ "(CD_MOTORISTA, "
                 + "(NM_MOTORISTA, "
-                + "SNM_MOTORISTA, "
+                + "TEL_MOTORISTA, "
                 + "CPF_MOTORISTA, "
                 + "RG_MOTORISTA, "
                 + "DT_NASC_MOTORISTA, "
@@ -87,7 +67,7 @@ String dt;
 			PreparedStatement stmt = conexao.prepareStatement(sql);
 
 			stmt.setString(1, motorista.getNm_motorista());
-                        stmt.setString(2, motorista.getSobrenome_motorista());
+                        stmt.setString(2, motorista.getTELEFONE_motorista());
                         stmt.setString(3, motorista.getCpf_motorista());
                         stmt.setString(4, motorista.getRg_motorista());
                         stmt.setString(5, motorista.getDT_NASC_MOTORISTA());
@@ -157,7 +137,7 @@ String dt;
 					Motorista motorista = new Motorista();
 					motorista.setCD_MOTORISTA(rs.getInt("CD_MOTORISTA"));
 					motorista.setNm_motorista(rs.getString("NM_MOTORISTA"));
-					motorista.setSobrenome_motorista(rs.getString("SNM_MOTORISTA"));
+					motorista.setTELEFONE_motorista(rs.getString("TEL_MOTORISTA"));
                                         motorista.setCpf_motorista(rs.getString("CPF_MOTORISTA"));
                                         motorista.setRg_motorista(rs.getString("RG_MOTORISTA"));
                                         motorista.setDT_NASC_MOTORISTA(rs.getString("DT_NASC_MOTORISTA"));
@@ -182,7 +162,7 @@ String dt;
 public void update(Motorista motorista){
         String sql = "update MOTORISTA set "
                 + "NM_MOTORISTA=?, "
-                + "SNM_MOTORISTA=?, "
+                + "TEL_MOTORISTA=?, "
                 + "CPF_MOTORISTA=? , "
                 + "RG_MOTORISTA=?,"
                 + "DT_NASC_MOTORISTA=?,"
@@ -195,7 +175,7 @@ public void update(Motorista motorista){
 			PreparedStatement stmt = conexao.prepareStatement(sql);
                         
                         stmt.setString(1, motorista.getNm_motorista());
-                        stmt.setString(2, motorista.getSobrenome_motorista());
+                        stmt.setString(2, motorista.getTELEFONE_motorista());
                         stmt.setString(3, motorista.getCpf_motorista());
                         stmt.setString(4, motorista.getRg_motorista());
                         stmt.setString(5, motorista.getDT_NASC_MOTORISTA());
