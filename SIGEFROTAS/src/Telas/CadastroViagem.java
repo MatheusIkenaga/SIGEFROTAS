@@ -72,7 +72,7 @@ public class CadastroViagem extends javax.swing.JFrame {
         cbOrigem = new javax.swing.JComboBox<>();
         cbDestino = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
-        jftValorViagem = new javax.swing.JMoneyField();
+        jftValorViagem = new javax.swing.JFormattedTextField();
         jLabel14 = new javax.swing.JLabel();
         tbCodViagem = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
