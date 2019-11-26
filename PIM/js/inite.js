@@ -17,3 +17,7 @@ function errobt(){
 function cadastrook(){
     alert("Cadastro Efetuado com Sucesso!")
 };	
+
+$(".dropdown-trigger").dropdown({
+    hover: false
+});

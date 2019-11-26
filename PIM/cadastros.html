@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <img src="img/png/logoFundo.png" alt="logo">
+        <ul>
+            <li><a href="#"><img src="img/svg/cadastros.svg" alt="cadastros"></a></li>
+            <li><a href="#"><img src="img/svg/gerFrotas.svg" alt="Gerenciamento de Frotas"></a></li>
+            <li><a href="#"><img src="img/svg/locacao.svg" alt="Locação de Veículos"></a></li>
+            <li><a href="#"><img src="img/svg/financeiro.svg" alt="Financeiro"></a></li>
+            <li><a href="#"><img src="img/svg/comprasAbaste.svg" alt="Compras e Abastecimentos"></a></li>
+            <li><a href="#"><img src="img/svg/manutencao.svg" alt="Manutenção"></a></li>
+        </ul>
+    </header>
+    <div class="cadastrosBar"></div>
+    <nav class="list">
+        <table>
+            <tr>
+                <td>Cadastro Motorista</td>
+                <td>Cadastro Veículo</td>
+                <td>Cadastro Viagem</td>
+                <td>Cadastro Aluguel</td>
+                <td>Cadastro Peças</td>
+                <td>Cadastro Multas e Sinistros</td>
+            </tr>
+            <tr>
+                <td><button type="button">Incluir</button></td>
+                <td><button type="button">Incluir</button></td>
+                <td><button type="button">Incluir</button></td>
+                <td><button type="button">Incluir</button></td>
+                <td><button type="button">Incluir</button></td>
+                <td><button type="button">Incluir</button></td>
+            </tr>
+            <tr>
+                <td><button type="button">Consultar</button></td>
+                <td><button type="button">Consultar</button></td>
+                <td><button type="button">Consultar</button></td>
+                <td><button type="button">Consultar</button></td>
+                <td><button type="button">Consultar</button></td>
+                <td><button type="button">Consultar</button></td>
+            </tr>
+        </table>
+    </nav>
+
+    <div class="overlay" id="CadMotorista">
+        <span onclick="popOpen('#CadMotorista');" class="close"><img src="img/png/close_hires.png" alt="patinete"></span>
+        <form class="wrapper">
+            <h1>Cadastro de Motoristas</h1>
+            <section>
+                <label>Código do Motorista
+                    <input type="text" name="codMotorista" id="codMotorista">
+                </label>
+            </section>
+            <section>
+                <label>Nome
+                    <input type="text" name="nomeMotorista" id="nomeMotorista">
+                </label>
+                <label>Telefone
+                    <input type="tel" name="telMotorista" id="telMotorista">
+                </label>
+            </section>
+            <section>
+                <label>CPF
+                    <input type="number" name="cpfMotorista" id="cpfMotorista">
+                </label>
+                <label>RG
+                    <input type="number" name="rgMotorista" id="rgMotorista">
+                </label>
+                <label>Data de Nascimento
+                    <input type="date" name="dtNascMotorista" id="dtNascMotorista">
+                </label>
+            </section>
+            <section>
+                <label>Sexo
+                    <select name="sexoMotorista" id="sexoMotorista">
+                        <option value="Masculino" disabled>Escolha</option>
+                        <option value="Masculino">Masculino</option>
+                        <option value="Feminino">Feminino</option>
+                        <option value="N/D">Outro</option>
+                    </select>
+                </label>
+                <label>Número de CNH
+                    <input type="number" name="cnhMotorista" id="cnhMotorista">
+                </label>
+                <label>Vencimento CNH
+                    <input type="date" name="dtCnhMotorista" id="dtCnhMotorista">
+                </label>
+            </section>
+            <section>
+                <label>Observações
+                    <textarea name="obsMotorista" id="obsMotorista"></textarea>
+                </label>
+            </section>
+            <button type="button" class="limpaCampos">Limpar</button>
+            <button type="button" class="cancelarInput">Cancelar</button>
+            <button type="button" class="SalvarDados">Salvar</button>
+        </form>
+    </div>
+</body>
+
+</html>
