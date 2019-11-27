@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Banco;
+package Banco.Motorista;
 
+import Banco.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -38,7 +39,7 @@ String dt;
             ResultSet rs=stmt.executeQuery();
             
             while(rs.next()){
-                String resultado = (rs.getString("NM_MOTORISTA")+" ("+rs.getString("CPF_MOTORISTA")+")");
+                String resultado = (rs.getString("CD_MOTORISTA")+"-"+ rs.getString("NM_MOTORISTA")+" ("+rs.getString("CPF_MOTORISTA")+")");
                 cb.addItem(resultado);
             }
                 

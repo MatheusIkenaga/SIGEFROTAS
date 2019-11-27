@@ -1,10 +1,10 @@
 //<<<<<<< HEAD:SIGEFROTAS/src/CadastroVeiculo.java
 //=======
-package Telas;
+package Telas.Veiculo;
 //>>>>>>> 7a189340bc241aaa76b9f069ffa4514956f47860:SIGEFROTAS/src/Telas/CadastroVeiculo.java
 
-import Banco.Veiculo;
-import Banco.VeiculoDAO;
+import Banco.Veiculo.Veiculo;
+import Banco.Veiculo.VeiculoDAO;
 import java.awt.Frame;
 
 /*
@@ -124,7 +124,6 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         btVeiculoProprio = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
 
         tbCodVeic.setEnabled(false);

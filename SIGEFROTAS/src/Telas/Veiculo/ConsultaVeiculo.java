@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Telas;
+package Telas.Veiculo;
 
 import java.sql.ResultSet;
-import Banco.Veiculo;
-import Banco.VeiculoDAO;
+import Banco.Veiculo.Veiculo;
+import Banco.Veiculo.VeiculoDAO;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 import java.util.List;

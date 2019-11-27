@@ -1,7 +1,7 @@
-package Telas;
+package Telas.Motorista;
 
-import Banco.Motorista;
-import Banco.MotoristaDAO;
+import Banco.Motorista.Motorista;
+import Banco.Motorista.MotoristaDAO;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.ParseException;
