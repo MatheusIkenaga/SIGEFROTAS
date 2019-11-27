@@ -3,22 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Telas;
+package Telas.Modulos;
 
+import Telas.CadastroViagem;
 import java.awt.Frame;
 
 /**
  *
  * @author matheusikenaga
  */
-public class Modulo6Manut extends javax.swing.JFrame {
+public class Modulo2GerFrota extends javax.swing.JFrame {
 
     /**
-     * Creates new form Modulo6
+     * Creates new form Modulo2
      */
-    public Modulo6Manut() {
+    public Modulo2GerFrota() {
         initComponents();
         this.setExtendedState(Frame.MAXIMIZED_BOTH);
+               
     }
 
     /**
@@ -30,6 +32,9 @@ public class Modulo6Manut extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
+        btInsViagem = new javax.swing.JButton();
+        btConsultViagem = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btSIGEGFROTAS = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -42,6 +47,17 @@ public class Modulo6Manut extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel3.setText("Cadastro Viagem");
+
+        btInsViagem.setText("Incluir");
+        btInsViagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInsViagemActionPerformed(evt);
+            }
+        });
+
+        btConsultViagem.setText("Consultar");
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setAlignmentX(0.0F);
@@ -159,7 +175,7 @@ public class Modulo6Manut extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 102, 0));
+        jPanel4.setBackground(new java.awt.Color(51, 0, 153));
         jPanel4.setSize(new java.awt.Dimension(0, 9));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -179,9 +195,9 @@ public class Modulo6Manut extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(btSIGEGFROTAS)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(340, Short.MAX_VALUE))
+                .addContainerGap(346, Short.MAX_VALUE))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -200,17 +216,37 @@ public class Modulo6Manut extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(357, 357, 357)
+                .addComponent(jLabel3)
+                .addGap(136, 136, 136)
+                .addComponent(btInsViagem)
+                .addGap(118, 118, 118)
+                .addComponent(btConsultViagem)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1292, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 601, Short.MAX_VALUE))
+                .addGap(148, 148, 148)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel3))
+                    .addComponent(btInsViagem)
+                    .addComponent(btConsultViagem))
+                .addContainerGap(424, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btInsViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsViagemActionPerformed
+        new CadastroViagem().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btInsViagemActionPerformed
 
     private void btSIGEGFROTASActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSIGEGFROTASActionPerformed
         new TelaInicial().setVisible(true);
@@ -264,6 +300,8 @@ public class Modulo6Manut extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btConsultViagem;
+    private javax.swing.JButton btInsViagem;
     private javax.swing.JButton btModCadastros;
     private javax.swing.JButton btModComprasEAbast;
     private javax.swing.JButton btModComprasEAbast1;
@@ -271,6 +309,7 @@ public class Modulo6Manut extends javax.swing.JFrame {
     private javax.swing.JButton btModGerFrota;
     private javax.swing.JButton btModLocacao;
     private javax.swing.JButton btSIGEGFROTAS;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

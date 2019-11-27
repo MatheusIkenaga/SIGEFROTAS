@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Telas;
+package Telas.Modulos;
 
 import java.awt.Frame;
 
@@ -11,12 +11,12 @@ import java.awt.Frame;
  *
  * @author matheusikenaga
  */
-public class Modulo3Locacao extends javax.swing.JFrame {
+public class Modulo6Manut extends javax.swing.JFrame {
 
     /**
-     * Creates new form Modulo3
+     * Creates new form Modulo6
      */
-    public Modulo3Locacao() {
+    public Modulo6Manut() {
         initComponents();
         this.setExtendedState(Frame.MAXIMIZED_BOTH);
     }
@@ -30,9 +30,6 @@ public class Modulo3Locacao extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel4 = new javax.swing.JLabel();
-        btInsAluguel = new javax.swing.JButton();
-        btConsultAluguel = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         btSIGEGFROTAS = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -45,12 +42,6 @@ public class Modulo3Locacao extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        jLabel4.setText("Cadastro Aluguel");
-
-        btInsAluguel.setText("Incluir");
-
-        btConsultAluguel.setText("Consultar");
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setAlignmentX(0.0F);
@@ -168,7 +159,7 @@ public class Modulo3Locacao extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel4.setBackground(new java.awt.Color(255, 0, 0));
+        jPanel4.setBackground(new java.awt.Color(255, 102, 0));
         jPanel4.setSize(new java.awt.Dimension(0, 9));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -188,9 +179,9 @@ public class Modulo3Locacao extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(btSIGEGFROTAS)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 266, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 260, Short.MAX_VALUE)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(346, Short.MAX_VALUE))
+                .addContainerGap(340, Short.MAX_VALUE))
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
@@ -209,28 +200,13 @@ public class Modulo3Locacao extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(364, 364, 364)
-                .addComponent(jLabel4)
-                .addGap(136, 136, 136)
-                .addComponent(btInsAluguel)
-                .addGap(118, 118, 118)
-                .addComponent(btConsultAluguel)
-                .addContainerGap(377, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1292, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(226, 226, 226)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jLabel4))
-                    .addComponent(btInsAluguel)
-                    .addComponent(btConsultAluguel))
-                .addContainerGap(346, Short.MAX_VALUE))
+                .addGap(0, 601, Short.MAX_VALUE))
         );
 
         pack();
@@ -288,8 +264,6 @@ public class Modulo3Locacao extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btConsultAluguel;
-    private javax.swing.JButton btInsAluguel;
     private javax.swing.JButton btModCadastros;
     private javax.swing.JButton btModComprasEAbast;
     private javax.swing.JButton btModComprasEAbast1;
@@ -297,7 +271,6 @@ public class Modulo3Locacao extends javax.swing.JFrame {
     private javax.swing.JButton btModGerFrota;
     private javax.swing.JButton btModLocacao;
     private javax.swing.JButton btSIGEGFROTAS;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

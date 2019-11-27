@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Telas;
+package Telas.Motorista;
 
-import Banco.Motorista;
-import Banco.MotoristaDAO;
+import Banco.Motorista.Motorista;
+import Banco.Motorista.MotoristaDAO;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;

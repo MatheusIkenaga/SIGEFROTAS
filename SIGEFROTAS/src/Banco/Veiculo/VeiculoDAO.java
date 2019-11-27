@@ -3,9 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Banco;
+package Banco.Veiculo;
 
-import Telas.CadastroVeiculo;
+import Banco.ConnectionFactory;
+import Telas.Veiculo.CadastroVeiculo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,7 +37,7 @@ private Connection conexao;
             ResultSet rs=stmt.executeQuery();
             
             while(rs.next()){
-                String resultado = (rs.getString("MODELO_VEICULO")+ " | " + rs.getString("PLACA_VEICULO"));
+                String resultado = (rs.getString("CD_VEICULO")+"- "+rs.getString("MODELO_VEICULO")+ " (" + rs.getString("PLACA_VEICULO")+")");
                 cb.addItem(resultado);
             }
                 

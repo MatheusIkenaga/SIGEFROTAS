@@ -1,4 +1,4 @@
-package Telas;
+package Telas.Modulos;
 
 import java.awt.Frame;
 
