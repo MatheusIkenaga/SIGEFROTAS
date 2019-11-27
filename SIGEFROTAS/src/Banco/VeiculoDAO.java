@@ -60,8 +60,9 @@ private Connection conexao;
                 + "TIPO_VEICULO,DISPO_VEICULO, "
                 + "SEGURO_VEICULO, "
                 + "NUM_APOLICE_VEICULO ,"
-                + "OBS_VEICULO) "
-                + "values (?,?,?,?,?,?,?,?,?,?,?,?)";
+                + "OBS_VEICULO,"
+                + "VEICULO_PROPRIO) "
+                + "values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
         
         try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);                        
@@ -78,6 +79,10 @@ private Connection conexao;
                         stmt.setString(10, veiculo.getSeguro_veiculo());
                         stmt.setString(11, veiculo.getNUM_APOLICE_VEICULO());
                         stmt.setString(12, veiculo.getObs_veiculo());
+                        stmt.setString(13, veiculo.getVEICULO_PROPRIO());
+                        
+                        
+                        //veiculo.setVEICULO_PROPRIO(this.btVeiculoProprio.isSelected());
                         
                         
 			stmt.execute();
@@ -135,6 +140,7 @@ private Connection conexao;
                                         veiculo.setSeguro_veiculo(rs.getString("SEGURO_VEICULO"));
                                         veiculo.setNUM_APOLICE_VEICULO(rs.getString("NUM_APOLICE_VEICULO"));
                                         veiculo.setObs_veiculo(rs.getString("OBS_VEICULO"));
+                                        veiculo.setVEICULO_PROPRIO(rs.getString("VEICULO_PROPRIO"));
 
 					veiculos.add(veiculo);
 				}
@@ -165,7 +171,8 @@ private Connection conexao;
                 + "DISPO_VEICULO=?,"
                 + "SEGURO_VEICULO=?,"
                 + "NUM_APOLICE_VEICULO=?,"
-                + "OBS_VEICULO=? where CD_VEICULO=?";
+                + "OBS_VEICULO=?,"
+                + "VEICULO_PROPRIO=? where CD_VEICULO=?";
 
 		try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -181,7 +188,9 @@ private Connection conexao;
                         stmt.setString(10,veiculo.getSeguro_veiculo());
 			stmt.setString(11, veiculo.getNUM_APOLICE_VEICULO());
                         stmt.setString(12,veiculo.getObs_veiculo());
-                        stmt.setInt(13,veiculo.getCD_VEICULO());
+                        stmt.setString(13,veiculo.getVEICULO_PROPRIO());
+                        stmt.setInt(14,veiculo.getCD_VEICULO());
+                        
                         
 			stmt.execute();
 			stmt.close();
