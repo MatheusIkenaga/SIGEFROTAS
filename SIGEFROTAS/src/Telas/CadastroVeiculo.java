@@ -23,6 +23,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     private VeiculoDAO dao= new VeiculoDAO();
     private Veiculo veiculo = new Veiculo();
 
+    
     /**
      * Creates new form Cad_Veiculo
      */
@@ -39,32 +40,11 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         this.cbDispoVeic.setSelectedItem(null);
         this.cbSeguradoraVeic.setSelectedItem(null);
         this.setVisible(true);
-//>>>>>>> 7a189340bc241aaa76b9f069ffa4514956f47860:SIGEFROTAS/src/Telas/CadastroVeiculo.java
-    }
-    /*
-    public CadastroVeiculo(int CD, String Marca, String Modelo, String Cor, String Placa, int Hodometro, int Ano_veic, int Ano_mod, String Tipo, String Dispo, String Seguro, String Num_Apo, String Obs){
-        initComponents();
-
-        this.setLocationRelativeTo(null);
         
-        this.tbCodVeic.setText(Integer.toString(CD));
-        this.tbMarcaVeic.setText(Marca);
-        this.tbModeloVeic.setText(Modelo);
-        this.tbCorVeic.setText(Cor);
-        this.tbPlacaVeic.setText(Placa);
-        this.tbHodometroVeic.setText(Integer.toString(Hodometro));
-        this.cbAnoModelo.setSelectedItem(Integer.toString(Ano_veic));
-        this.cbAnoFabricacao.setSelectedItem(Integer.toString(Ano_mod));
-        this.cbTipoVeic.setSelectedItem(Tipo);
-        this.cbDispoVeic.setSelectedItem(Dispo);
-        this.cbSeguradoraVeic.setSelectedItem(Seguro);
-        this.tbNumApolice.setText(Num_Apo);
-        this.tbObsVeic.setText(Obs);
-        this.setVisible(true);
-    
-    
+        //Fazer JToggleButton ficar marcado:
+        //this.btVeiculoProprio.doClick();
     }
-    */
+    
         public CadastroVeiculo(Veiculo veiculo){
         initComponents();
 
@@ -83,6 +63,17 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         this.cbSeguradoraVeic.setSelectedItem(veiculo.getSeguro_veiculo());
         this.tbNumApolice.setText(veiculo.getNUM_APOLICE_VEICULO());
         this.tbObsVeic.setText(veiculo.getObs_veiculo());
+        
+        if(veiculo.getVEICULO_PROPRIO().equals("Sim")){
+                this.btVeiculoProprio.setSelected(true);
+            }
+        if(veiculo.getVEICULO_PROPRIO().equals("Não")){
+                this.btVeiculoProprio.setSelected(false);
+            }
+        
+        
+        
+        
         this.setVisible(true);
     
     
@@ -130,6 +121,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         btLimparVeic = new javax.swing.JButton();
         tbModeloVeic = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
+        btVeiculoProprio = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1280, 720));
@@ -309,6 +301,10 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         getContentPane().add(jLabel15);
         jLabel15.setBounds(490, 30, 233, 30);
 
+        btVeiculoProprio.setText("Veículo Próprio");
+        getContentPane().add(btVeiculoProprio);
+        btVeiculoProprio.setBounds(1070, 100, 139, 29);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -355,6 +351,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         this.cbSeguradoraVeic.setSelectedItem(null);
         this.tbNumApolice.setText("");
         this.tbObsVeic.setText("");
+        this.btVeiculoProprio.setSelected(false);
     }//GEN-LAST:event_btLimparVeicActionPerformed
 
     private void tbObsVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbObsVeicActionPerformed
@@ -392,6 +389,11 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             veiculo.setSeguro_veiculo(this.cbSeguradoraVeic.getSelectedItem().toString());
             veiculo.setNUM_APOLICE_VEICULO(this.tbNumApolice.getText());
             veiculo.setObs_veiculo(this.tbObsVeic.getText());
+            if(this.btVeiculoProprio.isSelected()){
+                veiculo.setVEICULO_PROPRIO("Sim");
+            }else{
+                veiculo.setVEICULO_PROPRIO("Não");
+            }
             dao.insert(veiculo);
         
             this.dispose();
@@ -410,7 +412,11 @@ public class CadastroVeiculo extends javax.swing.JFrame {
             veiculo.setSeguro_veiculo(this.cbSeguradoraVeic.getSelectedItem().toString());
             veiculo.setNUM_APOLICE_VEICULO(this.tbNumApolice.getText());
             veiculo.setObs_veiculo(this.tbObsVeic.getText());
-            
+            if(this.btVeiculoProprio.isSelected()){
+                veiculo.setVEICULO_PROPRIO("Sim");
+            }else{
+                veiculo.setVEICULO_PROPRIO("Não");
+            }
             dao.update(veiculo);
             
             new ConsultaVeiculo();
@@ -466,6 +472,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     private javax.swing.JButton btCancelarVeic;
     private javax.swing.JButton btLimparVeic;
     private javax.swing.JButton btSalvarVeic;
+    private javax.swing.JToggleButton btVeiculoProprio;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> cbAnoFabricacao;
     private javax.swing.JComboBox<String> cbAnoModelo;

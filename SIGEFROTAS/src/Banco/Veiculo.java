@@ -23,6 +23,7 @@ public class Veiculo{
         private String SEGURO_VEICULO;
 	private String NUM_APOLICE_VEICULO;	
 	private String OBS_VEICULO;
+        private String VEICULO_PROPRIO;
 
         /*
     public Veiculo() {
@@ -134,6 +135,14 @@ public class Veiculo{
 		this.NUM_APOLICE_VEICULO=NUM_APOLICE_VEICULO;
 	}
         
+        
+        public String getVEICULO_PROPRIO(){
+		return VEICULO_PROPRIO;
+	}
+
+	public void setVEICULO_PROPRIO(String VEICULO_PROPRIO){
+		this.VEICULO_PROPRIO=VEICULO_PROPRIO;
+	}
         /*
         
         public Veiculo(int CD_VEICULO, String MARCA_VEICULO, String MODELO_VEICULO, String COR_VEICULO, String PLACA_VEICULO, int HODOM_VEICULO, int ANO_VEICULO, int ANO_MOD_VEICULO, String TIPO_VEICULO, String DISPO_VEICULO, String SEGURO_VEICULO, String NUM_APOLICE_VEICULO, String OBS_VEICULO){
