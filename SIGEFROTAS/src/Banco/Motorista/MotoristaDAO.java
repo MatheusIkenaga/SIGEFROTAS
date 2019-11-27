@@ -32,6 +32,28 @@ String dt;
     
     }
     
+    public String selectViagem(int cd){
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String resultado = null;
+        
+        try{
+            stmt = this.conexao.prepareStatement("select * from MOTORISTA where CD_MOTORISTA=?");
+            stmt.setInt(1, cd);
+            rs = stmt.executeQuery();
+            
+            
+            resultado = (rs.getString("NM_MOTORISTA"));
+            rs.close();
+            stmt.close();
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return resultado;
+        
+    }
+    
     public void preencheCB(JComboBox cb){
         try{
             String sql= "select * from MOTORISTA order by NM_MOTORISTA";

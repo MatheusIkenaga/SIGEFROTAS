@@ -5,7 +5,7 @@
  */
 package Telas.Modulos;
 
-import Telas.CadastroViagem;
+import Telas.Viagem.CadastroViagem;
 import java.awt.Frame;
 
 /**

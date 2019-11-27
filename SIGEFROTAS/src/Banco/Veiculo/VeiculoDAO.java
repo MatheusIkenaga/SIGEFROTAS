@@ -29,6 +29,27 @@ private Connection conexao;
         this.conexao = new ConnectionFactory().getConnection("root", "root1234");
     
     }
+    public String selectViagem(int cd){
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String resultado = null;
+        
+        try{
+            stmt = this.conexao.prepareStatement("select * from VEICULO where CD_VEICULO=?");
+            stmt.setInt(1, cd);
+            rs = stmt.executeQuery();
+            
+            
+            resultado = (rs.getString("MODELO_VEICULO")+ " (" + rs.getString("PLACA_VEICULO")+")");
+            rs.close();
+            stmt.close();
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return resultado;
+        
+    }
     
     public void preencheCB(JComboBox cb){
         try{

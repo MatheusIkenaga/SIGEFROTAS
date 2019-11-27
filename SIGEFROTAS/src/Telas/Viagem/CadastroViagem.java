@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Telas;
+package Telas.Viagem;
 
 import Banco.Motorista.MotoristaDAO;
 import Banco.Veiculo.VeiculoDAO;

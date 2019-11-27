@@ -8,10 +8,11 @@ package Telas.Modulos;
 
 import Telas.CadastroPeca;
 import Telas.Veiculo.CadastroVeiculo;
-import Telas.CadastroViagem;
+import Telas.Viagem.CadastroViagem;
 import Telas.Veiculo.ConsultaVeiculo;
 import Telas.Motorista.ConsultaMotorista;
 import Telas.Motorista.CadastroMotorista;
+import Telas.Viagem.ConsultaViagem;
 import java.awt.Frame;
 
 /**
@@ -128,6 +129,11 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
         });
 
         btConsultViagem.setText("Consultar");
+        btConsultViagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultViagemActionPerformed(evt);
+            }
+        });
 
         btInsViagem.setText("Incluir");
         btInsViagem.addActionListener(new java.awt.event.ActionListener() {
@@ -393,7 +399,7 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1292, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1292, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -486,6 +492,12 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btModComprasEAbast1ActionPerformed
+
+    private void btConsultViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultViagemActionPerformed
+        new ConsultaViagem().setVisible(true);
+        this.dispose();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btConsultViagemActionPerformed
 
     /**
      * @param args the command line arguments
