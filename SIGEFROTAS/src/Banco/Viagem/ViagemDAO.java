@@ -32,6 +32,89 @@ String dt;
     
     }
     
+    public String selectMotViagem(int cd){
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String resultado = null;
+        
+        try{
+            
+            stmt = this.conexao.prepareStatement("select m.cd_motorista, "
+                    + "m.nm_motorista, m.cpf_motorista from GER_FROTA_VIAGEM v "
+                    + "left join motorista m on m.cd_motorista = v.cd_motorista_viagem "
+                    + "where v.CD_VIAGEM="+cd);
+            rs = stmt.executeQuery();
+            if(rs.next()){
+            resultado = (rs.getString("CD_MOTORISTA")+"-"+rs.getString("NM_MOTORISTA")+" ("+rs.getString("CPF_MOTORISTA")+")");
+            }
+            rs.close();
+            stmt.close();
+            System.out.println(resultado);
+        
+        }catch(Exception e){
+            
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return resultado;
+        
+    }
+    
+    public String selectVeicViagem(int cd){
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String resultado = null;
+        
+        try{
+            
+            stmt = this.conexao.prepareStatement("select veic.cd_veiculo, "
+                    + "veic.modelo_veiculo, veic.placa_veiculo from GER_FROTA_VIAGEM v "
+                    + "left join veiculo veic on veic.cd_veiculo = v.cd_veiculo_viagem "
+                    + "where v.cd_viagem="+cd);
+            rs = stmt.executeQuery();
+            if(rs.next()){
+            resultado = (rs.getString("CD_VEICULO")+"- "+rs.getString("MODELO_VEICULO")+" ("+rs.getString("PLACA_VEICULO")+")");
+            }
+            rs.close();
+            stmt.close();
+            System.out.println(resultado);
+        
+        }catch(Exception e){
+            
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return resultado;
+        
+    }
+    
+    /*
+    select m.cd_motorista, m.nm_motorista, m.cpf_motorista
+        from GER_FROTA_VIAGEM v 
+        left join motorista m on m.cd_motorista = v.cd_motorista_viagem
+        where v.CD_VIAGEM=6
+    */
+    
+    public String selectViagem(int cd, String retorno){
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String resultado = null;
+        
+        try{
+            
+            stmt = this.conexao.prepareStatement("select * from GER_FROTA_VIAGEM where CD_VIAGEM="+cd);
+            rs = stmt.executeQuery();
+            if(rs.next()){
+            resultado = (rs.getString(retorno));
+            }
+            rs.close();
+            stmt.close();
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return resultado;
+        
+    }
+    
  /*INSERT INTO `GER_FROTAS`.`GER_FROTA_VIAGEM` 
 (`ORIGEM_VIAGEM`, `EST_ORIGEM_VIAGEM`, `DEST_VIAGEM`, 
 `EST_DEST_VIAGEM`, `KM_VIAGEM`, `TIPO_VIAGEM`, `MOTIVO_VIAGEM`
@@ -128,8 +211,8 @@ VALUES ('Espírito Santo', 'ES', 'Sao paulo', 'SP',
                 + "TIPO_VIAGEM=?,"
                 + "MOTIVO_VIAGEM=?,"
                 + "VALOR_VIAGEM=?,"
-                + "OBS_VIAGEM=?"
-                + "CD_MOTORISTA_VIAGEM=?"
+                + "OBS_VIAGEM=?,"
+                + "CD_MOTORISTA_VIAGEM=?,"
                 + "CD_VEICULO_VIAGEM=? where CD_VIAGEM=?";
         
         /*"insert into GER_FROTA_VIAGEM "

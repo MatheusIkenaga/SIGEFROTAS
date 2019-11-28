@@ -41,6 +41,30 @@ public class CadastroViagem extends javax.swing.JFrame {
     }
 
     
+    public CadastroViagem(Viagem viagem) {
+        //this.setLocationRelativeTo(null);
+        initComponents();
+        this.setLocationRelativeTo(null);
+        veicDAO.preencheCB(cbVeiculo);
+        motoDAO.preencheCB(cbMotorista);
+        this.tbCodViagem.setText(Integer.toString(viagem.getCD_VIAGEM()));
+        
+        this.cbMotorista.setSelectedItem(dao.selectMotViagem(viagem.getCD_VIAGEM()));
+//(rs.getString("CD_VEICULO")+"- "+rs.getString("MODELO_VEICULO")+ " (" + rs.getString("PLACA_VEICULO")+")");
+        this.cbVeiculo.setSelectedItem(dao.selectVeicViagem(viagem.getCD_VIAGEM()));        
+        this.tbCidadeOrigem.setText(viagem.getORIGEM_VIAGEM());
+        this.cbOrigem.setSelectedItem(viagem.getEST_ORIGEM_VIAGEM());
+        this.tbCidadeDestino.setText(viagem.getORIGEM_VIAGEM());
+        this.cbDestino.setSelectedItem(viagem.getEST_DEST_VIAGEM());
+        this.tbDistanciaViagem.setText(viagem.getKM_VIAGEM().toString());
+        this.cbTipoViagem.setSelectedItem(viagem.getTIPO_VIAGEM());
+        this.tbMotivoViagem.setText(viagem.getMOTIVO_VIAGEM());
+        this.tbValorViagem.setText(viagem.getVALOR_VIAGEM().toString());
+        this.tbObsViagem.setText(viagem.getOBS_VIAGEM());
+        
+        this.setVisible(true);
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -310,10 +334,12 @@ public class CadastroViagem extends javax.swing.JFrame {
     }//GEN-LAST:event_btLimparActionPerformed
 
     private void btCancActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        //new TelaPreCadastro().setVisible(true);
+        if(this.tbCodViagem == null){
         this.dispose();
+        }else{
+        new ConsultaViagem();
+        this.dispose();
+        }
     }//GEN-LAST:event_btCancActionPerformed
 
     private void cbOrigemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbOrigemActionPerformed
@@ -322,29 +348,62 @@ public class CadastroViagem extends javax.swing.JFrame {
 
     private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
         
-        viagem.setORIGEM_VIAGEM(this.tbCidadeOrigem.getText());
-        viagem.setEST_ORIGEM_VIAGEM(this.cbOrigem.getSelectedItem().toString());
-        viagem.setDEST_VIAGEM(this.tbCidadeDestino.getText());
-        viagem.setEST_DEST_VIAGEM(this.cbDestino.getSelectedItem().toString());
-        viagem.setKM_VIAGEM(Float.parseFloat(this.tbDistanciaViagem.getText()));
-        viagem.setTIPO_VIAGEM(this.cbTipoViagem.getSelectedItem().toString());
-        viagem.setMOTIVO_VIAGEM(this.tbMotivoViagem.getText());
-        viagem.setVALOR_VIAGEM(Float.parseFloat(this.tbValorViagem.getText()));
-        viagem.setOBS_VIAGEM(this.tbObsViagem.getText());
+        if(this.tbCodViagem.getText().isEmpty()){
+            viagem.setORIGEM_VIAGEM(this.tbCidadeOrigem.getText());
+            viagem.setEST_ORIGEM_VIAGEM(this.cbOrigem.getSelectedItem().toString());
+            viagem.setDEST_VIAGEM(this.tbCidadeDestino.getText());
+            viagem.setEST_DEST_VIAGEM(this.cbDestino.getSelectedItem().toString());
+            viagem.setKM_VIAGEM(Float.parseFloat(this.tbDistanciaViagem.getText()));
+            viagem.setTIPO_VIAGEM(this.cbTipoViagem.getSelectedItem().toString());
+            viagem.setMOTIVO_VIAGEM(this.tbMotivoViagem.getText());
+            viagem.setVALOR_VIAGEM(Float.parseFloat(this.tbValorViagem.getText()));
+            viagem.setOBS_VIAGEM(this.tbObsViagem.getText());
         
+            //Passa o Motorista selecionado para o Obj Viagem
+            String cdMotViagem = this.cbMotorista.getSelectedItem().toString();
+            int iend = cdMotViagem.indexOf("-");
+            if (iend != -1){
+            viagem.setCD_MOTORISTA_VIAGEM(Integer.parseInt(cdMotViagem.substring(0, iend)));
+            }
         
-        String cdMotViagem = this.cbMotorista.getSelectedItem().toString();
-        int iend = cdMotViagem.indexOf("-");
-        if (iend != -1){
-        viagem.setCD_MOTORISTA_VIAGEM(Integer.parseInt(cdMotViagem.substring(0, iend)));
+            //Passa o Veiculo selecionado para o Obj Viagem
+            String cdVeicViagem = this.cbVeiculo.getSelectedItem().toString();
+            int iend2 = cdVeicViagem.indexOf("-");
+            if (iend2 != -1){
+            viagem.setCD_VEICULO_VIAGEM(Integer.parseInt(cdVeicViagem.substring(0, iend2)));
+            }
+            dao.insert(viagem);
+            this.dispose();
+        }else {
+            viagem.setCD_VIAGEM(Integer.parseInt(this.tbCodViagem.getText()));
+            viagem.setORIGEM_VIAGEM(this.tbCidadeOrigem.getText());
+            viagem.setEST_ORIGEM_VIAGEM(this.cbOrigem.getSelectedItem().toString());
+            viagem.setDEST_VIAGEM(this.tbCidadeDestino.getText());
+            viagem.setEST_DEST_VIAGEM(this.cbDestino.getSelectedItem().toString());
+            viagem.setKM_VIAGEM(Float.parseFloat(this.tbDistanciaViagem.getText()));
+            viagem.setTIPO_VIAGEM(this.cbTipoViagem.getSelectedItem().toString());
+            viagem.setMOTIVO_VIAGEM(this.tbMotivoViagem.getText());
+            viagem.setVALOR_VIAGEM(Float.parseFloat(this.tbValorViagem.getText()));
+            viagem.setOBS_VIAGEM(this.tbObsViagem.getText());
+        
+            //Passa o Motorista selecionado para o Obj Viagem
+            String cdMotViagem = this.cbMotorista.getSelectedItem().toString();
+            int iend = cdMotViagem.indexOf("-");
+            if (iend != -1){
+            viagem.setCD_MOTORISTA_VIAGEM(Integer.parseInt(cdMotViagem.substring(0, iend)));
+            }
+        
+            //Passa o Veiculo selecionado para o Obj Viagem
+            String cdVeicViagem = this.cbVeiculo.getSelectedItem().toString();
+            int iend2 = cdVeicViagem.indexOf("-");
+            if (iend2 != -1){
+            viagem.setCD_VEICULO_VIAGEM(Integer.parseInt(cdVeicViagem.substring(0, iend2)));
+            }
+            dao.update(viagem);
+            this.dispose();
+            new ConsultaViagem();
+        
         }
-        
-        String cdVeicViagem = this.cbVeiculo.getSelectedItem().toString();
-        int iend2 = cdVeicViagem.indexOf("-");
-        if (iend2 != -1){
-        viagem.setCD_VEICULO_VIAGEM(Integer.parseInt(cdVeicViagem.substring(0, iend2)));
-        }
-        dao.insert(viagem);
         
 
         // TODO add your handling code here:

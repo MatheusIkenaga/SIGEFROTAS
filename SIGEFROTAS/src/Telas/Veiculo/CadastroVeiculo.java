@@ -28,11 +28,8 @@ public class CadastroVeiculo extends javax.swing.JFrame {
      * Creates new form Cad_Veiculo
      */
     public CadastroVeiculo() {
+        this.setLocationRelativeTo(null);
         initComponents();
-//<<<<<<< HEAD:SIGEFROTAS/src/CadastroVeiculo.java
-        //this.setExtendedState(Frame.MAXIMIZED_BOTH);
-//=======
-        //setExtendedState(Frame.MAXIMIZED_BOTH);
         this.setLocationRelativeTo(null);
         this.cbAnoFabricacao.setSelectedItem(null);
         this.cbAnoModelo.setSelectedItem(null);
@@ -41,8 +38,6 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         this.cbSeguradoraVeic.setSelectedItem(null);
         this.setVisible(true);
         
-        //Fazer JToggleButton ficar marcado:
-        //this.btVeiculoProprio.doClick();
     }
     
         public CadastroVeiculo(Veiculo veiculo){
@@ -124,6 +119,9 @@ public class CadastroVeiculo extends javax.swing.JFrame {
         btVeiculoProprio = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(1280, 720));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
+        setSize(new java.awt.Dimension(1280, 720));
         getContentPane().setLayout(null);
 
         tbCodVeic.setEnabled(false);

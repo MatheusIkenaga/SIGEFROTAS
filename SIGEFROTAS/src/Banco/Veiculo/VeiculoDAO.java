@@ -50,6 +50,27 @@ private Connection conexao;
         
     }
     
+    public String selectViagem(int cd, String retorno){
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String resultado = null;
+        
+        try{
+            stmt = this.conexao.prepareStatement("select * from VEICULO where CD_VEICULO="+cd);
+            rs = stmt.executeQuery();
+            if(rs.next()){
+            resultado = (rs.getString(retorno));
+            }
+            rs.close();
+            stmt.close();
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return resultado;
+        
+    }
+    
     public void preencheCB(JComboBox cb){
         try{
             String sql= "select * from VEICULO order by MODELO_VEICULO";

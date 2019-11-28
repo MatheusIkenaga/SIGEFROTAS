@@ -34,7 +34,7 @@ String dt;
     
     
     
-    public String selectViagem(int cd){
+    public String selectViagem(int cd, String retorno){
         PreparedStatement stmt = null;
         ResultSet rs = null;
         String resultado = null;
@@ -44,7 +44,7 @@ String dt;
             stmt = this.conexao.prepareStatement("select * from MOTORISTA where CD_MOTORISTA="+cd);
             rs = stmt.executeQuery();
             if(rs.next()){
-            resultado = (rs.getString("NM_MOTORISTA"));
+            resultado = (rs.getString(retorno));
             }
             rs.close();
             stmt.close();

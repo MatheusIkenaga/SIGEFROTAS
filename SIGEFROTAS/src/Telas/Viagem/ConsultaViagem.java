@@ -10,6 +10,7 @@ import Banco.Veiculo.VeiculoDAO;
 import Banco.Viagem.Viagem;
 import Banco.Viagem.ViagemDAO;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -56,7 +57,7 @@ public class ConsultaViagem extends javax.swing.JFrame {
         Object rowData[] = new Object [12];
         for (int i = 0; i < dao.selectConsulta().size();i++) {
             rowData[0] = list.get(i).getCD_VIAGEM();
-            rowData[1] = motoDao.selectViagem(list.get(i).getCD_MOTORISTA_VIAGEM()).toString();
+            rowData[1] = motoDao.selectViagem(list.get(i).getCD_MOTORISTA_VIAGEM(),"NM_MOTORISTA").toString();
             rowData[2] = veicDao.selectViagem(list.get(i).getCD_VEICULO_VIAGEM()).toString();
             rowData[3] = list.get(i).getORIGEM_VIAGEM();
             rowData[4] = list.get(i).getEST_ORIGEM_VIAGEM();
@@ -97,7 +98,7 @@ public class ConsultaViagem extends javax.swing.JFrame {
         btVoltar = new javax.swing.JButton();
         btExcluir = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel15.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         jLabel15.setText("Consulta de Viagens");
@@ -124,7 +125,7 @@ public class ConsultaViagem extends javax.swing.JFrame {
         Object rowData[] = new Object [12];
         for (int i = 0; i < dao.selectConsulta().size();i++) {
             rowData[0] = list.get(i).getCD_VIAGEM();
-            rowData[1] = motoDao.selectViagem(list.get(i).getCD_MOTORISTA_VIAGEM()).toString();
+            rowData[1] = motoDao.selectViagem(list.get(i).getCD_MOTORISTA_VIAGEM(),"NM_MOTORISTA").toString();
             rowData[2] = veicDao.selectViagem(list.get(i).getCD_VEICULO_VIAGEM()).toString();
             rowData[3] = list.get(i).getORIGEM_VIAGEM();
             rowData[4] = list.get(i).getEST_ORIGEM_VIAGEM();
@@ -213,28 +214,40 @@ public class ConsultaViagem extends javax.swing.JFrame {
 
         DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
         int linhaSelecionadaIndex = jTable1.getSelectedRow();
-        /*
-        Veiculo veiculoalterar = new Veiculo();
+        
+        Viagem viagemalterar = new Viagem();
+        
+        /*columnsName[0] = "Código";
+        columnsName[1] = "Motorista";
+        columnsName[2] = "Veículo";
+        columnsName[3] = "Origem";
+        columnsName[4] = "UF Origem";
+        columnsName[5] = "Destino";
+        columnsName[6] = "UF Destino";
+        columnsName[7] = "Distância";
+        columnsName[8] = "Tipo";
+        columnsName[9] = "Motivo";
+        columnsName[10] = "Valor";
+        columnsName[11] = "Observações";*/
 
-        veiculoalterar.setCD_VEICULO(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,0).toString()));
-        veiculoalterar.setMarca_veiculo(model.getValueAt(linhaSelecionadaIndex,1).toString());
-        veiculoalterar.setModelo_veiculo(model.getValueAt(linhaSelecionadaIndex,2).toString());
-        veiculoalterar.setCor_veiculo(model.getValueAt(linhaSelecionadaIndex,3).toString());
-        veiculoalterar.setPlaca_veiculo(model.getValueAt(linhaSelecionadaIndex,4).toString());
-        veiculoalterar.setHODOM_VEICULO(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,5).toString()));
-        veiculoalterar.setAno_veiculo(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,6).toString()));
-        veiculoalterar.setAno_modelo_veiculo(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,7).toString()));
-        veiculoalterar.setTipo_veiculo(model.getValueAt(linhaSelecionadaIndex,8).toString());
-        veiculoalterar.setDISPO_VEICULO(model.getValueAt(linhaSelecionadaIndex,9).toString());
-        veiculoalterar.setSeguro_veiculo(model.getValueAt(linhaSelecionadaIndex,10).toString());
-        veiculoalterar.setNUM_APOLICE_VEICULO(model.getValueAt(linhaSelecionadaIndex,11).toString());
-        veiculoalterar.setObs_veiculo(model.getValueAt(linhaSelecionadaIndex,12).toString());
-        veiculoalterar.setVEICULO_PROPRIO(model.getValueAt(linhaSelecionadaIndex,13).toString());
+        viagemalterar.setCD_VIAGEM(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,0).toString()));
+        viagemalterar.setCD_MOTORISTA_VIAGEM(Integer.parseInt(dao.selectViagem(viagemalterar.getCD_VIAGEM(),"CD_MOTORISTA_VIAGEM")));
+        viagemalterar.setCD_VEICULO_VIAGEM(Integer.parseInt(dao.selectViagem(viagemalterar.getCD_VIAGEM(),"CD_VEICULO_VIAGEM")));
+        viagemalterar.setORIGEM_VIAGEM(model.getValueAt(linhaSelecionadaIndex,3).toString());
+        viagemalterar.setEST_ORIGEM_VIAGEM(model.getValueAt(linhaSelecionadaIndex,4).toString());
+        viagemalterar.setDEST_VIAGEM(model.getValueAt(linhaSelecionadaIndex,5).toString());
+        viagemalterar.setEST_DEST_VIAGEM(model.getValueAt(linhaSelecionadaIndex,6).toString());
+        viagemalterar.setKM_VIAGEM(Float.parseFloat(model.getValueAt(linhaSelecionadaIndex,7).toString()));
+        viagemalterar.setTIPO_VIAGEM(model.getValueAt(linhaSelecionadaIndex,8).toString());
+        viagemalterar.setMOTIVO_VIAGEM(model.getValueAt(linhaSelecionadaIndex,9).toString());
+        viagemalterar.setVALOR_VIAGEM(Float.parseFloat(model.getValueAt(linhaSelecionadaIndex,10).toString()));
+        viagemalterar.setOBS_VIAGEM(model.getValueAt(linhaSelecionadaIndex,11).toString());
+        
 
-        new CadastroVeiculo(veiculoalterar);
+        new CadastroViagem(viagemalterar);
         this.dispose();
         // TODO add your handling code here:
-        */
+        
     }//GEN-LAST:event_btEditarActionPerformed
 
     private void btVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btVoltarActionPerformed
@@ -243,32 +256,31 @@ public class ConsultaViagem extends javax.swing.JFrame {
     }//GEN-LAST:event_btVoltarActionPerformed
 
     private void btExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btExcluirActionPerformed
-        /*
+        
         int botaoDialogo = JOptionPane.YES_NO_OPTION;
         JOptionPane.showConfirmDialog(null,"Você tem certeza? Essa operação pode ser PERMANENTE!","EXCLUIR VEICULO", botaoDialogo);
         if(botaoDialogo == JOptionPane.YES_OPTION){
             DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
             int linhaSelecionadaIndex = jTable1.getSelectedRow();
 
-            Veiculo veiculoexcluir = new Veiculo();
+            Viagem viagemexcluir = new Viagem();
 
-            veiculoexcluir.setCD_VEICULO(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,0).toString()));
-            veiculoexcluir.setMarca_veiculo(model.getValueAt(linhaSelecionadaIndex,1).toString());
-            veiculoexcluir.setModelo_veiculo(model.getValueAt(linhaSelecionadaIndex,2).toString());
-            veiculoexcluir.setCor_veiculo(model.getValueAt(linhaSelecionadaIndex,3).toString());
-            veiculoexcluir.setPlaca_veiculo(model.getValueAt(linhaSelecionadaIndex,4).toString());
-            veiculoexcluir.setHODOM_VEICULO(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,5).toString()));
-            veiculoexcluir.setAno_veiculo(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,6).toString()));
-            veiculoexcluir.setAno_modelo_veiculo(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,7).toString()));
-            veiculoexcluir.setTipo_veiculo(model.getValueAt(linhaSelecionadaIndex,8).toString());
-            veiculoexcluir.setDISPO_VEICULO(model.getValueAt(linhaSelecionadaIndex,9).toString());
-            veiculoexcluir.setSeguro_veiculo(model.getValueAt(linhaSelecionadaIndex,10).toString());
-            veiculoexcluir.setNUM_APOLICE_VEICULO(model.getValueAt(linhaSelecionadaIndex,11).toString());
-            veiculoexcluir.setObs_veiculo(model.getValueAt(linhaSelecionadaIndex,12).toString());
+            viagemexcluir.setCD_VIAGEM(Integer.parseInt(model.getValueAt(linhaSelecionadaIndex,0).toString()));
+            viagemexcluir.setCD_MOTORISTA_VIAGEM(Integer.parseInt(dao.selectViagem(viagemexcluir.getCD_VIAGEM(),"CD_MOTORISTA_VIAGEM")));
+            viagemexcluir.setCD_VEICULO_VIAGEM(Integer.parseInt(dao.selectViagem(viagemexcluir.getCD_VIAGEM(),"CD_VEICULO_VIAGEM")));
+            viagemexcluir.setORIGEM_VIAGEM(model.getValueAt(linhaSelecionadaIndex,3).toString());
+            viagemexcluir.setEST_ORIGEM_VIAGEM(model.getValueAt(linhaSelecionadaIndex,4).toString());
+            viagemexcluir.setDEST_VIAGEM(model.getValueAt(linhaSelecionadaIndex,5).toString());
+            viagemexcluir.setEST_DEST_VIAGEM(model.getValueAt(linhaSelecionadaIndex,6).toString());
+            viagemexcluir.setKM_VIAGEM(Float.parseFloat(model.getValueAt(linhaSelecionadaIndex,7).toString()));
+            viagemexcluir.setTIPO_VIAGEM(model.getValueAt(linhaSelecionadaIndex,8).toString());
+            viagemexcluir.setMOTIVO_VIAGEM(model.getValueAt(linhaSelecionadaIndex,9).toString());
+            viagemexcluir.setVALOR_VIAGEM(Float.parseFloat(model.getValueAt(linhaSelecionadaIndex,10).toString()));
+            viagemexcluir.setOBS_VIAGEM(model.getValueAt(linhaSelecionadaIndex,11).toString());
 
-            dao.delete(veiculoexcluir);
+            dao.delete(viagemexcluir);
             this.dispose();
-            new ConsultaVeiculo();
+            new ConsultaViagem();
 
         }
         if(botaoDialogo == JOptionPane.NO_OPTION){
@@ -276,7 +288,7 @@ public class ConsultaViagem extends javax.swing.JFrame {
         }
 
         // TODO add your handling code here:
-        */
+        
     }//GEN-LAST:event_btExcluirActionPerformed
 
     /**

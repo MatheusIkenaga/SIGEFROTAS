@@ -6,6 +6,7 @@
 package Telas.Modulos;
 
 import Telas.Viagem.CadastroViagem;
+import Telas.Viagem.ConsultaViagem;
 import java.awt.Frame;
 
 /**
@@ -58,6 +59,11 @@ public class Modulo2GerFrota extends javax.swing.JFrame {
         });
 
         btConsultViagem.setText("Consultar");
+        btConsultViagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultViagemActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setAlignmentX(0.0F);
@@ -224,7 +230,7 @@ public class Modulo2GerFrota extends javax.swing.JFrame {
                 .addGap(118, 118, 118)
                 .addComponent(btConsultViagem)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 1292, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1292, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,6 +299,11 @@ public class Modulo2GerFrota extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_btModComprasEAbast1ActionPerformed
+
+    private void btConsultViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultViagemActionPerformed
+        new ConsultaViagem();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btConsultViagemActionPerformed
 
     /**
      * @param args the command line arguments
