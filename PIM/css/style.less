@@ -263,13 +263,6 @@ body {
                   font-size: 0.85em;
               }
             }
-            select {
-                .appearance;
-                width: 90%;
-                font-size: 1.2em;
-                padding: 5px;
-                margin: 5px auto;
-            }
         }
         &#lock {
             h3 {
@@ -288,14 +281,26 @@ body {
     }
 }
 
-input, select {
+input {
     border: 1px solid @base !important;
     background: @branco !important;
     height: 1.4rem !important;  
+}
+
+select {
+    border: 1px solid @base !important;
+    background: @branco !important;
+    height: 1.6rem !important;
+    margin: auto !important;
+    padding: 0px !important;
 }
 
 textarea {
     border: 1px solid @base !important;
     background: @branco !important;
     height: 100px !important;
+}
+
+label {
+    color: #000 !important;
 }
