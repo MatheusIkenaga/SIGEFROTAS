@@ -95,7 +95,7 @@ public class CadastroViagem extends javax.swing.JFrame {
         cbMotorista = new javax.swing.JComboBox<>();
         cbOrigem = new javax.swing.JComboBox<>();
         cbDestino = new javax.swing.JComboBox<>();
-        jLabel13 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
         tbCodViagem = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
 
@@ -165,8 +165,8 @@ public class CadastroViagem extends javax.swing.JFrame {
         cbDestino.setPreferredSize(new java.awt.Dimension(154, 25));
         cbDestino.setSize(new java.awt.Dimension(154, 25));
 
-        jLabel13.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        jLabel13.setText("Cadastro de Viagem");
+        lblTitulo.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        lblTitulo.setText("Cadastro de Viagem");
 
         tbCodViagem.setEnabled(false);
 
@@ -183,7 +183,7 @@ public class CadastroViagem extends javax.swing.JFrame {
                         .addComponent(btLimpar))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(511, 511, 511)
-                        .addComponent(jLabel13))
+                        .addComponent(lblTitulo))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(216, 216, 216)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -249,7 +249,7 @@ public class CadastroViagem extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(79, 79, 79)
-                .addComponent(jLabel13)
+                .addComponent(lblTitulo)
                 .addGap(87, 87, 87)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -427,7 +427,6 @@ public class CadastroViagem extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -436,6 +435,7 @@ public class CadastroViagem extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextField tbCidadeDestino;
     private javax.swing.JTextField tbCidadeOrigem;
     private javax.swing.JTextField tbCodViagem;

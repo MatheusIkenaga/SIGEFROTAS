@@ -28,7 +28,7 @@ private Connection conexao;
         
         try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
-
+/*
 			stmt.setString(1, viagem.getCD_VIAGEM());
                         stmt.setString(2, viagem.getORIGEM_VIAGEM());
                         stmt.setString(3, viagem.getEST_ORIGEM_VIAGEM());
@@ -41,7 +41,7 @@ private Connection conexao;
                         stmt.setString(10, viagem.getOBS_VIAGEM());
                         stmt.setString(11, viagem.getCD_MOTORISTA_VIAGEM());
                         stmt.setString(12, viagem.getCD_VEICULO_VIAGEM());
-                        
+                        */
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {

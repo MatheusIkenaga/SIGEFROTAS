@@ -91,7 +91,7 @@ public class ConsultaViagem extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel15 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         btEditar = new javax.swing.JButton();
@@ -100,8 +100,8 @@ public class ConsultaViagem extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jLabel15.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        jLabel15.setText("Consulta de Viagens");
+        lblTitulo.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        lblTitulo.setText("Consulta de Viagens");
 
         DefaultTableModel model = new DefaultTableModel();
         Object[] columnsName = new Object [12];
@@ -173,7 +173,7 @@ public class ConsultaViagem extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel15)
+                .addComponent(lblTitulo)
                 .addGap(517, 517, 517))
             .addGroup(layout.createSequentialGroup()
                 .addGap(35, 35, 35)
@@ -191,7 +191,7 @@ public class ConsultaViagem extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(43, Short.MAX_VALUE)
-                .addComponent(jLabel15)
+                .addComponent(lblTitulo)
                 .addGap(52, 52, 52)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 533, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -299,8 +299,8 @@ public class ConsultaViagem extends javax.swing.JFrame {
     private javax.swing.JButton btEditar;
     private javax.swing.JButton btExcluir;
     private javax.swing.JButton btVoltar;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblTitulo;
     // End of variables declaration//GEN-END:variables
 }

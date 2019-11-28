@@ -28,11 +28,11 @@ public class FornecedorDAO {
         
         try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
-
+/*
 			stmt.setString(1, fornecedor.getCD_FORNECEDOR());
 			stmt.setString(2, fornecedor.getEND_FORNECEDOR());
 			stmt.setString(3, fornecedor.getOBS_FORNECEDOR());
-                        
+                        */
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
