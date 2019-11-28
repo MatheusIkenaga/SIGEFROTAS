@@ -33,7 +33,7 @@
         </ul>
       </div>
     </div>
-  </header>b
+  </header>
 
   <div class="valign-wrapper" style="width:100%; height:100%;">
     <div class="valign" style="width:100%;">

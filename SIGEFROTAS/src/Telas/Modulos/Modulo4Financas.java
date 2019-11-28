@@ -5,6 +5,7 @@
  */
 package Telas.Modulos;
 
+import Telas.CtsPagarEReceber.CadastroCtsPagar;
 import java.awt.Frame;
 
 /**
@@ -40,8 +41,16 @@ public class Modulo4Financas extends javax.swing.JFrame {
         btModCadastros = new javax.swing.JButton();
         btModComprasEAbast1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        btConsultCtsPagar = new javax.swing.JButton();
+        btInsCtsPagar = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        btInsCtsReceber = new javax.swing.JButton();
+        btConsultCtsReceber = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAutoRequestFocus(false);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
         jPanel2.setAlignmentX(0.0F);
@@ -196,17 +205,94 @@ public class Modulo4Financas extends javax.swing.JFrame {
                 .addGap(97, 97, 97))
         );
 
+        jLabel3.setText("Contas a Pagar");
+
+        btConsultCtsPagar.setText("Consultar");
+        btConsultCtsPagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultCtsPagarActionPerformed(evt);
+            }
+        });
+
+        btInsCtsPagar.setText("Incluir");
+        btInsCtsPagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInsCtsPagarActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Contas a Receber");
+
+        btInsCtsReceber.setText("Incluir");
+        btInsCtsReceber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInsCtsReceberActionPerformed(evt);
+            }
+        });
+
+        btConsultCtsReceber.setText("Consultar");
+        btConsultCtsReceber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultCtsReceberActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel11))
+                .addGap(121, 121, 121)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btInsCtsPagar)
+                    .addComponent(btInsCtsReceber))
+                .addGap(118, 118, 118)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btConsultCtsReceber)
+                    .addComponent(btConsultCtsPagar))
+                .addGap(21, 21, 21))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel3))
+                    .addComponent(btInsCtsPagar)
+                    .addComponent(btConsultCtsPagar))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jLabel11))
+                    .addComponent(btInsCtsReceber)
+                    .addComponent(btConsultCtsReceber))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 601, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(340, Short.MAX_VALUE))
         );
 
         pack();
@@ -258,12 +344,48 @@ public class Modulo4Financas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btModComprasEAbast1ActionPerformed
 
+    private void btConsultCtsPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultCtsPagarActionPerformed
+        //new ConsultaCtsPagar();
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btConsultCtsPagarActionPerformed
+
+    private void btInsCtsPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsCtsPagarActionPerformed
+        new CadastroCtsPagar().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btInsCtsPagarActionPerformed
+
+    private void btInsCtsReceberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsCtsReceberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btInsCtsReceberActionPerformed
+
+    private void btConsultCtsReceberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultCtsReceberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btConsultCtsReceberActionPerformed
+
     /**
      * @param args the command line arguments
      */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btConsultAluguel;
+    private javax.swing.JButton btConsultAluguel1;
+    private javax.swing.JButton btConsultAluguel2;
+    private javax.swing.JButton btConsultAluguel3;
+    private javax.swing.JButton btConsultAluguel4;
+    private javax.swing.JButton btConsultAluguel5;
+    private javax.swing.JButton btConsultAluguel6;
+    private javax.swing.JButton btConsultCtsPagar;
+    private javax.swing.JButton btConsultCtsReceber;
+    private javax.swing.JButton btInsAluguel;
+    private javax.swing.JButton btInsAluguel1;
+    private javax.swing.JButton btInsAluguel2;
+    private javax.swing.JButton btInsAluguel3;
+    private javax.swing.JButton btInsAluguel4;
+    private javax.swing.JButton btInsAluguel5;
+    private javax.swing.JButton btInsAluguel6;
+    private javax.swing.JButton btInsCtsPagar;
+    private javax.swing.JButton btInsCtsReceber;
     private javax.swing.JButton btModCadastros;
     private javax.swing.JButton btModComprasEAbast;
     private javax.swing.JButton btModComprasEAbast1;
@@ -271,8 +393,25 @@ public class Modulo4Financas extends javax.swing.JFrame {
     private javax.swing.JButton btModGerFrota;
     private javax.swing.JButton btModLocacao;
     private javax.swing.JButton btSIGEGFROTAS;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }
