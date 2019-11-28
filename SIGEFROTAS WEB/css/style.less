@@ -1,0 +1,306 @@
+@import "mixin.less";
+
+@verde: #afff00;
+@verdetxt: #91d400;
+@preto: #1c1b19;
+@base: #ebe8e2;
+@branco: #fff;
+
+@texto: "Montserrat", "Verdana", sans-serif;
+
+body {
+    background:rgb(240, 240, 240);
+    height: 100vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    ul,
+    ol,
+    li {
+        list-style: none;
+    }
+
+    header {
+        background: rgb(204, 204, 204);
+        display       : flex;
+        flex-direction: row;
+        width         : 100vw;
+        align-content: center;
+        align-items: center;
+
+        &>img {
+            height: 100px;
+            margin: 10px 20px;
+        }
+
+        ul {
+            display       : flex;
+            margin: 0 auto;
+            transform: translateX(-10%);
+
+            li {
+                width : 100px;
+                height: 100px;
+                margin: 5px;
+
+                img {
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .cadastrosBar {
+        height: 10px;
+        width: 100vw;
+        background: #006633;
+    }
+
+    .list {
+        margin-top: 100px;
+        padding: 20px;
+
+        table {
+            width: auto;
+
+            tbody {
+                display       : flex;
+                flex-direction: row;
+
+                tr {
+                    display       : flex;
+                    flex-direction: column;
+
+                    td {
+                        align-items: center;
+                        display       : flex;
+                        flex-direction: row;
+                        height        : 20px;
+                        padding       : 25px 40px;
+                        button {
+                            font-size: 1em;
+                            height: auto;
+                            padding: 5px 20px;
+                            background: #fff;
+                            border-radius: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .overlay {
+        overflow: hidden;
+        opacity: 0;
+        z-index: -1;
+        .position(fixed);
+        .bloco(100vh,100vw);
+        .transition;
+        background: rgba(0,0,0,0.5);
+        &.open {
+            z-index: 9999;
+            opacity:1;
+            .transition;
+            .wrapper {
+                .transition;
+               transform:translateX(-50%) translateY(-50%) scale(1);
+            }
+        }
+        .wrapper {
+            .arredonda(5px);
+            .bloco(auto,85%);
+            .position(absolute,50%,50%);
+            .sombra(0,8px,16px -8px,rgba(0,0,0,.5));
+            .transition;
+            padding: 30px;
+            max-height: 90vh;
+            transform: translateX(-50%) translateY(-50%) scale(0.2);
+            background:rgb(240, 240, 240);
+            button {
+                margin: 0 10px;
+            }
+            &:not(.price) {
+                overflow-y: auto;
+            }
+            .close {
+                display: inline-block;
+                .arredonda(50%);
+                .bloco(24px,24px);
+                .position(absolute,6px,auto,6px);
+                img {
+                    height: 24px;
+                    width: auto;
+                }
+            }
+            & > h1, & > h2, & > h3, & > h4, & > p {
+                padding: 0 6px;
+                margin:0 auto 10px;
+                text-align: center;
+                &:nth-child(2) {
+                    font-weight: 700;
+                    padding: 22px 30px 0;
+                }
+                &.destaque {
+                    background: @base;
+                }
+            }
+            & > figure {
+                padding: 10px;
+                .flex-menu(row nowrap,flex-start,center);
+                img {
+                    width: auto;
+                    height: auto;
+                    max-width: 25%;
+                    &[alt="pin"] {
+                        max-height: 30px;
+                    }
+                }
+                figcaption {
+                    margin: 0;
+                    padding:0 5px 0 5%;
+                    span {
+                        font-weight: 700;
+                    }
+                    meter {
+                        width: 100%;
+                    }
+                }
+            }
+            #swiper {
+                position: relative;
+                overflow: hidden;
+            }
+            .tabs {
+                position: relative;
+                overflow: hidden;
+                .flex-menu(row wrap,flex-start,flex-start);
+                &.slider {
+                    display: block;
+                    height:53vh;
+                    width: 100%;
+                }
+                li.aba {
+                    border-bottom: 2px solid @base;
+                    .bloco(auto,50%,5px,0);
+                    h2 {
+                        text-transform: uppercase;
+                        font-size: 1.09em;
+                        .flex-menu(row nowrap,center, center);
+                        img {
+                            .bloco(auto,24px,0 4px 0 0,0);
+                        }
+                    }
+                    & ~ .aba {
+                        border-left: 2px solid @base;
+                    }
+                    &.current {
+                        border-bottom-color: @preto;
+                    }
+                }
+                li.tab-content {
+                    position: absolute;
+                    max-height: 53.5vh;
+                    float:left;
+                    .transition(all,0.42s);
+                    .bloco(auto,100%);
+                    overflow-y:scroll;
+                    overflow-x: hidden;
+                    transform: translateX(0);
+                    &:not(.current) {
+                        .transition(all,0.2s);
+                        transform: translateX(-100%);
+                    }
+                    &.current ~ .tab-content {
+                        .transition(all,0.3s);
+                        transform: translateX(100%);
+                    }
+                    ol {
+                        .bloco;
+                        li {
+                            text-align: center;
+                            border-bottom:1px solid @base;
+                            .bloco(auto,100%,10px 5px);
+                            .flex-menu(row nowrap,space-between, center);
+                            meter:after {
+                                font-size: 0.8em;
+                                content: "BATERIA";
+                            }
+                            p span {
+                                display: block;
+                                text-align: center;
+                                font-size: 0.6em;
+                            }
+                            .scan {
+                                .bloco(45px,45px,4px,0);
+                                .fonte(700,0.8em,@texto,1.5em);
+                            }
+                        }
+                    }
+                }
+            }
+            .actions {
+                .set-align;
+                padding: 10px;
+                text-align: center;
+                * {
+                    color: @verdetxt;
+                    .fonte(300 italic,0.9em);
+                }
+                img {
+                    .bloco(16px,auto,0,0);
+                }
+            }
+            .tag {
+              .arredonda(24px);
+              .bloco(auto,100%,5px 3px);
+              .position(absolute,auto,0,0,-54px);
+              text-align: center;
+              background: @preto;
+              * {
+                  color:@branco;
+              } 
+              h3 {
+                  text-transform: uppercase;
+              }
+              p {
+                  font-size: 0.85em;
+              }
+            }
+        }
+        &#lock {
+            h3 {
+                .set-align;.inline;
+                text-align: left;
+                img {
+                    padding:5px;
+                    background: @verde;
+                    .arredonda(50%);
+                }
+                span {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+input {
+    border: 1px solid @base !important;
+    background: @branco !important;
+    height: 1.4rem !important;  
+}
+
+select {
+    border: 1px solid @base !important;
+    background: @branco !important;
+    height: 1.6rem !important;
+    margin: auto !important;
+    padding: 0px !important;
+}
+
+textarea {
+    border: 1px solid @base !important;
+    background: @branco !important;
+    height: 100px !important;
+}
+
+label {
+    color: #000 !important;
+}
