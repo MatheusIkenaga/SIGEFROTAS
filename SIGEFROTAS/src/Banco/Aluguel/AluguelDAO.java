@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Banco.Viagem;
+package Banco.Aluguel;
 
 import Banco.ConnectionFactory;
 import java.sql.Connection;
@@ -21,18 +21,18 @@ import javax.swing.JOptionPane;
  *
  * @author Matheus
  */
-public class ViagemDAO {
+public class AluguelDAO {
     
 private Connection conexao;
 String dt;
     
-    public ViagemDAO () {
+    public AluguelDAO () {
         
         this.conexao = new ConnectionFactory().getConnection("root", "root1234");
     
     }
     
-    public String selectMotViagem(int cd){
+    public String selectMotAluguel(int cd){
         PreparedStatement stmt = null;
         ResultSet rs = null;
         String resultado = null;
@@ -40,7 +40,7 @@ String dt;
         try{
             
             stmt = this.conexao.prepareStatement("select m.cd_motorista, "
-                    + "m.nm_motorista, m.cpf_motorista from GER_FROTA_VIAGEM v "
+                    + "m.nm_motorista, m.cpf_motorista from ALUG_VEIC_VIAGEM v "
                     + "left join motorista m on m.cd_motorista = v.cd_motorista_viagem "
                     + "where v.CD_VIAGEM="+cd);
             rs = stmt.executeQuery();
@@ -59,7 +59,7 @@ String dt;
         
     }
     
-    public String selectVeicViagem(int cd){
+    public String selectVeicAluguel(int cd){
         PreparedStatement stmt = null;
         ResultSet rs = null;
         String resultado = null;
@@ -67,7 +67,7 @@ String dt;
         try{
             
             stmt = this.conexao.prepareStatement("select veic.cd_veiculo, "
-                    + "veic.modelo_veiculo, veic.placa_veiculo from GER_FROTA_VIAGEM v "
+                    + "veic.modelo_veiculo, veic.placa_veiculo from ALUG_VEIC_VIAGEM v "
                     + "left join veiculo veic on veic.cd_veiculo = v.cd_veiculo_viagem "
                     + "where v.cd_viagem="+cd);
             rs = stmt.executeQuery();
@@ -86,14 +86,21 @@ String dt;
         
     }
     
-    public String selectViagem(int cd, String retorno){
+    /*
+    select m.cd_motorista, m.nm_motorista, m.cpf_motorista
+        from GER_FROTA_VIAGEM v 
+        left join motorista m on m.cd_motorista = v.cd_motorista_viagem
+        where v.CD_VIAGEM=6
+    */
+    
+    public String selectAluguel(int cd, String retorno){
         PreparedStatement stmt = null;
         ResultSet rs = null;
         String resultado = null;
         
         try{
             
-            stmt = this.conexao.prepareStatement("select * from GER_FROTA_VIAGEM where CD_VIAGEM="+cd);
+            stmt = this.conexao.prepareStatement("select * from ALUG_VEIC_VIAGEM where CD_VIAGEM="+cd);
             rs = stmt.executeQuery();
             if(rs.next()){
             resultado = (rs.getString(retorno));
@@ -107,9 +114,17 @@ String dt;
         return resultado;
         
     }
+    
+ /*INSERT INTO `GER_FROTAS`.`GER_FROTA_VIAGEM` 
+(`ORIGEM_VIAGEM`, `EST_ORIGEM_VIAGEM`, `DEST_VIAGEM`, 
+`EST_DEST_VIAGEM`, `KM_VIAGEM`, `TIPO_VIAGEM`, `MOTIVO_VIAGEM`
+, `VALOR_VIAGEM`, `OBS_VIAGEM`, `CD_MOTORISTA_VIAGEM`, 
+`CD_VEICULO_VIAGEM`) 
+VALUES ('Espírito Santo', 'ES', 'Sao paulo', 'SP', 
+'321', 'teste 2', 'eu quero', '321', 'obs', '5', '15');*/
 
-    public void insert(Viagem viagem){
-        String sql = "insert into GER_FROTA_VIAGEM "
+    public void insert(Aluguel viagem){
+        String sql = "insert into ALUG_VEIC_VIAGEM "
             //+ "(CD_VIAGEM, "
             + "(ORIGEM_VIAGEM, "
             + "EST_ORIGEM_VIAGEM, "
@@ -148,18 +163,18 @@ String dt;
         }
     }    
     
-    public List<Viagem> selectConsulta(){
+    public List<Aluguel> selectConsulta(){
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            List<Viagem> viagens = new ArrayList<Viagem>();
-            stmt = this.conexao.prepareStatement("select * from GER_FROTA_VIAGEM order by CD_VIAGEM");
+            List<Aluguel> viagens = new ArrayList<Aluguel>();
+            stmt = this.conexao.prepareStatement("select * from ALUG_VEIC_VIAGEM order by CD_VIAGEM");
 				
             rs = stmt.executeQuery();
                                 
                                 
             while (rs.next()) {
-		Viagem viagem = new Viagem();
+		Aluguel viagem = new Aluguel();
                 viagem.setCD_VIAGEM(rs.getInt("CD_VIAGEM"));
 		viagem.setORIGEM_VIAGEM(rs.getString("ORIGEM_VIAGEM"));
 		viagem.setEST_ORIGEM_VIAGEM(rs.getString("EST_ORIGEM_VIAGEM"));
@@ -186,8 +201,8 @@ String dt;
         }
     }
     
-    public void update(Viagem viagem){
-        String sql = "update GER_FROTA_VIAGEM set "
+    public void update(Aluguel viagem){
+        String sql = "update ALUG_VEIC_VIAGEM set "
                 + "ORIGEM_VIAGEM=?, "
                 + "EST_ORIGEM_VIAGEM=?, "
                 + "DEST_VIAGEM=? , "
@@ -199,6 +214,32 @@ String dt;
                 + "OBS_VIAGEM=?,"
                 + "CD_MOTORISTA_VIAGEM=?,"
                 + "CD_VEICULO_VIAGEM=? where CD_VIAGEM=?";
+        
+        /*"insert into GER_FROTA_VIAGEM "
+            //+ "(CD_VIAGEM, "
+            + "(ORIGEM_VIAGEM, "
+            + "EST_ORIGEM_VIAGEM, "
+            + "DEST_VIAGEM, "
+            + "EST_DEST_VIAGEM, "
+            + "KM_VIAGEM, "
+            + "TIPO_VIAGEM, "
+            + "MOTIVO_VIAGEM, "
+            + "VALOR_VIAGEM, "
+            + "OBS_VIAGEM,"
+            + "CD_MOTORISTA_VIAGEM,"
+            + "CD_VEICULO_VIAGEM) "
+            + "values (?,?,?,?,?,?,?,?,?,?,?)";
+        stmt.setString(1, viagem.getORIGEM_VIAGEM());
+            stmt.setString(2, viagem.getEST_ORIGEM_VIAGEM());
+            stmt.setString(3, viagem.getDEST_VIAGEM());
+            stmt.setString(4, viagem.getEST_DEST_VIAGEM());
+            stmt.setFloat(5, viagem.getKM_VIAGEM());
+            stmt.setString(6,viagem.getTIPO_VIAGEM());
+            stmt.setString(7, viagem.getMOTIVO_VIAGEM());
+            stmt.setFloat(8, viagem.getVALOR_VIAGEM());
+            stmt.setString(9, viagem.getOBS_VIAGEM());
+            stmt.setInt(10, viagem.getCD_MOTORISTA_VIAGEM());
+            stmt.setInt(11, viagem.getCD_VEICULO_VIAGEM());*/
 
 	try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -224,9 +265,9 @@ String dt;
     
     }
 
-public void delete(Viagem viagem) {
+public void delete(Aluguel viagem) {
 	try {
-            PreparedStatement stmt = conexao.prepareStatement("delete from GER_FROTA_VIAGEM where CD_VIAGEM=?");
+            PreparedStatement stmt = conexao.prepareStatement("delete from ALUG_VEIC_VIAGEM where CD_VIAGEM=?");
             stmt.setInt(1, viagem.getCD_VIAGEM());
             stmt.execute();
             stmt.close();

@@ -6,6 +6,8 @@
 
 package Telas.Modulos;
 
+import Telas.Aluguel.CadastroAluguel;
+import Telas.Aluguel.ConsultaAluguel;
 import Telas.CadastroPeca;
 import Telas.Veiculo.CadastroVeiculo;
 import Telas.Viagem.CadastroViagem;
@@ -75,9 +77,14 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
         jPanel1.setAlignmentX(0.0F);
         jPanel1.setAlignmentY(0.0F);
 
-        jLabel4.setText("Cadastro Aluguel");
+        jLabel4.setText("Cadastro locação");
 
         btConsultAluguel.setText("Consultar");
+        btConsultAluguel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultAluguelActionPerformed(evt);
+            }
+        });
 
         btInsMultaSin.setText("Incluir");
 
@@ -143,6 +150,11 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
         });
 
         btInsAluguel.setText("Incluir");
+        btInsAluguel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInsAluguelActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Cadastro Viagem");
 
@@ -497,6 +509,17 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
         new ConsultaViagem().setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_btConsultViagemActionPerformed
+
+    private void btInsAluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsAluguelActionPerformed
+        new CadastroAluguel().setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btInsAluguelActionPerformed
+
+    private void btConsultAluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultAluguelActionPerformed
+        new ConsultaAluguel().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btConsultAluguelActionPerformed
 
     /**
      * @param args the command line arguments

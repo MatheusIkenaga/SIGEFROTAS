@@ -169,13 +169,16 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabel4">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Cadastro Aluguel"/>
+            <Property name="text" type="java.lang.String" value="Cadastro loca&#xe7;&#xe3;o"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btConsultAluguel">
           <Properties>
             <Property name="text" type="java.lang.String" value="Consultar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btConsultAluguelActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btInsMultaSin">
           <Properties>
@@ -272,6 +275,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Incluir"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btInsAluguelActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>

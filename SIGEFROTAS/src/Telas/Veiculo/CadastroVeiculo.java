@@ -360,7 +360,7 @@ public class CadastroVeiculo extends javax.swing.JFrame {
     }//GEN-LAST:event_tbModeloVeicActionPerformed
 
     private void btCancelarVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarVeicActionPerformed
-        if(this.tbCodVeic == null){
+        if(this.tbCodVeic.getText().isEmpty()){
         this.dispose();
         }else{
         new ConsultaVeiculo();
