@@ -35,12 +35,11 @@ private Connection conexao;
         String resultado = null;
         
         try{
-            stmt = this.conexao.prepareStatement("select * from VEICULO where CD_VEICULO=?");
-            stmt.setInt(1, cd);
+            stmt = this.conexao.prepareStatement("select * from VEICULO where CD_VEICULO="+cd);
             rs = stmt.executeQuery();
-            
-            
+            if(rs.next()){
             resultado = (rs.getString("MODELO_VEICULO")+ " (" + rs.getString("PLACA_VEICULO")+")");
+            }
             rs.close();
             stmt.close();
         

@@ -495,7 +495,6 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
 
     private void btConsultViagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultViagemActionPerformed
         new ConsultaViagem().setVisible(true);
-        this.dispose();
         // TODO add your handling code here:
     }//GEN-LAST:event_btConsultViagemActionPerformed
 

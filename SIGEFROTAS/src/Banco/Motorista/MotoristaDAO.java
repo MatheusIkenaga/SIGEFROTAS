@@ -32,18 +32,20 @@ String dt;
     
     }
     
+    
+    
     public String selectViagem(int cd){
         PreparedStatement stmt = null;
         ResultSet rs = null;
         String resultado = null;
         
         try{
-            stmt = this.conexao.prepareStatement("select * from MOTORISTA where CD_MOTORISTA=?");
-            stmt.setInt(1, cd);
+            
+            stmt = this.conexao.prepareStatement("select * from MOTORISTA where CD_MOTORISTA="+cd);
             rs = stmt.executeQuery();
-            
-            
+            if(rs.next()){
             resultado = (rs.getString("NM_MOTORISTA"));
+            }
             rs.close();
             stmt.close();
         
@@ -53,6 +55,8 @@ String dt;
         return resultado;
         
     }
+    
+    
     
     public void preencheCB(JComboBox cb){
         try{

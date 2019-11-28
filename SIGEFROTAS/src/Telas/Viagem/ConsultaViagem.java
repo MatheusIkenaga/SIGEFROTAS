@@ -56,8 +56,8 @@ public class ConsultaViagem extends javax.swing.JFrame {
         Object rowData[] = new Object [12];
         for (int i = 0; i < dao.selectConsulta().size();i++) {
             rowData[0] = list.get(i).getCD_VIAGEM();
-            rowData[1] = motoDao.selectViagem(i);
-            rowData[2] = veicDao.selectViagem(i);
+            rowData[1] = motoDao.selectViagem(list.get(i).getCD_MOTORISTA_VIAGEM()).toString();
+            rowData[2] = veicDao.selectViagem(list.get(i).getCD_VEICULO_VIAGEM()).toString();
             rowData[3] = list.get(i).getORIGEM_VIAGEM();
             rowData[4] = list.get(i).getEST_ORIGEM_VIAGEM();
             rowData[5] = list.get(i).getDEST_VIAGEM();
@@ -124,8 +124,8 @@ public class ConsultaViagem extends javax.swing.JFrame {
         Object rowData[] = new Object [12];
         for (int i = 0; i < dao.selectConsulta().size();i++) {
             rowData[0] = list.get(i).getCD_VIAGEM();
-            rowData[1] = motoDao.selectViagem(i);
-            rowData[2] = veicDao.selectViagem(i);
+            rowData[1] = motoDao.selectViagem(list.get(i).getCD_MOTORISTA_VIAGEM()).toString();
+            rowData[2] = veicDao.selectViagem(list.get(i).getCD_VEICULO_VIAGEM()).toString();
             rowData[3] = list.get(i).getORIGEM_VIAGEM();
             rowData[4] = list.get(i).getEST_ORIGEM_VIAGEM();
             rowData[5] = list.get(i).getDEST_VIAGEM();
