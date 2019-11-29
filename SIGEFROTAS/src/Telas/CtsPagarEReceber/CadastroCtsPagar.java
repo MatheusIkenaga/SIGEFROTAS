@@ -5,10 +5,26 @@
  */
 package Telas.CtsPagarEReceber;
 
+import Banco.CtsPagarEReceber.ContaPagar;
+import Banco.CtsPagarEReceber.ContaPagarDAO;
 import Banco.Veiculo.VeiculoDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
+import java.text.SimpleDateFormat;
+import javax.swing.JComboBox;
+import javax.swing.JOptionPane;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.text.ParseException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 /**
  *
@@ -17,6 +33,8 @@ import java.awt.event.ItemListener;
 public class CadastroCtsPagar extends javax.swing.JFrame {
 
     VeiculoDAO veicDAO = new VeiculoDAO();
+    ContaPagar conta = new ContaPagar();
+    ContaPagarDAO dao = new ContaPagarDAO();
     
     /**
      * Creates new form CadastroCtsPagar
@@ -29,10 +47,34 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
         veicDAO.preencheCB(cbVeiculo);
         cbVeiculo.setSelectedItem(null);
         cbVeiculo.setEnabled(false);
+        this.dcPagto.setDateFormatString("dd/MM/yyyy");
         
         
     }
 
+    public CadastroCtsPagar(ContaPagar conta){
+        this.dcPagto.setDateFormatString("dd/MM/yyyy");
+        
+        this.tbCodCtsPagar.setText(Integer.toString(conta.getCD_CONTA()));
+        this.tbTotalConta.setText(Float.toString(conta.getTOTAL_CONTA()));
+        this.tbTotalPago.setText(Float.toString(conta.getTOTAL_PAGO()));
+        this.tbStatus.setText(conta.getSTATUS_CONTA());
+        
+        
+        String dtSetConta = (conta.getDT_PAGTO().substring(6, 10) + "-"+
+                             conta.getDT_PAGTO().substring(3,5) + "-"+
+                             conta.getDT_PAGTO().substring(0,2));
+        try{
+            Date dtCta = new SimpleDateFormat("yyyy-MM-dd").parse(dtSetConta);
+            this.dcPagto.setDate(dtCta);
+            this.dcPagto.setDateFormatString("dd/MM/yyyy");
+        }catch(ParseException ex) {
+            Logger.getLogger(CadastroCtsPagar.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        this.cbCategoria.setSelectedItem(conta.getCATEGORIA());
+        this.cbVeiculo.setSelectedItem(dao.selectVeicConta(conta.getCD_VEIC_CONTA()));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -57,8 +99,6 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
         tbCodCtsPagar = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         tbStatus = new javax.swing.JTextField();
-        btLimpar = new javax.swing.JButton();
-        btCancelar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         dcPagto = new com.toedter.calendar.JDateChooser();
         jLabel5 = new javax.swing.JLabel();
@@ -66,7 +106,10 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         tbPagtoParcial = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        tbObs = new javax.swing.JTextField();
+        btLimpar = new javax.swing.JButton();
+        btCanc = new javax.swing.JButton();
+        btSave = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setSize(new java.awt.Dimension(1280, 720));
@@ -105,6 +148,11 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
         jLabel4.setText("Total Pago");
 
         btPagarAgora.setText("Pagar Agora");
+        btPagarAgora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPagarAgoraActionPerformed(evt);
+            }
+        });
 
         btReverterPagto.setText("Reverter Pagamentos");
 
@@ -116,20 +164,6 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
 
         tbStatus.setEnabled(false);
 
-        btLimpar.setText("Limpar");
-        btLimpar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btLimparActionPerformed(evt);
-            }
-        });
-
-        btCancelar.setText("Cancelar");
-        btCancelar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btCancelarActionPerformed(evt);
-            }
-        });
-
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
         jLabel5.setText("Registrar Pagamento:");
@@ -137,6 +171,11 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
         jLabel7.setText("Data do Pagamento");
 
         jButton2.setText("Registrar Baixa Parcial");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -170,6 +209,27 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
 
         jLabel9.setText("Observações");
 
+        btLimpar.setText("Limpar");
+        btLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btLimparActionPerformed(evt);
+            }
+        });
+
+        btCanc.setText("Cancelar");
+        btCanc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btCancActionPerformed(evt);
+            }
+        });
+
+        btSave.setText("Salvar");
+        btSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btSaveActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -196,7 +256,7 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
                                             .addComponent(cbCategoria, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                     .addComponent(jLabel6)
                                     .addComponent(jLabel9)
-                                    .addComponent(jTextField4))
+                                    .addComponent(tbObs))
                                 .addGap(80, 80, 80)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
@@ -215,11 +275,13 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(134, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(51, 51, 51)
                 .addComponent(btLimpar)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btCancelar)
-                .addGap(45, 45, 45))
+                .addComponent(btCanc)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btSave)
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +318,7 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(tbObs, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -264,8 +326,9 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
                     .addComponent(btReverterPagto))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btLimpar)
-                    .addComponent(btCancelar))
+                    .addComponent(btCanc)
+                    .addComponent(btSave)
+                    .addComponent(btLimpar))
                 .addGap(18, 18, 18))
         );
 
@@ -276,23 +339,8 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tbTotalContaActionPerformed
 
-    private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_btLimparActionPerformed
-
-    private void btCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancelarActionPerformed
-        if(this.tbCodCtsPagar.getText().isEmpty()){
-            this.dispose();
-        }else{
-            //new ConsultaCtsPagar();
-            this.dispose();
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btCancelarActionPerformed
-
     private void tbTotalPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tbTotalPagoActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_tbTotalPagoActionPerformed
 
     private void cbCategoriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbCategoriaItemStateChanged
@@ -308,15 +356,133 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_cbCategoriaItemStateChanged
 
+    private void btLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLimparActionPerformed
+
+
+    }//GEN-LAST:event_btLimparActionPerformed
+
+    private void btCancActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btCancActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        //new TelaPreCadastro().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btCancActionPerformed
+
+    private void btSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSaveActionPerformed
+
+        if(this.tbTotalConta.getText().equals("")||
+                this.cbCategoria.getSelectedItem().equals("")){
+            
+            JOptionPane.showMessageDialog(null, "Preencha os campos de: Valor da Conta e Categoria");
+            
+            
+        }else{
+            try{
+            if(this.tbCodCtsPagar.getText().isEmpty()){//***********Significa NOVO cadastro***************
+            
+                DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+                conta.setTOTAL_CONTA(Float.parseFloat(this.tbTotalConta.getText()));
+                if(this.tbTotalPago.getText().isEmpty()){
+                    conta.setTOTAL_PAGO(0);
+                }else{
+                    conta.setTOTAL_PAGO(Float.parseFloat(this.tbTotalPago.getText()));
+                }
+                conta.setSTATUS_CONTA("");
+                try{ 
+                    if(this.dcPagto.getDate().toString().isEmpty()){
+                        Date date=java.util.Calendar.getInstance().getTime();
+                        this.dcPagto.setDate(date);
+                    }else{
+                        conta.setDT_PAGTO(df.format(this.dcPagto.getDate()));
+                    }
+                }catch(Exception e){
+                    System.out.println(e);
+                }
+                conta.setCATEGORIA(this.cbCategoria.getSelectedItem().toString());
+                
+                if(this.cbVeiculo.getSelectedItem().toString().isEmpty()){
+                                    
+                }else{//Pega só o Código do Veiculo e passa para a Conta
+                    String cdVeicViagem = this.cbVeiculo.getSelectedItem().toString();
+                    int iend = cdVeicViagem.indexOf("-");
+                    if (iend != -1){
+                    conta.setCD_VEIC_CONTA(Integer.parseInt(cdVeicViagem.substring(0, iend)));
+                    }
+                }
+                
+                conta.setOBS_CONTA(this.tbObs.getText());
+               
+                dao.insert(conta);
+                this.dispose();
+            }
+                
+                
+                // *******************Significa EDICAO de cadastro*****************************
+            }catch(Exception e){
+                    System.out.println(e);
+            }
+            
+            /*else{ 
+                
+                conta.setCD_CONTA(Integer.parseInt(this.tbCodCtsPagar.getText()));
+                DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
+                conta.setTOTAL_CONTA(Float.parseFloat(this.tbTotalConta.getText()));
+                if(this.tbTotalPago.getText().isEmpty()){
+                    conta.setTOTAL_PAGO(0);
+                }else{
+                    conta.setTOTAL_PAGO(Float.parseFloat(this.tbTotalPago.getText()));
+                }
+                conta.setSTATUS_CONTA("");
+                conta.setDT_PAGTO(null);
+                conta.setCATEGORIA(this.cbCategoria.getSelectedItem().toString());
+                conta.setCD_VEIC_CONTA(Integer.parseInt(this.cbVeiculo.getSelectedItem().toString()));
+                conta.setOBS_CONTA(this.tbObs.getText());
+                dao.update(conta);
+                //new ConsultarContaPagar();
+                this.dispose();
+            
+            }*/
+        }
+        
+    }//GEN-LAST:event_btSaveActionPerformed
+
+    private void btPagarAgoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPagarAgoraActionPerformed
+        this.tbTotalPago.setText(this.tbTotalConta.getText());
+        Date date=java.util.Calendar.getInstance().getTime();
+        this.dcPagto.setDate(date);
+        this.dcPagto.setDateFormatString("dd/MM/yyyy");
+        this.tbStatus.setText("Pago");
+        
+        
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btPagarAgoraActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.tbTotalPago.setText(this.tbPagtoParcial.getText());
+        if(Float.parseFloat(this.tbPagtoParcial.getText())>Float.parseFloat(this.tbTotalConta.getText())){
+            JOptionPane.showMessageDialog(null, "Valor Inválido");
+        }
+        if(Float.parseFloat(this.tbPagtoParcial.getText()) == Float.parseFloat(this.tbTotalConta.getText())){
+            this.tbStatus.setText("Pago");
+        }
+        if(Float.parseFloat(this.tbPagtoParcial.getText())<Float.parseFloat(this.tbTotalConta.getText())){
+            this.tbStatus.setText("Pago Parcialmente");
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    
+    
+
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btCancelar;
+    private javax.swing.JButton btCanc;
     private javax.swing.JButton btLimpar;
     private javax.swing.JButton btPagarAgora;
     private javax.swing.JButton btReverterPagto;
+    private javax.swing.JButton btSave;
     private javax.swing.JComboBox<String> cbCategoria;
     private javax.swing.JComboBox<String> cbVeiculo;
     private com.toedter.calendar.JDateChooser dcPagto;
@@ -331,9 +497,9 @@ public class CadastroCtsPagar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lbVeiculo;
     private javax.swing.JTextField tbCodCtsPagar;
+    private javax.swing.JTextField tbObs;
     private javax.swing.JTextField tbPagtoParcial;
     private javax.swing.JTextField tbStatus;
     private javax.swing.JTextField tbTotalConta;
