@@ -287,6 +287,120 @@
             <button type="button" class=" btn cancelarInput blue darken-4 right" onclick="popOpen('#cadViagem')">Cancelar</button>
         </form>
     </div>
+
+    <!-- cadastro locação -->
+    <div class="overlay" id="cadLocacao">
+        <form class="wrapper">
+            <h4>Cadastro de Locação</h4>
+            <section class="row">
+                <label class="col s3">Código da Locação
+                    <input type="number" name="CD_VIAGEM" id="CD_VIAGEM" disabled>
+                </label>
+                <label class="col s5 middle">Motorista
+                    <select class="browser-default" name="CD_MOTORISTA_VIAGEM" id="CD_MOTORISTA_VIAGEM"></select>
+                </label>
+                <label class="col s4">Veiculo
+                    <select class="browser-default" name="CD_VEICULO_VIAGEM" id="CD_VEICULO_VIAGEM"></select>
+                </label>
+            </section>
+            <section class="row">
+                <label class="col s7">Cidade Origem
+                    <input type="text" name="ORIGEM_VIAGEM" id="ORIGEM_VIAGEM">
+                </label>
+                <label class="col s5">UF Origem
+                    <select class="browser-default" name="EST_ORIGEM_VIAGEM" id="EST_ORIGEM_VIAGEM">
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="AC">AC - Acre</option>
+                        <option value="AL">AL - Alagoas</option>
+                        <option value="AM">AM - Amazonas</option>
+                        <option value="AP">AP - Amapá</option>
+                        <option value="BA">BA - Bahia</option>
+                        <option value="CE">CE - Ceará</option>
+                        <option value="DF">DF - Distrito Federal</option>
+                        <option value="ES">ES - Espírito Santo</option>
+                        <option value="GO">GO - Goiás</option>
+                        <option value="MA">MA - Maranhão</option>
+                        <option value="MG">MG - Minas Gerais</option>
+                        <option value="MS">MS - Mato Grosso do Sul</option>
+                        <option value="MT">MT - Mato Grosso</option>
+                        <option value="PA">PA - Pará</option>
+                        <option value="PB">PB - Paraíba</option>
+                        <option value="PE">PE - Pernambuco</option>
+                        <option value="PI">PI - Piauí</option>
+                        <option value="PR">PR - Paraná</option>
+                        <option value="RJ">RJ - Rio de Janeiro</option>
+                        <option value="RN">RN - Rio Grande do Norte</option>
+                        <option value="RO">RO - Rondônia</option>
+                        <option value="RR">RR - Roraima</option>
+                        <option value="RS">RS - Rio Grande do Sul</option>
+                        <option value="SC">SC - Santa Catarina</option>
+                        <option value="SP">SP - São Paulo</option>
+                        <option value="SE">SE - Sergipe</option>
+                        <option value="TO">TO - Tocantins</option>
+                    </select>
+                </label>
+            </section>
+            <section class="row">
+                <label class="col s7">Cidade Destino
+                    <input type="text" name="DEST_VIAGEM" id="DEST_VIAGEM">
+                </label>
+                <label class="col s5">UF Destino
+                    <select class="browser-default" name="EST_DEST_VIAGEM" id="EST_DEST_VIAGEM">
+                        <option value="" disabled selected>Selecione</option>
+                        <option value="AC">AC - Acre</option>
+                        <option value="AL">AL - Alagoas</option>
+                        <option value="AM">AM - Amazonas</option>
+                        <option value="AP">AP - Amapá</option>
+                        <option value="BA">BA - Bahia</option>
+                        <option value="CE">CE - Ceará</option>
+                        <option value="DF">DF - Distrito Federal</option>
+                        <option value="ES">ES - Espírito Santo</option>
+                        <option value="GO">GO - Goiás</option>
+                        <option value="MA">MA - Maranhão</option>
+                        <option value="MG">MG - Minas Gerais</option>
+                        <option value="MS">MS - Mato Grosso do Sul</option>
+                        <option value="MT">MT - Mato Grosso</option>
+                        <option value="PA">PA - Pará</option>
+                        <option value="PB">PB - Paraíba</option>
+                        <option value="PE">PE - Pernambuco</option>
+                        <option value="PI">PI - Piauí</option>
+                        <option value="PR">PR - Paraná</option>
+                        <option value="RJ">RJ - Rio de Janeiro</option>
+                        <option value="RN">RN - Rio Grande do Norte</option>
+                        <option value="RO">RO - Rondônia</option>
+                        <option value="RR">RR - Roraima</option>
+                        <option value="RS">RS - Rio Grande do Sul</option>
+                        <option value="SC">SC - Santa Catarina</option>
+                        <option value="SP">SP - São Paulo</option>
+                        <option value="SE">SE - Sergipe</option>
+                        <option value="TO">TO - Tocantins</option>
+                    </select>
+                </label>
+            </section>
+            <section class="row">
+                <label class="col s3">Distância Viagem (KM)
+                    <input type="number" name="KM_VIAGEM" id="KM_VIAGEM">
+                </label>
+                <label class="col s3">Tipo da Viagem
+                    <input type="number" name="TIPO_VIAGEM" id="TIPO_VIAGEM">
+                </label>
+                <label class="col s3">Motivo Viagem
+                    <input type="number" name="MOTIVO_VIAGEM" id="MOTIVO_VIAGEM">
+                </label>
+            </section>
+            <section class="row">
+                <label class="col s4">Valor
+                    <input type="number" name="VALOR_VIAGEM" id="VALOR_VIAGEM">
+                </label>
+                <label class="col s8">Observações
+                    <textarea name="OBS_VIAGEM" id="OBS_VIAGEM"></textarea>
+                </label>
+            </section>
+            <button type="button" class="btn limpaCampos blue darken-4">Limpar</button>
+            <button type="submit" class="btn salvarDados limpaCampos blue darken-4 right">Salvar</button>
+            <button type="button" class=" btn cancelarInput blue darken-4 right" onclick="popOpen('#cadViagem')">Cancelar</button>
+        </form>
+    </div>
 </body>
 
 <script src="js/jquery-3.4.1.js" type="text/javascript"></script>
