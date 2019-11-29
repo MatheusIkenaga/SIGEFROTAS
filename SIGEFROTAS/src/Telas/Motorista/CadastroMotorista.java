@@ -4,13 +4,14 @@ import Banco.Motorista.Motorista;
 import Banco.Motorista.MotoristaDAO;
 import java.util.Date;
 import java.text.DateFormat;
-import java.text.ParseException;
+
 import java.text.SimpleDateFormat;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.text.ParseException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

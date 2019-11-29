@@ -6,15 +6,25 @@
 
 package Telas.CtsPagarEReceber;
 
+import Banco.Veiculo.VeiculoDAO;
+import java.awt.event.ItemEvent;
+
 /**
  *
  * @author matheusikenaga
  */
 public class CadastroCtsReceber extends javax.swing.JFrame {
 
+    VeiculoDAO veicDAO = new VeiculoDAO();
     /** Creates new form CadastroCtsReceber */
     public CadastroCtsReceber() {
         initComponents();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        cbCategoria.setSelectedItem(null);
+        veicDAO.preencheCBAluguel(cbVeiculo);
+        cbVeiculo.setSelectedItem(null);
+        cbVeiculo.setEnabled(false);
     }
 
     /** This method is called from within the constructor to
@@ -38,7 +48,7 @@ public class CadastroCtsReceber extends javax.swing.JFrame {
         btPagarAgora = new javax.swing.JButton();
         btReverterPagto = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        tbCodCtsPagar = new javax.swing.JTextField();
+        tbCodCtsReceber = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         tbStatus = new javax.swing.JTextField();
         btLimpar = new javax.swing.JButton();
@@ -58,7 +68,7 @@ public class CadastroCtsReceber extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         jLabel11.setText("Cadastro de Conta a Receber");
 
-        cbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Abastecimento", "Multa", "Compras", "Seguro","Manutenção","Outros" }));
+        cbCategoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Aluguel", "Mensalidade", "Outros"}));
         cbCategoria.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cbCategoriaItemStateChanged(evt);
@@ -86,15 +96,20 @@ public class CadastroCtsReceber extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("Total Pago");
+        jLabel4.setText("Total Recebido");
 
-        btPagarAgora.setText("Pagar Agora");
+        btPagarAgora.setText("Receber Agora");
+        btPagarAgora.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btPagarAgoraActionPerformed(evt);
+            }
+        });
 
-        btReverterPagto.setText("Reverter Pagamentos");
+        btReverterPagto.setText("Reverter Recebimento");
 
         jLabel6.setText("Código");
 
-        tbCodCtsPagar.setEnabled(false);
+        tbCodCtsReceber.setEnabled(false);
 
         jLabel8.setText("Status:");
 
@@ -116,9 +131,9 @@ public class CadastroCtsReceber extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel5.setText("Registrar Pagamento:");
+        jLabel5.setText("Registrar Recebimento");
 
-        jLabel7.setText("Data do Pagamento");
+        jLabel7.setText("Data do Recebimento");
 
         jButton2.setText("Registrar Baixa Parcial");
 
@@ -163,7 +178,7 @@ public class CadastroCtsReceber extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(167, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tbCodCtsPagar, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tbCodCtsReceber, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
@@ -216,7 +231,7 @@ public class CadastroCtsReceber extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(tbStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tbCodCtsPagar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tbCodCtsReceber, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -259,7 +274,7 @@ public class CadastroCtsReceber extends javax.swing.JFrame {
     private void cbCategoriaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbCategoriaItemStateChanged
         if(evt.getStateChange()==ItemEvent.SELECTED){
             if(cbCategoria.getSelectedItem().toString().equals("")||
-                cbCategoria.getSelectedItem().toString().equals("Compras")||
+                cbCategoria.getSelectedItem().toString().equals("Mensalidade")||
                 cbCategoria.getSelectedItem().toString().equals("Outros")){
                 cbVeiculo.setSelectedItem(null);
                 cbVeiculo.setEnabled(false);
@@ -292,6 +307,10 @@ public class CadastroCtsReceber extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btCancelarActionPerformed
 
+    private void btPagarAgoraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btPagarAgoraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btPagarAgoraActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -317,7 +336,7 @@ public class CadastroCtsReceber extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JLabel lbVeiculo;
-    private javax.swing.JTextField tbCodCtsPagar;
+    private javax.swing.JTextField tbCodCtsReceber;
     private javax.swing.JTextField tbPagtoParcial;
     private javax.swing.JTextField tbStatus;
     private javax.swing.JTextField tbTotalConta;

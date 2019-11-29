@@ -6,6 +6,7 @@
 package Telas.Modulos;
 
 import Telas.CtsPagarEReceber.CadastroCtsPagar;
+import Telas.CtsPagarEReceber.CadastroCtsReceber;
 import java.awt.Frame;
 
 /**
@@ -355,7 +356,7 @@ public class Modulo4Financas extends javax.swing.JFrame {
     }//GEN-LAST:event_btInsCtsPagarActionPerformed
 
     private void btInsCtsReceberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsCtsReceberActionPerformed
-        // TODO add your handling code here:
+        new CadastroCtsReceber().setVisible(true);        // TODO add your handling code here:
     }//GEN-LAST:event_btInsCtsReceberActionPerformed
 
     private void btConsultCtsReceberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultCtsReceberActionPerformed
