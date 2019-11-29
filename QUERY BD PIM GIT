@@ -9,6 +9,7 @@ NO WINDOWS SELECIONE TODA A QUERY E EXECUTE COM      CTRL+SHIF+ENTER
 NO MAC SELECIONE TODA A QUERY E EXECUTE COM   COMAND + SHIFT + RETURN
 
 --------------------------------------------------------------------------------------------------------------
+*/
 
 CREATE DATABASE GER_FROTAS;
 
