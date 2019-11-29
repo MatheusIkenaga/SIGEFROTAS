@@ -27,9 +27,9 @@
   <header>
     <div class="nav-wrapper">
       <div class="container">
-        <a href="index.html" class="brand-logo"><img src="img/logo.svg" width="120"></a>
+        <a href="index.jsp" class="brand-logo"><img src="img/logo.svg" width="120"></a>
         <ul class="right">
-          <li><a href="configuracoes.html"><i class="small black-text material-icons">build</i></a></li>
+          <li><a href="configuracoes.jsp"><i class="small black-text material-icons">build</i></a></li>
         </ul>
       </div>
     </div>
@@ -41,27 +41,27 @@
         <div class="menu">
           <div class="row">
             <div class="col s12 m6 l4">
-              <a href="ger-frotas.html"> <img src="img/ger_frota.svg" class="responsive-img" width="200px"></a>
+              <a href="ger-frotas.jsp"> <img src="img/ger_frota.svg" class="responsive-img" width="200px"></a>
             </div>
 
             <div class="col s12 m6 l4">
-              <a href="est-pecas.html"> <img src="img/est_pecas.svg" class="responsive-img" width="200px"></a>
+              <a href="est-pecas.jsp"> <img src="img/est_pecas.svg" class="responsive-img" width="200px"></a>
             </div>
 
             <div class="col s12 m6 l4">
-              <a href="loc-veiculos.html"> <img src="img/loc_veiculos.svg" class="responsive-img" width="200px"></a>
+              <a href="loc-veiculos.jsp"> <img src="img/loc_veiculos.svg" class="responsive-img" width="200px"></a>
             </div>
 
             <div class="col s12 m6 l4">
-              <a href="financeiro.html"> <img src="img/financeiro.svg" class="responsive-img" width="200px"></a>
+              <a href="financeiro.jsp"> <img src="img/financeiro.svg" class="responsive-img" width="200px"></a>
             </div>
 
             <div class="col s12 m6 l4">
-              <a href="manutencao.html"> <img src="img/man_veiculos.svg" class="responsive-img" width="200px"></a>
+              <a href="manutencao.jsp"> <img src="img/man_veiculos.svg" class="responsive-img" width="200px"></a>
             </div>
 
             <div class="col s12 m6 l4">
-              <a href="mul-sini.html"> <img src="img/mul_sini.svg" class="responsive-img" width="200px"></a>
+              <a href="mul-sini.jsp"> <img src="img/mul_sini.svg" class="responsive-img" width="200px"></a>
             </div>
           </div>
         </div>
