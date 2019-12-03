@@ -15,7 +15,7 @@ public class Login
 	private String LOGIN_USER; 
         private String PW_USER;
         private String EMAIL_USER;
-        private java.sql.Date DT_NASC_USER;
+        private String FRASE_USER;
         
         
 	public int getID_LOGIN()
@@ -58,13 +58,13 @@ public class Login
 	}
 
 	
-	public java.sql.Date getDT_NASC_USER()
+	public String getFRASE_USER()
 	{
-		return this.DT_NASC_USER;
+		return this.FRASE_USER;
 	}
-	public void setDT_NASC_USER(java.sql.Date value)
+	public void setFRASE_USER(String value)
 	{
-		this.DT_NASC_USER = value;
+		this.FRASE_USER = value;
 	}
 
 }

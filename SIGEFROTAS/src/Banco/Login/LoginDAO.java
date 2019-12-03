@@ -6,6 +6,7 @@
 package Banco.Login;
 
 import Banco.ConnectionFactory;
+import Telas.Modulos.TelaInicial;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -27,41 +28,50 @@ private Connection conexao;
     }
     
     public void insert(Login login){
-        String sql = "insert into login (ID_LOGIN, LOGIN_USER, PW_USER, EMAIL_USER, DT_NASC_USER)";
+        String sql = "insert into login (LOGIN_USER, PW_USER, EMAIL_USER, FRASE_USER) values (?,?,?,?)";
         
         try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
-
-			stmt.setString(1, Integer.toString(login.getID_LOGIN()));
-			stmt.setString(2, login.getLOGIN_USER());
-			stmt.setString(3, login.getPW_USER());
-                        stmt.setString(4, login.getEMAIL_USER());
-			stmt.setDate(5, (Date) login.getDT_NASC_USER());
+			stmt.setString(1, login.getLOGIN_USER());
+			stmt.setString(2, login.getPW_USER());
+                        stmt.setString(3, login.getEMAIL_USER());
+			stmt.setString(4, login.getFRASE_USER());
       
                         
 			stmt.execute();
 			stmt.close();
+                        JOptionPane.showMessageDialog(null, "Cadastro efetuado com Sucesso!");
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+                    System.out.println(e);
+                    throw new RuntimeException(e);
 		}
     }
     
     public boolean validaUser(String login, String senha){
-        String sql = "Select * from LOGIN where LOGIN_USER = ? and PW_USER= ?";
+        PreparedStatement stmt = null;
+	ResultSet rs = null;
+        
         try {
-		PreparedStatement stmt = conexao.prepareStatement(sql);
-        	stmt.setString(1, login);
-		stmt.setString(2, senha);
-                 
-			stmt.execute();
-			stmt.close();
-			JOptionPane.showMessageDialog(null, "Validação de Acesso ACEITA !");
-                        return true;
-		} catch (SQLException e) {
-                    System.out.println(e);
-			throw new RuntimeException(e);
-                        
-		}
+            stmt = this.conexao.prepareStatement("Select * from LOGIN where LOGIN_USER = '" +login+ "'");
+            rs = stmt.executeQuery();
+            if(rs.first()){
+                if(rs.getString("PW_USER").equals(senha)){
+                    System.out.println("Login OK");
+                    System.out.println("Senha OK");
+                    return true;
+                }else{
+                    System.out.println("Senha Incorreta");
+                    return false;
+                }
+            }else{
+                System.out.println("Login Incorreto");
+                return false;
+            }
+            
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw new RuntimeException(e);
+        }
     }
     
 }

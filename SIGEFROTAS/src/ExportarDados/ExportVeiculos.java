@@ -31,7 +31,7 @@ public class ExportVeiculos {
             
             String query="select * from VEICULO";
             ps= conexao.prepareStatement(query);
-            System.out.println(ps);
+            System.out.println("Consulta no Banco:"+ps);
             rs=ps.executeQuery();
             WritableSheet wsheet = wworkbook.createSheet("Veículos", 0);
             Label label = new Label(0, 2, "A label record");
@@ -99,7 +99,7 @@ public class ExportVeiculos {
             }
             wworkbook.write();
             wworkbook.close();
-            System.out.println("PlanilhaVeiculos gerado");
+            System.out.println("Finished");
             JOptionPane.showMessageDialog(null, "Relatório Gerado");
             
         

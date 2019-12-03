@@ -5,7 +5,7 @@
  */
 package Telas;
 
-import Telas.Login.Login;
+import Telas.Login.LoginValida;
 import java.awt.Frame;
 
 /**
@@ -19,8 +19,8 @@ public class Executavel{
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //new Login();
-        new Login();
+        //new LoginValida();
+        new LoginValida();
         
     }
     

@@ -5,18 +5,21 @@
  */
 package Telas.Login;
 
+import Banco.Login.LoginDAO;
 import Telas.Modulos.TelaInicial;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author matheusikenaga
  */
-public class Login extends javax.swing.JFrame {
+public class LoginValida extends javax.swing.JFrame {
 
+    LoginDAO dao = new LoginDAO();
     /**
      * Creates new form Login
      */
-    public Login() {
+    public LoginValida() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -153,16 +156,17 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btLoginActionPerformed
-        // TODO add your handling code here:
         
-        /*
         String login = tbLogin.getText();
-        String senha = pbSenha.getPassword().toString();
-        if((login=="ads") && (senha=="ads")){} 
+        String senha = pbSenha.getText();
         
-        */
+        if(dao.validaUser(login, senha)){
+        
             new TelaInicial().setVisible(true);
             this.dispose();
+        }else{
+            JOptionPane.showMessageDialog(null,"Login ou Senha inválido");
+        }
          
     }//GEN-LAST:event_btLoginActionPerformed
 
