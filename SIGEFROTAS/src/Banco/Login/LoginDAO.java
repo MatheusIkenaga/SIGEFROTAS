@@ -59,6 +59,7 @@ private Connection conexao;
                     System.out.println("Login OK");
                     System.out.println("Senha OK");
                     return true;
+                    
                 }else{
                     System.out.println("Senha Incorreta");
                     return false;
@@ -68,10 +69,34 @@ private Connection conexao;
                 return false;
             }
             
+            
         } catch (SQLException e) {
             System.out.println(e);
             throw new RuntimeException(e);
         }
+    }
+    
+    public String esqueceuSenha(String login){
+        PreparedStatement stmt = null;
+	ResultSet rs = null;
+        String resultado = null;
+        
+        try {
+            stmt = this.conexao.prepareStatement("Select * from LOGIN where LOGIN_USER = '" +login+ "'");
+            rs = stmt.executeQuery();
+            if(rs.first()){
+                resultado = rs.getString("FRASE_USER");
+                
+            }else{
+                System.out.println("Login Incorreto");
+                JOptionPane.showMessageDialog(null, "Login não encontrado");
+            }
+            return resultado;
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw new RuntimeException(e);
+        }
+        
     }
     
 }
