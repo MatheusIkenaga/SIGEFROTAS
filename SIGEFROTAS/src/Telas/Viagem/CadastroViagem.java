@@ -54,7 +54,7 @@ public class CadastroViagem extends javax.swing.JFrame {
         this.cbVeiculo.setSelectedItem(dao.selectVeicViagem(viagem.getCD_VIAGEM()));        
         this.tbCidadeOrigem.setText(viagem.getORIGEM_VIAGEM());
         this.cbOrigem.setSelectedItem(viagem.getEST_ORIGEM_VIAGEM());
-        this.tbCidadeDestino.setText(viagem.getORIGEM_VIAGEM());
+        this.tbCidadeDestino.setText(viagem.getDEST_VIAGEM());
         this.cbDestino.setSelectedItem(viagem.getEST_DEST_VIAGEM());
         this.tbDistanciaViagem.setText(viagem.getKM_VIAGEM().toString());
         this.cbTipoViagem.setSelectedItem(viagem.getTIPO_VIAGEM());

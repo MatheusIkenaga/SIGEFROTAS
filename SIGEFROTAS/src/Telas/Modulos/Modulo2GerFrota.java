@@ -5,9 +5,12 @@
  */
 package Telas.Modulos;
 
+import ExportarDados.ExportVeiculos;
 import Telas.Viagem.CadastroViagem;
 import Telas.Viagem.ConsultaViagem;
 import java.awt.Frame;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -47,6 +50,7 @@ public class Modulo2GerFrota extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btConsultViagem = new javax.swing.JButton();
         btInsViagem = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -219,13 +223,22 @@ public class Modulo2GerFrota extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Exportar Veículos");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addComponent(jLabel3))
                 .addGap(136, 136, 136)
                 .addComponent(btInsViagem)
                 .addGap(118, 118, 118)
@@ -242,7 +255,9 @@ public class Modulo2GerFrota extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addComponent(btInsViagem)
                     .addComponent(btConsultViagem))
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(48, 48, 48))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -261,7 +276,7 @@ public class Modulo2GerFrota extends javax.swing.JFrame {
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(412, Short.MAX_VALUE))
+                .addContainerGap(276, Short.MAX_VALUE))
         );
 
         pack();
@@ -323,6 +338,15 @@ public class Modulo2GerFrota extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btConsultViagemActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try {
+            new ExportVeiculos().ExportarVeiculos();
+            // TODO add your handling code here:
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Modulo2GerFrota.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -338,6 +362,7 @@ public class Modulo2GerFrota extends javax.swing.JFrame {
     private javax.swing.JButton btModGerFrota;
     private javax.swing.JButton btModLocacao;
     private javax.swing.JButton btSIGEGFROTAS;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
