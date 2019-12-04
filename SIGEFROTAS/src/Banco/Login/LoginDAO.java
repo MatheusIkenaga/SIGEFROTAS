@@ -43,8 +43,9 @@ private Connection conexao;
                         JOptionPane.showMessageDialog(null, "Cadastro efetuado com Sucesso!");
 		} catch (SQLException e) {
                     System.out.println(e);
+                    JOptionPane.showMessageDialog(null, "Login ja utilizado");
                     throw new RuntimeException(e);
-		}
+		} 
     }
     
     public boolean validaUser(String login, String senha){

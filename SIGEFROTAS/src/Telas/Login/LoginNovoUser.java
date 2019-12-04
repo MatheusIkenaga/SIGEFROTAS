@@ -7,6 +7,7 @@ package Telas.Login;
 
 import Banco.Login.Login;
 import Banco.Login.LoginDAO;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -186,13 +187,21 @@ public class LoginNovoUser extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        login.setLOGIN_USER(this.tbLogin.getText());
-        login.setPW_USER(this.tbSenha.getText());
-        login.setEMAIL_USER(this.tbEmail.getText());
-        login.setFRASE_USER(this.tbFrase.getText());
-        dao.insert(login);
-        new LoginValida().setVisible(true);
-        this.dispose();
+        if(this.tbLogin.getText().isEmpty()||
+           this.tbSenha.getText().isEmpty()||
+           this.tbEmail.getText().isEmpty()||
+           this.tbFrase.getText().isEmpty()){
+            JOptionPane.showMessageDialog(null,"Preencha todos os campos");
+        }else{
+        
+            login.setLOGIN_USER(this.tbLogin.getText());
+            login.setPW_USER(this.tbSenha.getText());
+            login.setEMAIL_USER(this.tbEmail.getText());
+            login.setFRASE_USER(this.tbFrase.getText());
+            dao.insert(login);
+            new LoginValida().setVisible(true);
+            this.dispose();
+        }
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
