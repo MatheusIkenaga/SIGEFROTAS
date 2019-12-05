@@ -5,9 +5,12 @@
  */
 package Telas.Modulos;
 
+import ExportarDados.ExportAlugueis;
 import Telas.Aluguel.CadastroAluguel;
 import Telas.Aluguel.ConsultaAluguel;
 import java.awt.Frame;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -46,6 +49,7 @@ public class Modulo3Locacao extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         btInsAluguel = new javax.swing.JButton();
         btConsultAluguel = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -205,6 +209,9 @@ public class Modulo3Locacao extends javax.swing.JFrame {
                 .addGap(97, 97, 97))
         );
 
+        jPanel1.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel1.setPreferredSize(new java.awt.Dimension(817, 41));
+
         jLabel4.setText("Cadastro locação");
 
         btInsAluguel.setText("Incluir");
@@ -221,34 +228,44 @@ public class Modulo3Locacao extends javax.swing.JFrame {
             }
         });
 
+        jButton7.setText("Exportar Locações");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 562, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(219, 219, 219)
+                .addComponent(btInsAluguel)
+                .addGap(66, 66, 66)
+                .addComponent(btConsultAluguel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(5, 5, 5)
                     .addComponent(jLabel4)
-                    .addGap(136, 136, 136)
-                    .addComponent(btInsAluguel)
-                    .addGap(118, 118, 118)
-                    .addComponent(btConsultAluguel)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap(581, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 41, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btInsAluguel)
+                    .addComponent(btConsultAluguel)
+                    .addComponent(jButton7))
+                .addContainerGap())
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(5, 5, 5)
-                            .addComponent(jLabel4))
-                        .addComponent(btInsAluguel)
-                        .addComponent(btConsultAluguel))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGap(11, 11, 11)
+                    .addComponent(jLabel4)
+                    .addContainerGap(14, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -260,9 +277,9 @@ public class Modulo3Locacao extends javax.swing.JFrame {
                 .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(564, 564, 564))
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 694, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -278,17 +295,6 @@ public class Modulo3Locacao extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btInsAluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsAluguelActionPerformed
-        new CadastroAluguel().setVisible(true);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btInsAluguelActionPerformed
-
-    private void btConsultAluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultAluguelActionPerformed
-        new ConsultaAluguel().setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btConsultAluguelActionPerformed
 
     private void btSIGEGFROTAS9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSIGEGFROTAS9ActionPerformed
         new TelaInicial().setVisible(true);
@@ -336,6 +342,26 @@ public class Modulo3Locacao extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btModComprasEAbast19ActionPerformed
 
+    private void btConsultAluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultAluguelActionPerformed
+        new ConsultaAluguel().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btConsultAluguelActionPerformed
+
+    private void btInsAluguelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsAluguelActionPerformed
+        new CadastroAluguel().setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btInsAluguelActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        try {
+            new ExportAlugueis().ExportarAlugueis();
+            // TODO add your handling code here:
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Modulo2GerFrota.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -343,91 +369,35 @@ public class Modulo3Locacao extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btConsultAluguel;
+    private javax.swing.JButton btConsultAluguel1;
+    private javax.swing.JButton btConsultAluguel2;
+    private javax.swing.JButton btConsultAluguel3;
     private javax.swing.JButton btInsAluguel;
-    private javax.swing.JButton btModCadastros;
-    private javax.swing.JButton btModCadastros1;
-    private javax.swing.JButton btModCadastros2;
-    private javax.swing.JButton btModCadastros3;
-    private javax.swing.JButton btModCadastros4;
-    private javax.swing.JButton btModCadastros5;
-    private javax.swing.JButton btModCadastros6;
-    private javax.swing.JButton btModCadastros7;
+    private javax.swing.JButton btInsAluguel1;
+    private javax.swing.JButton btInsAluguel2;
+    private javax.swing.JButton btInsAluguel3;
     private javax.swing.JButton btModCadastros9;
-    private javax.swing.JButton btModComprasEAbast;
-    private javax.swing.JButton btModComprasEAbast1;
-    private javax.swing.JButton btModComprasEAbast10;
-    private javax.swing.JButton btModComprasEAbast11;
-    private javax.swing.JButton btModComprasEAbast12;
-    private javax.swing.JButton btModComprasEAbast13;
-    private javax.swing.JButton btModComprasEAbast14;
-    private javax.swing.JButton btModComprasEAbast15;
     private javax.swing.JButton btModComprasEAbast18;
     private javax.swing.JButton btModComprasEAbast19;
-    private javax.swing.JButton btModComprasEAbast2;
-    private javax.swing.JButton btModComprasEAbast3;
-    private javax.swing.JButton btModComprasEAbast4;
-    private javax.swing.JButton btModComprasEAbast5;
-    private javax.swing.JButton btModComprasEAbast6;
-    private javax.swing.JButton btModComprasEAbast7;
-    private javax.swing.JButton btModComprasEAbast8;
-    private javax.swing.JButton btModComprasEAbast9;
-    private javax.swing.JButton btModFinancas;
-    private javax.swing.JButton btModFinancas1;
-    private javax.swing.JButton btModFinancas2;
-    private javax.swing.JButton btModFinancas3;
-    private javax.swing.JButton btModFinancas4;
-    private javax.swing.JButton btModFinancas5;
-    private javax.swing.JButton btModFinancas6;
-    private javax.swing.JButton btModFinancas7;
     private javax.swing.JButton btModFinancas9;
-    private javax.swing.JButton btModGerFrota;
-    private javax.swing.JButton btModGerFrota1;
-    private javax.swing.JButton btModGerFrota2;
-    private javax.swing.JButton btModGerFrota3;
-    private javax.swing.JButton btModGerFrota4;
-    private javax.swing.JButton btModGerFrota5;
-    private javax.swing.JButton btModGerFrota6;
-    private javax.swing.JButton btModGerFrota7;
     private javax.swing.JButton btModGerFrota9;
-    private javax.swing.JButton btModLocacao;
-    private javax.swing.JButton btModLocacao1;
-    private javax.swing.JButton btModLocacao2;
-    private javax.swing.JButton btModLocacao3;
-    private javax.swing.JButton btModLocacao4;
-    private javax.swing.JButton btModLocacao5;
-    private javax.swing.JButton btModLocacao6;
-    private javax.swing.JButton btModLocacao7;
     private javax.swing.JButton btModLocacao9;
-    private javax.swing.JButton btSIGEGFROTAS;
-    private javax.swing.JButton btSIGEGFROTAS1;
-    private javax.swing.JButton btSIGEGFROTAS2;
-    private javax.swing.JButton btSIGEGFROTAS3;
-    private javax.swing.JButton btSIGEGFROTAS4;
-    private javax.swing.JButton btSIGEGFROTAS5;
-    private javax.swing.JButton btSIGEGFROTAS6;
-    private javax.swing.JButton btSIGEGFROTAS7;
     private javax.swing.JButton btSIGEGFROTAS9;
     private javax.swing.Box.Filler filler1;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }

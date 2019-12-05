@@ -3,19 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Banco;
+package Banco.Pecas;
 
 /**
  *
  * @author Matheus
  */
-public class Pecas {
+public class Peca {
         
         private int CD_PECA;
 	private String NOME_PECA;
 	private int QTD_PECA;
         private float VALOR_PECA;
-	private int CD_FORNEC_PECA;
+	private int CD_VEIC_PECA;
 
         
         
@@ -51,12 +51,12 @@ public class Pecas {
 		this.VALOR_PECA=VALOR_PECA;
 	}
 
-	public int getCd_fornec_peca(){
-		return CD_FORNEC_PECA;
+	public int getCD_VEIC_PECA(){
+		return CD_VEIC_PECA;
 	}
 
-	public void setCd_fornec_peca(int CD_FORNEC_PECA){
-		this.CD_FORNEC_PECA=CD_FORNEC_PECA;
+	public void setCD_VEIC_PECA(int CD_FORNEC_PECA){
+		this.CD_VEIC_PECA=CD_FORNEC_PECA;
 	}
 }
 
