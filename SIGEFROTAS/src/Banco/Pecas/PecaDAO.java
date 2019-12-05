@@ -27,6 +27,54 @@ public class PecaDAO {
         this.conexao = new ConnectionFactory().getConnection("root", "root1234");
     
     }
+    public String selectPeca(int cd, String retorno){
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String resultado = null;
+        
+        try{
+            
+            stmt = this.conexao.prepareStatement("select * from PECAS where CD_PECA="+cd);
+            rs = stmt.executeQuery();
+            if(rs.next()){
+            resultado = (rs.getString(retorno));
+            }
+            rs.close();
+            stmt.close();
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return resultado;
+        
+    }
+    
+    public String selectVeicPeca(int cd){
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String resultado = null;
+        
+        try{
+            
+            stmt = this.conexao.prepareStatement("select veic.cd_veiculo, "
+                    + "veic.modelo_veiculo, veic.placa_veiculo from PECAS v "
+                    + "left join veiculo veic on veic.cd_veiculo = v.cd_veic_peca "
+                    + "where v.cd_peca="+cd);
+            rs = stmt.executeQuery();
+            if(rs.next()){
+            resultado = (rs.getString("CD_VEICULO")+"- "+rs.getString("MODELO_VEICULO")+" ("+rs.getString("PLACA_VEICULO")+")");
+            }
+            rs.close();
+            stmt.close();
+            System.out.println(resultado);
+        
+        }catch(Exception e){
+            
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return resultado;
+        
+    }
     
     public void insert(Peca pecas){
         String sql = "insert into pecas  "
@@ -34,7 +82,7 @@ public class PecaDAO {
                 + "QTD_PECA, "
                 + "VALOR_PECA, "
                 + "CD_VEIC_PECA) "
-                + "values (?,?,?,?,?)";
+                + "values (?,?,?,?)";
         
         try {
 			PreparedStatement stmt = conexao.prepareStatement(sql);
@@ -45,6 +93,7 @@ public class PecaDAO {
                         
 			stmt.execute();
 			stmt.close();
+                        JOptionPane.showMessageDialog(null, "Gravado com sucesso ! ");
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		}

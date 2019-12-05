@@ -40,6 +40,10 @@ public class Modulo6Manut extends javax.swing.JFrame {
         btModCadastros = new javax.swing.JButton();
         btModComprasEAbast1 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        btConsultPecas = new javax.swing.JButton();
+        btInsPecas = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -196,17 +200,64 @@ public class Modulo6Manut extends javax.swing.JFrame {
                 .addGap(97, 97, 97))
         );
 
+        jLabel5.setText("Cadastro Peças");
+
+        btConsultPecas.setText("Consultar");
+        btConsultPecas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultPecasActionPerformed(evt);
+            }
+        });
+
+        btInsPecas.setText("Incluir");
+        btInsPecas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btInsPecasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addGap(149, 149, 149)
+                .addComponent(btInsPecas)
+                .addGap(118, 118, 118)
+                .addComponent(btConsultPecas)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btInsPecas)
+                        .addComponent(jLabel5))
+                    .addComponent(btConsultPecas))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 601, Short.MAX_VALUE))
+                .addGap(236, 236, 236)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 324, Short.MAX_VALUE))
         );
 
         pack();
@@ -258,12 +309,23 @@ public class Modulo6Manut extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btModComprasEAbast1ActionPerformed
 
+    private void btInsPecasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btInsPecasActionPerformed
+        new CadastroPeca().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btInsPecasActionPerformed
+
+    private void btConsultPecasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultPecasActionPerformed
+        new ConsultaPeca().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_btConsultPecasActionPerformed
+
     /**
      * @param args the command line arguments
      */
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btConsultPecas;
+    private javax.swing.JButton btInsPecas;
     private javax.swing.JButton btModCadastros;
     private javax.swing.JButton btModComprasEAbast;
     private javax.swing.JButton btModComprasEAbast1;
@@ -271,6 +333,8 @@ public class Modulo6Manut extends javax.swing.JFrame {
     private javax.swing.JButton btModGerFrota;
     private javax.swing.JButton btModLocacao;
     private javax.swing.JButton btSIGEGFROTAS;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

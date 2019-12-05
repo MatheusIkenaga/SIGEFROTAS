@@ -12,12 +12,13 @@ import ExportarDados.ExportVeiculos;
 import ExportarDados.ExportViagens;
 import Telas.Aluguel.CadastroAluguel;
 import Telas.Aluguel.ConsultaAluguel;
-import Telas.CadastroPeca;
+import Telas.Peca.CadastroPeca;
 import Telas.Veiculo.CadastroVeiculo;
 import Telas.Viagem.CadastroViagem;
 import Telas.Veiculo.ConsultaVeiculo;
 import Telas.Motorista.ConsultaMotorista;
 import Telas.Motorista.CadastroMotorista;
+import Telas.Peca.ConsultaPeca;
 import Telas.Viagem.ConsultaViagem;
 import java.awt.Frame;
 import java.util.logging.Level;
@@ -94,6 +95,11 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
         btInsMultaSin.setText("Incluir");
 
         btConsultPecas.setText("Consultar");
+        btConsultPecas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btConsultPecasActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Cadastro de Sinistros");
 
@@ -695,6 +701,10 @@ public class Modulo1Cadastros extends javax.swing.JFrame {
             Logger.getLogger(Modulo2GerFrota.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void btConsultPecasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btConsultPecasActionPerformed
+        new ConsultaPeca().setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_btConsultPecasActionPerformed
 
     /**
      * @param args the command line arguments
