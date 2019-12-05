@@ -32,6 +32,28 @@ String dt;
     
     }
     
+    public String selectConta(int cd, String retorno){
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+        String resultado = null;
+        
+        try{
+            
+            stmt = this.conexao.prepareStatement("select * from CONTAS_RECEBER where CD_CONTA="+cd);
+            rs = stmt.executeQuery();
+            if(rs.next()){
+            resultado = (rs.getString(retorno));
+            }
+            rs.close();
+            stmt.close();
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return resultado;
+        
+    }
+    
     public String selectVeicConta(int cd){
         PreparedStatement stmt = null;
         ResultSet rs = null;
@@ -42,7 +64,7 @@ String dt;
             stmt = this.conexao.prepareStatement("select veic.cd_veiculo, "
                     + "veic.modelo_veiculo, veic.placa_veiculo from CONTAS_RECEBER v "
                     + "left join veiculo veic on veic.cd_veiculo = v.cd_veic_conta "
-                    + "where v.cd_conta="+ cd);
+                    + "where v.cd_conta="+cd);
             rs = stmt.executeQuery();
             if(rs.next()){
             resultado = (rs.getString("CD_VEICULO")+"- "+rs.getString("MODELO_VEICULO")+" ("+rs.getString("PLACA_VEICULO")+")");
@@ -50,9 +72,10 @@ String dt;
             rs.close();
             stmt.close();
             System.out.println(resultado);
+            return resultado;
         
         }catch(Exception e){
-            System.out.println(e);
+            
             JOptionPane.showMessageDialog(null,e);
         }
         return resultado;
@@ -156,10 +179,10 @@ String dt;
     
     }
 
-public void delete(ContaPagar contaPagar) {
+public void delete(ContaReceber contaReceber) {
 	try {
             PreparedStatement stmt = conexao.prepareStatement("delete from CONTAS_RECEBER where CD_CONTA=?");
-            stmt.setInt(1, contaPagar.getCD_CONTA());
+            stmt.setInt(1, contaReceber.getCD_CONTA());
             stmt.execute();
             stmt.close();
             JOptionPane.showMessageDialog(null, "Registro excluído com sucesso !");

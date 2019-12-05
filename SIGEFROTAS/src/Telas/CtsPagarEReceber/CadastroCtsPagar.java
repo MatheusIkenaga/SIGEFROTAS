@@ -59,7 +59,7 @@ public class CadastroCtsPagar extends javax.swing.JFrame{
 
     public CadastroCtsPagar(ContaPagar conta){
         initComponents();
-        veicDAO.preencheCBAluguel(cbVeiculo);
+        veicDAO.preencheCB(cbVeiculo);
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         this.dcPagto.setDateFormatString("dd/MM/yyyy");

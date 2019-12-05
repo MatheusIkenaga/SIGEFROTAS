@@ -42,6 +42,10 @@ public class CadastroCtsReceber extends javax.swing.JFrame {
     }
 
     public CadastroCtsReceber(ContaReceber conta){
+        initComponents();
+        veicDAO.preencheCBAluguel(cbVeiculo);
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
         this.dcPagto.setDateFormatString("dd/MM/yyyy");
         
         this.tbCodCtsReceber.setText(Integer.toString(conta.getCD_CONTA()));
@@ -62,7 +66,7 @@ public class CadastroCtsReceber extends javax.swing.JFrame {
         }
         
         this.cbCategoria.setSelectedItem(conta.getCATEGORIA());
-        this.cbVeiculo.setSelectedItem(dao.selectVeicConta(conta.getCD_VEIC_CONTA()));
+        this.cbVeiculo.setSelectedItem(dao.selectVeicConta(conta.getCD_CONTA()));
     }
     
     
