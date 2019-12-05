@@ -5,6 +5,8 @@
  */
 package Telas.Modulos;
 
+import Telas.Peca.CadastroPeca;
+import Telas.Peca.ConsultaPeca;
 import java.awt.Frame;
 
 /**
