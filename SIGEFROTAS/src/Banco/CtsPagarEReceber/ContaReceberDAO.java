@@ -21,36 +21,15 @@ import javax.swing.JOptionPane;
  *
  * @author Matheus
  */
-public class ContaPagarDAO {
+public class ContaReceberDAO {
     
 private Connection conexao;
 String dt;
     
-    public ContaPagarDAO () {
+    public ContaReceberDAO () {
         
         this.conexao = new ConnectionFactory().getConnection("root", "root1234");
     
-    }
-    public String selectConta(int cd, String retorno){
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
-        String resultado = null;
-        
-        try{
-            
-            stmt = this.conexao.prepareStatement("select * from CONTAS_PAGAR where CD_CONTA="+cd);
-            rs = stmt.executeQuery();
-            if(rs.next()){
-            resultado = (rs.getString(retorno));
-            }
-            rs.close();
-            stmt.close();
-        
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(null,e);
-        }
-        return resultado;
-        
     }
     
     public String selectVeicConta(int cd){
@@ -61,9 +40,9 @@ String dt;
         try{
             
             stmt = this.conexao.prepareStatement("select veic.cd_veiculo, "
-                    + "veic.modelo_veiculo, veic.placa_veiculo from CONTAS_PAGAR v "
+                    + "veic.modelo_veiculo, veic.placa_veiculo from CONTAS_RECEBER v "
                     + "left join veiculo veic on veic.cd_veiculo = v.cd_veic_conta "
-                    + "where v.cd_conta="+cd);
+                    + "where v.cd_conta="+ cd);
             rs = stmt.executeQuery();
             if(rs.next()){
             resultado = (rs.getString("CD_VEICULO")+"- "+rs.getString("MODELO_VEICULO")+" ("+rs.getString("PLACA_VEICULO")+")");
@@ -71,23 +50,22 @@ String dt;
             rs.close();
             stmt.close();
             System.out.println(resultado);
-            return resultado;
         
         }catch(Exception e){
-            
+            System.out.println(e);
             JOptionPane.showMessageDialog(null,e);
         }
         return resultado;
         
     }
     
-    public void insert(ContaPagar contaPagar){
-        String sql = "insert into CONTAS_PAGAR "
+    public void insert(ContaReceber contaReceber){
+        String sql = "insert into CONTAS_RECEBER "
             //+ "(CD_MOTORISTA, "
             + "(TOTAL_CONTA, "
-            + "TOTAL_PAGO, "
+            + "TOTAL_RECEBIDO, "
             + "STATUS_CONTA, "
-            + "DT_PAGTO, "
+            + "DT_RECEBIDO, "
             + "CATEGORIA, "
             + "CD_VEIC_CONTA, "
             + "OBS_CONTA) "
@@ -96,13 +74,14 @@ String dt;
         try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
 
-            stmt.setFloat(1, contaPagar.getTOTAL_CONTA());
-            stmt.setFloat(2, contaPagar.getTOTAL_PAGO());
-            stmt.setString(3, contaPagar.getSTATUS_CONTA());
-            stmt.setString(4, contaPagar.getDT_PAGTO());//   OLHAR DATA
-            stmt.setString(5, contaPagar.getCATEGORIA());
-            stmt.setInt(6, contaPagar.getCD_VEIC_CONTA());
-            stmt.setString(7,contaPagar.getOBS_CONTA());
+            stmt.setFloat(1, contaReceber.getTOTAL_CONTA());
+            stmt.setFloat(2, contaReceber.getTOTAL_RECEBIDO());
+            stmt.setString(3, contaReceber.getSTATUS_CONTA());
+            stmt.setString(4, contaReceber.getDT_RECEBIDO());//   OLHAR DATA
+            stmt.setString(5, contaReceber.getCATEGORIA());
+            stmt.setInt(6, contaReceber.getCD_VEIC_CONTA());
+            stmt.setString(7,contaReceber.getOBS_CONTA());
+            System.out.println(stmt);
             stmt.execute();
             stmt.close();
             JOptionPane.showMessageDialog(null, "Gravado com sucesso ! ");
@@ -113,47 +92,46 @@ String dt;
         }
     }    
     
-    public List<ContaPagar> selectConsulta(){
+    public List<ContaReceber> selectConsulta(){
         PreparedStatement stmt = null;
         ResultSet rs = null;
         try {
-            List<ContaPagar> contas = new ArrayList<ContaPagar>();
-            stmt = this.conexao.prepareStatement("select * from CONTAS_PAGAR order by CD_CONTA");
+            List<ContaReceber> contasReceber = new ArrayList<ContaReceber>();
+            stmt = this.conexao.prepareStatement("select * from CONTAS_RECEBER order by CD_CONTA");
 				
             rs = stmt.executeQuery();
                                 
                                 
             while (rs.next()) {
-		ContaPagar contaPagar = new ContaPagar();
-                contaPagar.setCD_CONTA(rs.getInt("CD_CONTA"));
-		contaPagar.setTOTAL_CONTA(rs.getFloat("TOTAL_CONTA"));
-		contaPagar.setTOTAL_PAGO(rs.getFloat("TOTAL_PAGO"));
-                contaPagar.setSTATUS_CONTA(rs.getString("STATUS_CONTA"));
-                contaPagar.setDT_PAGTO(rs.getString("DT_PAGTO"));
-                contaPagar.setCATEGORIA(rs.getString("CATEGORIA"));
-                contaPagar.setCD_VEIC_CONTA(rs.getInt("CD_VEIC_CONTA"));
-                contaPagar.setOBS_CONTA(rs.getString("OBS_CONTA"));
-                contas.add(contaPagar);
+		ContaReceber contaReceber = new ContaReceber();
+                contaReceber.setCD_CONTA(rs.getInt("CD_CONTA"));
+		contaReceber.setTOTAL_CONTA(rs.getFloat("TOTAL_CONTA"));
+		contaReceber.setTOTAL_RECEBIDO(rs.getFloat("TOTAL_RECEBIDO"));
+                contaReceber.setSTATUS_CONTA(rs.getString("STATUS_CONTA"));
+                contaReceber.setDT_RECEBIDO(rs.getString("DT_RECEBIDO"));
+                contaReceber.setCATEGORIA(rs.getString("CATEGORIA"));
+                contaReceber.setCD_VEIC_CONTA(rs.getInt("CD_VEIC_CONTA"));
+                contaReceber.setOBS_CONTA(rs.getString("OBS_CONTA"));
+                contasReceber.add(contaReceber);
             }
             rs.close();
             stmt.close();
                                 
-            return contas;
+            return contasReceber;
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null,e);
-            System.out.println(e);
             throw new RuntimeException(e);
         
         }
     }
     
-    public void update(ContaPagar contaPagar){
-        String sql = "update CONTAS_PAGAR set "
+    public void update(ContaReceber contaReceber){
+        String sql = "update CONTAS_RECEBER set "
                 + "TOTAL_CONTA=?, "
-                + "TOTAL_PAGO=?, "
+                + "TOTAL_RECEBIDO=?, "
                 + "STATUS_CONTA=? ,"
-                + "DT_PAGTO=? ,"
+                + "DT_RECEBIDO=? ,"
                 + "CATEGORIA=?,"
                 + "CD_VEIC_CONTA=?,"
                 + "OBS_CONTA=? where CD_CONTA=?";
@@ -161,14 +139,14 @@ String dt;
 	try {
             PreparedStatement stmt = conexao.prepareStatement(sql);
             
-            stmt.setFloat(1, contaPagar.getTOTAL_CONTA());
-            stmt.setFloat(2, contaPagar.getTOTAL_PAGO());
-            stmt.setString(3, contaPagar.getSTATUS_CONTA());
-            stmt.setString(4, contaPagar.getDT_PAGTO());
-            stmt.setString(5, contaPagar.getCATEGORIA());
-            stmt.setInt(6, contaPagar.getCD_VEIC_CONTA());
-            stmt.setString(7, contaPagar.getOBS_CONTA());
-            stmt.setInt(8, contaPagar.getCD_CONTA());
+            stmt.setFloat(1, contaReceber.getTOTAL_CONTA());
+            stmt.setFloat(2, contaReceber.getTOTAL_RECEBIDO());
+            stmt.setString(3, contaReceber.getSTATUS_CONTA());
+            stmt.setString(4, contaReceber.getDT_RECEBIDO());
+            stmt.setString(5, contaReceber.getCATEGORIA());
+            stmt.setInt(6, contaReceber.getCD_VEIC_CONTA());
+            stmt.setString(7, contaReceber.getOBS_CONTA());
+            stmt.setInt(8, contaReceber.getCD_CONTA());
             stmt.execute();
             stmt.close();
             JOptionPane.showMessageDialog(null, "Registro alterado com sucesso !");
@@ -180,7 +158,7 @@ String dt;
 
 public void delete(ContaPagar contaPagar) {
 	try {
-            PreparedStatement stmt = conexao.prepareStatement("delete from CONTAS_PAGAR where CD_CONTA=?");
+            PreparedStatement stmt = conexao.prepareStatement("delete from CONTAS_RECEBER where CD_CONTA=?");
             stmt.setInt(1, contaPagar.getCD_CONTA());
             stmt.execute();
             stmt.close();

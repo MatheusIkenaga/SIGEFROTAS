@@ -12,13 +12,13 @@ import java.util.List;
  *
  * @author matheusikenaga
  */
-public class ContaPagar
+public class ContaReceber
 {
 	private int CD_CONTA;
         private float TOTAL_CONTA;
-        private float TOTAL_PAGO;
+        private float TOTAL_RECEBIDO;
         private String STATUS_CONTA;
-        private String DT_PAGTO;
+        private String DT_RECEBIDO;
         private String CATEGORIA;
         private int CD_VEIC_CONTA;
         private String OBS_CONTA;
@@ -44,13 +44,13 @@ public class ContaPagar
 	}
 
 	
-	public float getTOTAL_PAGO()
+	public float getTOTAL_RECEBIDO()
 	{
-		return this.TOTAL_PAGO;
+		return this.TOTAL_RECEBIDO;
 	}
-	public void setTOTAL_PAGO(float value)
+	public void setTOTAL_RECEBIDO(float value)
 	{
-		this.TOTAL_PAGO = value;
+		this.TOTAL_RECEBIDO = value;
 	}
 
 	
@@ -64,13 +64,13 @@ public class ContaPagar
 	}
         
         
-        public String getDT_PAGTO()
+        public String getDT_RECEBIDO()
 	{
-		return this.DT_PAGTO;
+		return this.DT_RECEBIDO;
 	}
-	public void setDT_PAGTO(String value)
+	public void setDT_RECEBIDO(String value)
 	{
-		this.DT_PAGTO = value;
+		this.DT_RECEBIDO = value;
 	}
 	
         
@@ -102,5 +102,9 @@ public class ContaPagar
 	{
 		this.OBS_CONTA = value;
 	}
+        
+    void add(List<ContaReceber> contasReceber) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

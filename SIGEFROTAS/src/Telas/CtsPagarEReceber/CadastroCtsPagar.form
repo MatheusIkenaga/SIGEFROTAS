@@ -161,7 +161,7 @@
     <Component class="javax.swing.JComboBox" name="cbCategoria">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;Abastecimento&quot;, &quot;Multa&quot;, &quot;Compras&quot;, &quot;Seguro&quot;,&quot;Manuten&#xe7;&#xe3;o&quot;,&quot;Outros&quot; })" type="code"/>
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;&quot;,&quot;Abastecimento&quot;, &quot;Multa&quot;, &quot;Compras&quot;, &quot;Seguro&quot;,&quot;Manuten&#xe7;&#xe3;o&quot;,&quot;Outros&quot; })" type="code"/>
         </Property>
       </Properties>
       <Events>
@@ -189,7 +189,7 @@
     <Component class="javax.swing.JComboBox" name="cbVeiculo">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;--&quot; })" type="code"/>
+          <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;&quot;})" type="code"/>
         </Property>
       </Properties>
       <AuxValues>
@@ -226,6 +226,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Reverter Pagamentos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btReverterPagtoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
@@ -246,6 +249,9 @@
       <Properties>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tbStatusActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
@@ -262,8 +268,8 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
                       <Component id="tbPagtoParcial" alignment="0" max="32767" attributes="0"/>
-                      <Component id="jButton2" pref="267" max="32767" attributes="0"/>
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      <Component id="btPagtoParcial" pref="267" max="32767" attributes="0"/>
+                      <Component id="lblData" min="-2" max="-2" attributes="0"/>
                       <Component id="dcPagto" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -278,11 +284,11 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="tbPagtoParcial" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblData" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="dcPagto" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="26" max="32767" attributes="0"/>
-                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                  <Component id="btPagtoParcial" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -296,17 +302,17 @@
             <Property name="text" type="java.lang.String" value="Registrar Pagamento:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel7">
+        <Component class="javax.swing.JLabel" name="lblData">
           <Properties>
             <Property name="text" type="java.lang.String" value="Data do Pagamento"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="btPagtoParcial">
           <Properties>
             <Property name="text" type="java.lang.String" value="Registrar Baixa Parcial"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btPagtoParcialActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="tbPagtoParcial">

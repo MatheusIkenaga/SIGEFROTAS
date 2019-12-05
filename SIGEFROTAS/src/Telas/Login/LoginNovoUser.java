@@ -191,7 +191,9 @@ public class LoginNovoUser extends javax.swing.JFrame {
            this.tbSenha.getText().isEmpty()||
            this.tbEmail.getText().isEmpty()||
            this.tbFrase.getText().isEmpty()){
+            
             JOptionPane.showMessageDialog(null,"Preencha todos os campos");
+            
         }else{
         
             login.setLOGIN_USER(this.tbLogin.getText());
