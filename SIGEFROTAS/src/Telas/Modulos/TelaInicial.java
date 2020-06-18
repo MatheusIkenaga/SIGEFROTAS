@@ -42,7 +42,6 @@ public class TelaInicial extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton3.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/TelaInicial/locacao_g (1).png")); // NOI18N
         jButton3.setBorderPainted(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,7 +49,6 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/TelaInicial/cadastros_g (1).png")); // NOI18N
         jButton1.setBorderPainted(false);
         jButton1.setDefaultCapable(false);
         jButton1.setFocusPainted(false);
@@ -62,7 +60,6 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        jButton6.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/TelaInicial/manutencao_g (1).png")); // NOI18N
         jButton6.setBorderPainted(false);
         jButton6.setFocusCycleRoot(true);
         jButton6.setRequestFocusEnabled(false);
@@ -74,7 +71,6 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/TelaInicial/compras-abast_g (1).png")); // NOI18N
         jButton5.setBorderPainted(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,7 +78,6 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/TelaInicial/financeiro_g (1).png")); // NOI18N
         jButton4.setBorderPainted(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +85,6 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setIcon(new javax.swing.ImageIcon("/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/TelaInicial/gerfrotras_g (1).png")); // NOI18N
         jButton2.setBorderPainted(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

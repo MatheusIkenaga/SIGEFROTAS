@@ -89,9 +89,6 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="jButton3">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/TelaInicial/locacao_g (1).png"/>
-            </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -100,9 +97,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton1">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/TelaInicial/cadastros_g (1).png"/>
-            </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="defaultCapable" type="boolean" value="false"/>
             <Property name="focusPainted" type="boolean" value="false"/>
@@ -117,9 +111,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton6">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/TelaInicial/manutencao_g (1).png"/>
-            </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="focusCycleRoot" type="boolean" value="true"/>
             <Property name="requestFocusEnabled" type="boolean" value="false"/>
@@ -132,9 +123,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton5">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/TelaInicial/compras-abast_g (1).png"/>
-            </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -143,9 +131,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton4">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/TelaInicial/financeiro_g (1).png"/>
-            </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
@@ -154,9 +139,6 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton2">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/Users/matheusikenaga/NetBeansProjects/SIGEFROTAS/SIGEFROTAS/imgJAVA/TelaInicial/gerfrotras_g (1).png"/>
-            </Property>
             <Property name="borderPainted" type="boolean" value="false"/>
           </Properties>
           <Events>
